@@ -1,0 +1,7 @@
+{
+"config_version": 20210101,
+"name": "Visualum-Dev",
+"location": "US-VA",
+"deployment_model": "LOCAL",
+"environment": "testing"
+}

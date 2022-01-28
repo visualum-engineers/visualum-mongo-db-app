@@ -1,0 +1,50 @@
+{"name": "api-key",
+"type": "api-key",
+"disabled": true,
+    "local-userpass": {
+        "name": "local-userpass",
+        "type": "local-userpass",
+        "config": {
+            "autoConfirm": false,
+            "confirmEmailSubject": "",
+            "emailConfirmationUrl": "https://visualum.herokuapp.com/login/confirmEmail",
+            "resetPasswordUrl": "https://visualum.herokuapp.com/login/resetPassword",
+            "runConfirmationFunction": false,
+            "runResetFunction": false
+        },
+        "disabled": false
+    },
+    "oauth2-google": {
+        "name": "oauth2-google",
+        "type": "oauth2-google",
+        "config": {
+            "clientId": "297543839155-ambq3o5468pll4igtaruhlmh0nceru18.apps.googleusercontent.com"
+        },
+        "secret_config": {
+            "clientSecret": "MONGO_DB_GOOGLE_CLIENT_SECRET"
+        },
+        "disabled": false,
+        "metadata_fields": [
+            {
+                "required": false,
+                "name": "first_name"
+            },
+            {
+                "required": false,
+                "name": "last_name"
+            },
+            {
+                "required": false,
+                "name": "email"
+            },
+            {
+                "required": false,
+                "name": "birthday"
+            },
+            {
+                "required": false,
+                "name": "gender"
+            }
+        ]
+     }
+ }
