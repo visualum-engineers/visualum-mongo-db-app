@@ -1,0 +1,7 @@
+{
+    "enabled": true,
+    "mongo_service_name": "users",
+    "database_name": "Testing-Cluster",
+    "collection_name": "users",
+    "user_id_field": "<Field Name>"
+}
