@@ -1,9 +1,9 @@
 {
-    "name": "users",
+    "name": "mongodb-atlas",
     "type": "mongodb-atlas",
     "config": {
       "clusterName": "Testing-Cluster",
       "readPreference": "primary",
       "wireProtocolEnabled": true
     }
-  }
+}
