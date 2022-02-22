@@ -1,8 +1,0 @@
-{
-    "Rewards":{
-        "ref": "#/relationship/mongodb-atlas//<Collection Name>",
-        "source_key": "Rewards",
-        "foreign_key": "RewardStoreId",
-        "isList": true
-    }
-}
