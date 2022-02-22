@@ -1,0 +1,7 @@
+{
+    "DateRedeemed": "date",
+    "ItemRedeemed": "objectId",
+    "RewardStoreId": "objectId",
+    "UserId": "objectId",
+    "bsonType": "object"
+}
