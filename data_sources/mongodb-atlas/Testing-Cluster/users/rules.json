@@ -1,0 +1,10 @@
+{
+    "name": "user-access-data",
+    "read": { 
+        "UserID": "%%user.id"
+        
+    },
+    "write":{
+        "UserID": "%%user.id"
+    }
+}
