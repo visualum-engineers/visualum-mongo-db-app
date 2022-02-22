@@ -1,0 +1,20 @@
+{
+    "UserId": {
+        "ref": "#/relationship/mongodb-atlas/Development/users",
+        "source_key": "RedeemedByUser",
+        "foreign_key": "_id",
+        "is_list": false
+    },
+    "RewardStoreId": {
+        "ref": "#/relationship/mongodb-atlas/Development/rewardStores",
+        "source_key": "RewardStores",
+        "foreign_key": "_id",
+        "is_list": false
+    },
+    "ItemRedeemed": {
+        "ref": "#/relationship/mongodb-atlas/Development/rewardStoreItems",
+        "source_key": "ItemRedeemed",
+        "foreign_key": "_id",
+        "is_list": false
+    }
+}
