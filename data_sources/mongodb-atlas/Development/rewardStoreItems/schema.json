@@ -1,0 +1,8 @@
+{
+    "bsonType": "object",
+    "Name": "string", 
+    "Price": "number",
+    "NumAvailable": "number", 
+    "IMGURL": "string",
+    "RewardStoreId": "objectId"
+}

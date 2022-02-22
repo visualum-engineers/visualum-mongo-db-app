@@ -1,0 +1,16 @@
+{
+    "bsonType": "object",
+    "Name": {
+        "bsonType": "string",
+        "maxLength": "100",
+        "minLength": "0"
+    },
+    "School_ID": "objectId",
+    "Class_ID" : "objectId",
+    "Rewards" : {
+        "bsonType": "array",
+        "items": "object",
+        "maxItems": 1000,
+        "minItems": 1000
+    }
+}
