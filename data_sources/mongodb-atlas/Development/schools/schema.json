@@ -1,5 +1,5 @@
 {
-    "Address": {
+    "address": {
         "apartment": {
             "bsonType": "string"
         },
@@ -16,10 +16,10 @@
             "bsonType": "string"
         }
     },
-    "Name": {
+    "bsonType": "object",
+    "name": {
         "bsonType": "string"
     },
-    "bsonType": "object",
     "properties": {
         "_id": {
             "bsonType": "objectId"
