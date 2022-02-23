@@ -1,11 +1,5 @@
 {
     "bsonType": "object",
-    "class_code": {
-        "bsonType": "string"
-    },
-    "class_name": {
-        "bsonType": "string"
-    },
     "properties": {
         "_id": {
             "bsonType": "objectId"
@@ -17,12 +11,24 @@
             },
             "maxItems": 200
         },
+        "class_code": {
+            "bsonType": "string"
+        },
         "class_goals": {
             "bsonType": "array",
             "items": {
                 "bsonType": "objectId"
             },
             "maxItems": 150
+        },
+        "class_name": {
+            "bsonType": "string"
+        },
+        "creation_date": {
+            "bsonType": "date"
+        },
+        "reward_store_id": {
+            "bsonType": "objectId"
         },
         "school": {
             "bsonType": "objectId"

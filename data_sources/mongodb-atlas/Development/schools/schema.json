@@ -1,28 +1,32 @@
 {
-    "address": {
-        "apartment": {
-            "bsonType": "string"
-        },
-        "country": {
-            "bsonType": "string"
-        },
-        "state": {
-            "bsonType": "string"
-        },
-        "street": {
-            "bsonType": "string"
-        },
-        "zip": {
-            "bsonType": "string"
-        }
-    },
     "bsonType": "object",
-    "name": {
-        "bsonType": "string"
-    },
     "properties": {
         "_id": {
             "bsonType": "objectId"
+        },
+        "address": {
+            "apartment": {
+                "bsonType": "string"
+            },
+            "bsonType": "object",
+            "country": {
+                "bsonType": "string"
+            },
+            "state": {
+                "bsonType": "string"
+            },
+            "street": {
+                "bsonType": "string"
+            },
+            "zip": {
+                "bsonType": "string"
+            }
+        },
+        "reward_store_id": {
+            "bsonType": "objectId"
+        },
+        "school_name": {
+            "bsonType": "string"
         }
     },
     "required": [

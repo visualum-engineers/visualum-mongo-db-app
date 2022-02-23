@@ -1,23 +1,25 @@
 {
     "bsonType": "object",
     "properties": {
-        "ImgURL": {
-            "bsonType": "string"
-        },
-        "Name": {
-            "bsonType": "string"
-        },
-        "NumAvailable": {
-            "bsonType": "number"
-        },
-        "Price": {
-            "bsonType": "number"
-        },
-        "RewardStoreId": {
-            "bsonType": "objectId"
-        },
         "_id": {
             "bsonType": "objectId"
+        },
+        "img_url": {
+            "bsonType": "string"
+        },
+        "item_name": {
+            "bsonType": "string"
+        },
+        "item_price": {
+            "bsonType": "int",
+            "minimum": 0
+        },
+        "listed_date": {
+            "bsonType": "date"
+        },
+        "num_available": {
+            "bsonType": "int",
+            "minimum": 0
         }
     }
 }
