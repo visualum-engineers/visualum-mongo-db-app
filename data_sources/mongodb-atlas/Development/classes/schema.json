@@ -1,23 +1,23 @@
 {
-    "Name": {
+    "bsonType": "object",
+    "class_code": {
         "bsonType": "string"
     },
-    "bsonType": "object",
-    "classCode": {
+    "class_name": {
         "bsonType": "string"
     },
     "properties": {
         "_id": {
             "bsonType": "objectId"
         },
-        "activeAssignments": {
+        "active_assignments": {
             "bsonType": "array",
             "items": {
                 "bsonType": "objectId"
             },
             "maxItems": 200
         },
-        "classGoals": {
+        "class_goals": {
             "bsonType": "array",
             "items": {
                 "bsonType": "objectId"
