@@ -6,7 +6,7 @@
             "name": "default",
             "apply_when": {},
             "fields": {
-                "UserId": {}
+                "_id": {}
             },
             "write": true,
             "insert": true,
