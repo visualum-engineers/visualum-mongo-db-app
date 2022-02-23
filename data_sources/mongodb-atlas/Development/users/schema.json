@@ -37,9 +37,6 @@
             "maxItems": 200,
             "minItems": 0
         },
-        "UserId": {
-            "bsonType": "objectId"
-        },
         "_id": {
             "bsonType": "objectId"
         }
