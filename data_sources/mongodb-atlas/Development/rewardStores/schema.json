@@ -19,6 +19,9 @@
         },
         "School_ID": {
             "bsonType": "objectId"
+        },
+        "_id": {
+            "bsonType": "objectId"
         }
     }
 }

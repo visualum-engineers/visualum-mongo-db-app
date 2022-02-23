@@ -12,6 +12,9 @@
         "UserId": {
             "bsonType": "objectId"
         },
+        "_id": {
+            "bsonType": "objectId"
+        },
         "bsonType": {
             "bsonType": "objectId"
         }

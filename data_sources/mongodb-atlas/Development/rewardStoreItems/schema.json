@@ -15,6 +15,9 @@
         },
         "RewardStoreId": {
             "bsonType": "objectId"
+        },
+        "_id": {
+            "bsonType": "objectId"
         }
     }
 }

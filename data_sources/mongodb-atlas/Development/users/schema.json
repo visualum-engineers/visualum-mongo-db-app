@@ -39,6 +39,9 @@
         },
         "UserId": {
             "bsonType": "objectId"
+        },
+        "_id": {
+            "bsonType": "objectId"
         }
     },
     "required": [
