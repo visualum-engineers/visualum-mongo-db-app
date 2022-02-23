@@ -22,6 +22,14 @@
                 "bsonType": "string"
             }
         },
+        "classes": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "objectId"
+            },
+            "maxItems": 1000,
+            "minItems": 0
+        },
         "reward_store_id": {
             "bsonType": "objectId"
         },

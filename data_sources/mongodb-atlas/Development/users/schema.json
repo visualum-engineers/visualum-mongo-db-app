@@ -1,50 +1,40 @@
 {
     "bsonType": "object",
     "properties": {
-        "AccountType": {
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "account_type": {
             "bsonType": "string",
             "maxLength": 300,
             "minLength": 0
         },
-        "Avatar_ID": {
-            "bsonType": "string",
-            "maxLength": 300,
-            "minLength": 0
+        "avatar_id": {
+            "bsonType": "object"
         },
-        "Email": {
+        "email": {
             "bsonType": "string",
             "maxLength": 300,
             "minLength": 3
         },
-        "FirstName": {
+        "first_name": {
             "bsonType": "string",
             "maxLength": 300,
             "minLength": 0
         },
-        "LastName": {
+        "last_name": {
             "bsonType": "string",
             "maxLength": 300,
             "minLength": 0
         },
-        "PaymentInfo": {
+        "payment_info": {
             "bsonType": "string"
-        },
-        "RewardStores": {
-            "bsonType": "array",
-            "items": {
-                "bsonType": "objectId"
-            },
-            "maxItems": 200,
-            "minItems": 0
-        },
-        "_id": {
-            "bsonType": "objectId"
         }
     },
     "required": [
-        "FirstName",
-        "LastName",
-        "Email",
-        "AccountType"
+        "first_name",
+        "last_name",
+        "email",
+        "account_type"
     ]
 }

@@ -1,8 +1,1 @@
-{
-    "RewardStores": {
-        "ref": "#/relationship/mongodb-atlas/Development/rewardStores",
-        "source_key": "RewardStores",
-        "foreign_key": "_id",
-        "is_list": true
-    }
-}
+{}
