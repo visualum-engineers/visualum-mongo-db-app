@@ -1,10 +1,20 @@
 {
     "bsonType": "object",
-    "properties":{
-        "IMGURL": "string",
-        "Name": "string",
-        "NumAvailable": "number",
-        "Price": "number",
-        "RewardStoreId": "objectId"
+    "properties": {
+        "ImgURL": {
+            "bsonType": "string"
+        },
+        "Name": {
+            "bsonType": "string"
+        },
+        "NumAvailable": {
+            "bsonType": "number"
+        },
+        "Price": {
+            "bsonType": "number"
+        },
+        "RewardStoreId": {
+            "bsonType": "objectId"
+        }
     }
 }

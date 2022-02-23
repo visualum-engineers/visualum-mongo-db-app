@@ -1,9 +1,19 @@
 {
-    "properties":{
-        "DateRedeemed": "date",
-        "ItemRedeemed": "objectId",
-        "RewardStoreId": "objectId",
-        "UserId": "objectId",
-        "bsonType": "object"
+    "properties": {
+        "DateRedeemed": {
+            "bsonType": "date"
+        },
+        "ItemRedeemed": {
+            "bsonType": "objectId"
+        },
+        "RewardStoreId": {
+            "bsonType": "objectId"
+        },
+        "UserId": {
+            "bsonType": "objectId"
+        },
+        "bsonType": {
+            "bsonType": "objectId"
+        }
     }
 }
