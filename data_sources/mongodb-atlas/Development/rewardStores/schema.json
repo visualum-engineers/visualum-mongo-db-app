@@ -1,24 +1,16 @@
 {
-    "bsonType": "object",
-    "properties": {
-        "Class_ID": {
-            "bsonType": "objectId"
-        },
-        "Name": {
-            "bsonType": "string",
-            "maxLength": 100,
-            "minLength": 0
-        },
-        "Rewards": {
-            "bsonType": "array",
-            "items": {
-                "bsonType": "object"
-            },
-            "maxItems": 1000,
-            "minItems": 1000
-        },
-        "School_ID": {
-            "bsonType": "objectId"
-        }
-    }
+    "Class_ID": "objectId",
+    "Name": {
+        "bsonType": "string",
+        "maxLength": "100",
+        "minLength": "0"
+    },
+    "Rewards": {
+        "bsonType": "array",
+        "items": "object",
+        "maxItems": 1000,
+        "minItems": 1000
+    },
+    "School_ID": "objectId",
+    "bsonType": "object"
 }
