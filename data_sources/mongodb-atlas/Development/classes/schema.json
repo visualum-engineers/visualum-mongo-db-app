@@ -3,38 +3,38 @@
         "bsonType": "string"
     },
     "bsonType": "object",
+    "classCode": {
+        "bsonType": "string"
+    },
     "properties": {
-        "ActiveAssignments": {
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "activeAssignments": {
             "bsonType": "array",
             "items": {
                 "bsonType": "objectId"
             },
             "maxItems": 200
         },
-        "ClassCode": {
-            "bsonType": "string"
-        },
-        "ClassGoals": {
+        "classGoals": {
             "bsonType": "array",
             "items": {
                 "bsonType": "objectId"
             },
             "maxItems": 150
         },
-        "School": {
+        "school": {
             "bsonType": "objectId"
         },
-        "Students": {
+        "students": {
             "bsonType": "objectId"
         },
-        "Teachers": {
+        "teachers": {
             "bsonType": "array",
             "items": {
                 "bsonType": "objectId"
             }
-        },
-        "_id": {
-            "bsonType": "objectId"
         }
     }
 }
