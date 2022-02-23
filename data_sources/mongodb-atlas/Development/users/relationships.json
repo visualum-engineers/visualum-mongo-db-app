@@ -1,1 +1,8 @@
-{}
+{
+    "classes": {
+        "ref": "#/relationship/mongodb-atlas/Development/classes",
+        "source_key": "classes",
+        "foreign_key": "_id",
+        "is_list": true
+    }
+}

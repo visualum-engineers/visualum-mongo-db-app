@@ -22,14 +22,6 @@
                 "bsonType": "string"
             }
         },
-        "classes": {
-            "bsonType": "array",
-            "items": {
-                "bsonType": "objectId"
-            },
-            "maxItems": 1000,
-            "minItems": 0
-        },
         "organization_name": {
             "bsonType": "string"
         },
@@ -38,7 +30,7 @@
         }
     },
     "required": [
-        "Name",
-        "Address"
+        "organization_name",
+        "address"
     ]
 }

@@ -9,8 +9,11 @@
             "maxLength": 300,
             "minLength": 0
         },
-        "avatar_id": {
-            "bsonType": "object"
+        "classes": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "objectId"
+            }
         },
         "email": {
             "bsonType": "string",
@@ -29,6 +32,55 @@
         },
         "payment_info": {
             "bsonType": "string"
+        },
+        "user_avatar": {
+            "accessory": {
+                "bsonType": "string"
+            },
+            "bsonType": "object",
+            "clothes": {
+                "bsonType": "string"
+            },
+            "clothes_color": {
+                "bsonType": "string"
+            },
+            "eyebrow": {
+                "bsonType": "string"
+            },
+            "eyes": {
+                "bsonType": "string"
+            },
+            "facial_hair": {
+                "bsonType": "string"
+            },
+            "facial_hair_color": {
+                "bsonType": "string"
+            },
+            "hair_color": {
+                "bsonType": "string"
+            },
+            "hair_style": {
+                "bsonType": "string"
+            },
+            "mouth": {
+                "bsonType": "string"
+            },
+            "skin_color": {
+                "bsonType": "string"
+            }
+        },
+        "user_points": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "object",
+                "class_id": {
+                    "bsonType": "objectId"
+                },
+                "points": {
+                    "bsonType": "int",
+                    "minimum": 0
+                }
+            }
         }
     },
     "required": [

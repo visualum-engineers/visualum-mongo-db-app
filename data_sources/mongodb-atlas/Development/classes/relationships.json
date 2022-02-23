@@ -1,4 +1,10 @@
 {
+    "organization_id": {
+        "ref": "#/relationship/mongodb-atlas/Development/organizations",
+        "source_key": "organization_id",
+        "foreign_key": "_id",
+        "is_list": false
+    },
     "reward_store_id": {
         "ref": "#/relationship/mongodb-atlas/Development/rewardStores",
         "source_key": "reward_store_id",
