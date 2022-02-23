@@ -1,0 +1,40 @@
+{
+    "Name": {
+        "bsonType": "string"
+    },
+    "bsonType": "object",
+    "properties": {
+        "ActiveAssignments": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "objectId"
+            },
+            "maxItems": 200
+        },
+        "ClassCode": {
+            "bsonType": "string"
+        },
+        "ClassGoals": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "objectId"
+            },
+            "maxItems": 150
+        },
+        "School": {
+            "bsonType": "objectId"
+        },
+        "Students": {
+            "bsonType": "objectId"
+        },
+        "Teachers": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "objectId"
+            }
+        },
+        "_id": {
+            "bsonType": "objectId"
+        }
+    }
+}

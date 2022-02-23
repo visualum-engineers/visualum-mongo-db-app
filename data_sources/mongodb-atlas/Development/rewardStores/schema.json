@@ -1,7 +1,7 @@
 {
     "bsonType": "object",
     "properties": {
-        "Class_ID": {
+        "ClassId": {
             "bsonType": "objectId"
         },
         "Name": {
@@ -12,12 +12,12 @@
         "Rewards": {
             "bsonType": "array",
             "items": {
-                "bsonType": "object"
+                "bsonType": "objectId"
             },
             "maxItems": 1000,
             "minItems": 1000
         },
-        "School_ID": {
+        "SchoolId": {
             "bsonType": "objectId"
         },
         "_id": {

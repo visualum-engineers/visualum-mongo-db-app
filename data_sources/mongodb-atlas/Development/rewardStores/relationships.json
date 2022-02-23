@@ -1,1 +1,14 @@
-{}
+{
+    "ClassId": {
+        "ref": "#/relationship/mongodb-atlas/Development/classes",
+        "source_key": "ClassId",
+        "foreign_key": "_id",
+        "is_list": false
+    },
+    "Rewards": {
+        "ref": "#/relationship/mongodb-atlas/Development/rewardStoreItems",
+        "source_key": "Rewards",
+        "foreign_key": "_id",
+        "is_list": true
+    }
+}
