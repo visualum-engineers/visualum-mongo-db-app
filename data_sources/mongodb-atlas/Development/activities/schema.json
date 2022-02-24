@@ -16,7 +16,7 @@
                     "oneOf": [
                         {
                             "properties": {
-                                "answerChoices": {
+                                "answer_choices": {
                                     "bsonType": "array",
                                     "items": {
                                         "bsonType": "object",
@@ -30,7 +30,7 @@
                                         }
                                     }
                                 },
-                                "keyPairs": {
+                                "key_pairs": {
                                     "bsonType": "array",
                                     "items": {
                                         "bsonType": "object",
@@ -41,7 +41,7 @@
                                             "answer": {
                                                 "bsonType": "uuid"
                                             },
-                                            "name": {
+                                            "content": {
                                                 "bsonType": "string"
                                             }
                                         }
