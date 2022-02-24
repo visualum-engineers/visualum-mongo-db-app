@@ -1,0 +1,99 @@
+{
+    "properties": {
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "activity_creator": {
+            "bsonType": "objectId"
+        },
+        "activity_name": {
+            "bsonType": "string"
+        },
+        "activity_questions": {
+            "bsonType": "array",
+            "items": {
+                "$jsonSchema": {
+                    "oneOf": [
+                        {
+                            "properties": {
+                                "answerChoices": {
+                                    "bsonType": "array",
+                                    "items": {
+                                        "bsonType": "object",
+                                        "properties": {
+                                            "_id": {
+                                                "bsonType": "uuid"
+                                            },
+                                            "content": {
+                                                "bsonType": "string"
+                                            }
+                                        }
+                                    }
+                                },
+                                "keyPairs": {
+                                    "bsonType": "array",
+                                    "items": {
+                                        "bsonType": "object",
+                                        "properties": {
+                                            "_id": {
+                                                "bsonType": "uuid"
+                                            },
+                                            "answer": {
+                                                "bsonType": "uuid"
+                                            },
+                                            "name": {
+                                                "bsonType": "string"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "properties": {}
+                        },
+                        {
+                            "properties": {}
+                        },
+                        {
+                            "properties": {}
+                        },
+                        {
+                            "properties": {}
+                        }
+                    ],
+                    "question_type": {
+                        "bsonType": "string"
+                    }
+                }
+            },
+            "maxItems": 400,
+            "minItems": 0
+        },
+        "activity_subject": {
+            "bsonType": "string"
+        },
+        "activity_timer": {
+            "bsonType": "object",
+            "properties": {
+                "hours": {
+                    "bsonType": "int",
+                    "minimum": 0
+                },
+                "minutes": {
+                    "bsonType": "int",
+                    "minimum": 0
+                },
+                "seconds": {
+                    "bsonType": "int",
+                    "minimum": 0
+                }
+            }
+        },
+        "creation_date": {
+            "bsonType": "date"
+        }
+    },
+    "required": [],
+    "title": "activity"
+}
