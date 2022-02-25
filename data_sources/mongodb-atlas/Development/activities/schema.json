@@ -1,5 +1,4 @@
 {
-    "title": "activity",
     "properties": {
         "_id": {
             "bsonType": "objectId"
@@ -10,33 +9,8 @@
         "activity_name": {
             "bsonType": "string"
         },
-        "activity_subject": {
-            "bsonType": "string"
-        },
-        "activity_timer": {
-            "bsonType": "object",
-            "properties": {
-                "hours": {
-                    "bsonType": "int",
-                    "minimum": 0
-                },
-                "minutes": {
-                    "bsonType": "int",
-                    "minimum": 0
-                },
-                "seconds": {
-                    "bsonType": "int",
-                    "minimum": 0
-                }
-            }
-        },
-        "creation_date": {
-            "bsonType": "date"
-        },
         "activity_questions": {
             "bsonType": "array",
-            "maxItems": 250,
-            "minItems": 0,
             "items": {
                 "$jsonSchema": {
                     "oneOf": [
@@ -72,125 +46,180 @@
                                             }
                                         }
                                     }
-                                }
+                                },
+                                "question_type": "match_keypairs"
                             }
                         },
                         {
                             "properties": {
-                                "question_content":{"bsonType": "string"},
-                                "img_description": {"bsonType": "string"},
-                                "image_url" : {"bsonType": "string"},
-                                "answers": {
+                                "answer_choices": {
                                     "bsonType": "array",
-                                    "items": {"bsonType": "uuid"},
+                                    "items": {
+                                        "bsonType": "object",
+                                        "properties": {
+                                            "_id": {
+                                                "bsonType": "uuid"
+                                            },
+                                            "content": {
+                                                "bsonType": "string"
+                                            }
+                                        }
+                                    },
                                     "maxItems": 100,
                                     "minItems": 0
                                 },
-                                "answer_choices": {
+                                "answers": {
                                     "bsonType": "array",
-                                    "maxItems": 100,
-                                    "minItems": 0,
                                     "items": {
-                                        "bsonType":"object",
-                                        "properties":{
-                                            "_id": {"bsonType":"uuid"},
-                                            "content": {"bsonType":"string"}
-                                        }
-                                    }
+                                        "bsonType": "uuid"
+                                    },
+                                    "maxItems": 100,
+                                    "minItems": 0
+                                },
+                                "image_url": {
+                                    "bsonType": "string"
+                                },
+                                "img_description": {
+                                    "bsonType": "string"
+                                },
+                                "question_content": {
+                                    "bsonType": "string"
                                 }
                             }
                         },
                         {
                             "properties": {
-                                "categories": {
-                                    "bsonType": "array",
-                                    "minItems": 0,
-                                    "maxItems": 150,
-                                    "items":{
-                                        "bsonType": "object",
-                                        "properties": {
-                                            "_id": {"bsonType": "uuid"},
-                                            "content": {"bsonType": "string"},
-                                            "answers": {"bsonType": "uuid"}
-                                        }
-                                    }
-                                    
-                                },
                                 "answerChoices": {
                                     "bsonType": "array",
-                                    "minItems": 0,
-                                    "maxItems": 150,
-                                    "items":{
+                                    "items": {
                                         "bsonType": "object",
-                                        "properties":{
+                                        "properties": {
                                             "_id": "uuid",
                                             "content": "content"
                                         }
-                                    }
+                                    },
+                                    "maxItems": 150,
+                                    "minItems": 0
+                                },
+                                "categories": {
+                                    "bsonType": "array",
+                                    "items": {
+                                        "bsonType": "object",
+                                        "properties": {
+                                            "_id": {
+                                                "bsonType": "uuid"
+                                            },
+                                            "answers": {
+                                                "bsonType": "uuid"
+                                            },
+                                            "content": {
+                                                "bsonType": "string"
+                                            }
+                                        }
+                                    },
+                                    "maxItems": 150,
+                                    "minItems": 0
                                 }
                             }
                         },
                         {
                             "properties": {
-                                "question": {"bsonType": "string"},
-                                "img_url": {"bsonType": "string"}
+                                "img_url": {
+                                    "bsonType": "string"
+                                },
+                                "question": {
+                                    "bsonType": "string"
+                                }
                             }
                         },
                         {
                             "properties": {
-                                "image_url": "images/homePage/mountain-home-bg.jpg",
-                                "img_size":{
+                                "answer_choices": {
                                     "bsonType": "object",
-                                    "properties":{
-                                        "width":{"bsonType": "number"}, 
-                                        "height": {"bsonType":"number"}
+                                    "properties": {
+                                        "_id": {
+                                            "bsonType": "uuid"
+                                        },
+                                        "content": {
+                                            "bsonType": "string"
+                                        }
                                     }
                                 },
-                                "img_labels":{
+                                "image_url": "images/homePage/mountain-home-bg.jpg",
+                                "img_labels": {
                                     "bsonType": "array",
-                                    "items":{
+                                    "items": {
                                         "bsonType": "object",
-                                        "properties":{
-
+                                        "properties": {}
+                                    }
+                                },
+                                "img_size": {
+                                    "bsonType": "object",
+                                    "properties": {
+                                        "height": {
+                                            "bsonType": "number"
+                                        },
+                                        "width": {
+                                            "bsonType": "number"
                                         }
                                     }
                                 },
                                 "questions": {
                                     "bsonType": "array",
-                                    "minItems": 0,
-                                    "maxItems": 100,
-                                    "items":{
-                                        "bsonType":"object",
-                                        "properties":{
-                                            "_id": {"bsonType": "uuid"},
-                                            "content": {"bsonType": "string"},
+                                    "items": {
+                                        "bsonType": "object",
+                                        "properties": {
+                                            "_id": {
+                                                "bsonType": "uuid"
+                                            },
                                             "answers": {
                                                 "bsonType": "array",
-                                                "minItems": 0,
-                                                "maxItems": 100,
                                                 "items": {
                                                     "bsonType": "uuid"
-                                                }
+                                                },
+                                                "maxItems": 100,
+                                                "minItems": 0
+                                            },
+                                            "content": {
+                                                "bsonType": "string"
                                             }
                                         }
-                                    }
-                                },
-                                "answer_choices":{
-                                    "bsonType":"object",
-                                    "properties":{
-                                        "_id": {"bsonType": "uuid"},
-                                        "content": {"bsonType": "string"}
-                                    }
+                                    },
+                                    "maxItems": 100,
+                                    "minItems": 0
                                 }
                             }
                         }
-                    ],
-                    "question_type": {
-                        "bsonType": "string"
-                    }
+                    ]
+                }
+            },
+            "maxItems": 250,
+            "minItems": 0
+        },
+        "activity_subject": {
+            "bsonType": "string"
+        },
+        "activity_timer": {
+            "bsonType": "object",
+            "properties": {
+                "hours": {
+                    "bsonType": "int",
+                    "minimum": 0
+                },
+                "minutes": {
+                    "bsonType": "int",
+                    "minimum": 0
+                },
+                "seconds": {
+                    "bsonType": "int",
+                    "minimum": 0
                 }
             }
+        },
+        "creation_date": {
+            "bsonType": "date"
         }
     },
-    "required": []
+    "required": [],
+    "title": "activity"
 }
