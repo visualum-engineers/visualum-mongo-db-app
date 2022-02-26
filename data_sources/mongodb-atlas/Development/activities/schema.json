@@ -12,8 +12,6 @@
         },
         "activity_questions": {
             "bsonType": "array",
-            "maxItems": 250,
-            "minItems": 1,
             "items": {
                 "$jsonSchema": {
                     "oneOf": [
@@ -21,8 +19,6 @@
                             "properties": {
                                 "answer_choices": {
                                     "bsonType": "array",
-                                    "maxItems": 300,
-                                    "minItems": 1,
                                     "items": {
                                         "bsonType": "object",
                                         "properties": {
@@ -34,12 +30,12 @@
                                                 "maxLength": 1500
                                             }
                                         }
-                                    }
+                                    },
+                                    "maxItems": 300,
+                                    "minItems": 1
                                 },
                                 "key_pairs": {
                                     "bsonType": "array",
-                                    "maxItems": 300,
-                                    "minItems": 1,
                                     "items": {
                                         "bsonType": "object",
                                         "properties": {
@@ -52,19 +48,18 @@
                                             "content": {
                                                 "bsonType": "string",
                                                 "maxLength": 2000,
-                                                "minLength" : 1
+                                                "minLength": 1
                                             }
                                         }
-                                    }
+                                    },
+                                    "maxItems": 300,
+                                    "minItems": 1
                                 },
                                 "question_type": "match_keypairs"
                             }
                         },
                         {
                             "properties": {
-                                "question_type": {
-                                    "enum": ["radio_question", "checkbox_question"]
-                                },
                                 "answer_choices": {
                                     "bsonType": "array",
                                     "items": {
@@ -76,7 +71,7 @@
                                             "content": {
                                                 "bsonType": "string",
                                                 "maxLength": 5000,
-                                                "minLength" : 1
+                                                "minLength": 1
                                             }
                                         }
                                     },
@@ -101,24 +96,29 @@
                                 "question_content": {
                                     "bsonType": "string",
                                     "maxLength": 5000,
-                                    "minLength" : 1
+                                    "minLength": 1
+                                },
+                                "question_type": {
+                                    "enum": [
+                                        "radio_question",
+                                        "checkbox_question"
+                                    ]
                                 }
                             }
                         },
                         {
                             "properties": {
-                                "question_type": "sort_categories_question",
                                 "answerChoices": {
                                     "bsonType": "array",
                                     "items": {
                                         "bsonType": "object",
                                         "properties": {
                                             "_id": {
-                                                "bsonType":"uuid"
+                                                "bsonType": "uuid"
                                             },
                                             "content": {
                                                 "bsonType": "string",
-                                                "maxLength": 3000 
+                                                "maxLength": 3000
                                             }
                                         }
                                     },
@@ -145,12 +145,12 @@
                                     },
                                     "maxItems": 20,
                                     "minItems": 1
-                                }
+                                },
+                                "question_type": "sort_categories_question"
                             }
                         },
                         {
                             "properties": {
-                                "question_type": "short_answer_question",
                                 "img_url": {
                                     "bsonType": "string"
                                 },
@@ -158,12 +158,12 @@
                                     "bsonType": "string",
                                     "maxLength": 5000,
                                     "minLength": 1
-                                }
+                                },
+                                "question_type": "short_answer_question"
                             }
                         },
                         {
                             "properties": {
-                                "question_type": "label_pictures_question",
                                 "answer_choices": {
                                     "bsonType": "object",
                                     "properties": {
@@ -196,6 +196,7 @@
                                         }
                                     }
                                 },
+                                "question_type": "label_pictures_question",
                                 "questions": {
                                     "bsonType": "array",
                                     "items": {
@@ -224,7 +225,9 @@
                         }
                     ]
                 }
-            }
+            },
+            "maxItems": 250,
+            "minItems": 1
         },
         "activity_subject": {
             "bsonType": "string",
@@ -253,7 +256,7 @@
         }
     },
     "required": [
-        "activity_creator", 
+        "activity_creator",
         "activity_name",
         "activity_questions",
         "creation_date"
