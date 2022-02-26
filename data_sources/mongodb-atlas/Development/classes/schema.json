@@ -41,7 +41,8 @@
             "items": {
                 "bsonType": "objectId"
             }
-        }
+        },
+        "img_url":{"bsonType":"string"}
     },
     "required":[
         "teachers",

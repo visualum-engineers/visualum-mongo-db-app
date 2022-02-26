@@ -34,7 +34,8 @@
         },
         "reward_store_id": {
             "bsonType": "objectId"
-        }
+        },
+        "img_url": {"bson_type": "string"}
     },
     "required": [
         "organization_name",

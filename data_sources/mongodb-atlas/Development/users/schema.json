@@ -15,12 +15,17 @@
             "bsonType": "array",
             "items": {
                 "bsonType": "objectId"
-            }
+            },
+            "maxItems": 1000,
+            "minItems": 0
         },
         "email": {
             "bsonType": "string",
             "maxLength": 300,
             "minLength": 3
+        },
+        "email_confirmed":{
+            "bsonType": "bool"
         },
         "first_name": {
             "bsonType": "string",
@@ -108,6 +113,8 @@
         "last_name",
         "email",
         "account_type",
-        "user_settings"
+        "user_settings",
+        "email_confirmed",
+        "classes"
     ]
 }

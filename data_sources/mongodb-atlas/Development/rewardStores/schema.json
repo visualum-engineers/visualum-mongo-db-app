@@ -20,7 +20,8 @@
             "bsonType": "string",
             "maxLength": 100,
             "minLength": 0
-        }
+        },
+        "img_url":{"bsonType": "string"}
     },
     "required":[
         "creation_date",
