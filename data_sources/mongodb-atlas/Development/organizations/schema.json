@@ -5,21 +5,23 @@
             "bsonType": "objectId"
         },
         "address": {
-            "apartment": {
-                "bsonType": "string"
-            },
             "bsonType": "object",
-            "country": {
-                "bsonType": "string"
-            },
-            "state": {
-                "bsonType": "string"
-            },
-            "street": {
-                "bsonType": "string"
-            },
-            "zip": {
-                "bsonType": "string"
+            "properties":{
+                "apartment": {
+                    "bsonType": "string"
+                },
+                "country": {
+                    "bsonType": "string"
+                },
+                "state": {
+                    "bsonType": "string"
+                },
+                "street": {
+                    "bsonType": "string"
+                },
+                "zip": {
+                    "bsonType": "string"
+                }
             }
         },
         "organization_name": {

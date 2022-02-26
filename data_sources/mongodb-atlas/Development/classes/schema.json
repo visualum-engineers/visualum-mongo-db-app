@@ -42,5 +42,11 @@
                 "bsonType": "objectId"
             }
         }
-    }
+    },
+    "required":[
+        "teachers",
+        "class_code",
+        "class_name",
+        "creation_date"
+    ]
 }

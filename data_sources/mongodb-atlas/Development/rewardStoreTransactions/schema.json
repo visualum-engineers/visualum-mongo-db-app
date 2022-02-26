@@ -1,4 +1,6 @@
 {
+    "title": "reward_transaction",
+    "bsonType":"object",
     "properties": {
         "_id": {
             "bsonType": "objectId"

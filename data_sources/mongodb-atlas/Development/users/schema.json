@@ -1,11 +1,13 @@
 {
     "bsonType": "object",
+    "title": "user",
     "properties": {
         "_id": {
             "bsonType": "objectId"
         },
         "account_type": {
             "bsonType": "string",
+            "enum": ["student", "teacher", "admin"],
             "maxLength": 300,
             "minLength": 0
         },
@@ -34,52 +36,63 @@
             "bsonType": "string"
         },
         "user_avatar": {
-            "accessory": {
-                "bsonType": "string"
-            },
             "bsonType": "object",
-            "clothes": {
-                "bsonType": "string"
-            },
-            "clothes_color": {
-                "bsonType": "string"
-            },
-            "eyebrow": {
-                "bsonType": "string"
-            },
-            "eyes": {
-                "bsonType": "string"
-            },
-            "facial_hair": {
-                "bsonType": "string"
-            },
-            "facial_hair_color": {
-                "bsonType": "string"
-            },
-            "hair_color": {
-                "bsonType": "string"
-            },
-            "hair_style": {
-                "bsonType": "string"
-            },
-            "mouth": {
-                "bsonType": "string"
-            },
-            "skin_color": {
-                "bsonType": "string"
+            "properties":{
+                "accessory": {
+                    "bsonType": "string"
+                },
+                
+                "clothes": {
+                    "bsonType": "string"
+                },
+                "clothes_color": {
+                    "bsonType": "string"
+                },
+                "eyebrow": {
+                    "bsonType": "string"
+                },
+                "eyes": {
+                    "bsonType": "string"
+                },
+                "facial_hair": {
+                    "bsonType": "string"
+                },
+                "facial_hair_color": {
+                    "bsonType": "string"
+                },
+                "hair_color": {
+                    "bsonType": "string"
+                },
+                "hair_style": {
+                    "bsonType": "string"
+                },
+                "mouth": {
+                    "bsonType": "string"
+                },
+                "skin_color": {
+                    "bsonType": "string"
+                }
             }
         },
         "user_points": {
             "bsonType": "array",
             "items": {
                 "bsonType": "object",
-                "class_id": {
-                    "bsonType": "objectId"
-                },
-                "points": {
-                    "bsonType": "int",
-                    "minimum": 0
+                "properties": {
+                    "class_id": {
+                        "bsonType": "objectId"
+                    },
+                    "points": {
+                        "bsonType": "int",
+                        "minimum": 0
+                    }
                 }
+            }
+        },
+        "user_settings":{
+            "bsonType": "object",
+            "properties":{
+
             }
         }
     },

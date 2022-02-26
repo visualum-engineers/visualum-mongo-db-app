@@ -1,5 +1,6 @@
 {
     "bsonType": "object",
+    "title": "reward_store_item",
     "properties": {
         "_id": {
             "bsonType": "objectId"
