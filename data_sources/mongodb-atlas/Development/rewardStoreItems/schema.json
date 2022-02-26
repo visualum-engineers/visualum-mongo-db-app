@@ -22,5 +22,10 @@
             "bsonType": "int",
             "minimum": 0
         }
-    }
+    },
+    "required":[
+        "item_name",
+        "item_price",
+        "listed_date"
+    ]
 }

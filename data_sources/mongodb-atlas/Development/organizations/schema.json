@@ -22,7 +22,12 @@
                 "zip": {
                     "bsonType": "string"
                 }
-            }
+            },
+            "required":[
+                "country",
+                "state",
+                "street"
+            ]
         },
         "organization_name": {
             "bsonType": "string"

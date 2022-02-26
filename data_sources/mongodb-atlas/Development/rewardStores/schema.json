@@ -21,5 +21,10 @@
             "maxLength": 100,
             "minLength": 0
         }
-    }
+    },
+    "required":[
+        "creation_date",
+        "reward_items",
+        "store_name"
+    ]
 }

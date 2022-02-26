@@ -1,4 +1,5 @@
 {
+    "bsonType":"object",
     "properties": {
         "_id": {
             "bsonType": "objectId"
@@ -16,6 +17,7 @@
                 "$jsonSchema": {
                     "oneOf": [
                         {
+                            "bsonType":"object",
                             "properties": {
                                 "answer_choices": {
                                     "bsonType": "array",
@@ -29,7 +31,11 @@
                                                 "bsonType": "string",
                                                 "maxLength": 1500
                                             }
-                                        }
+                                        },
+                                        "required":[
+                                            "_id",
+                                            "content"
+                                        ]
                                     },
                                     "maxItems": 300,
                                     "minItems": 1
@@ -50,15 +56,26 @@
                                                 "maxLength": 2000,
                                                 "minLength": 1
                                             }
-                                        }
+                                        },
+                                        "required":[
+                                            "_id",
+                                            "answer",
+                                            "content"
+                                        ]
                                     },
                                     "maxItems": 300,
                                     "minItems": 1
                                 },
                                 "question_type": "match_keypairs"
-                            }
+                            },
+                            "required":[
+                                "answer_choices",
+                                "key_pairs",
+                                "question_type"
+                            ]
                         },
                         {
+                            "bsonType": "object",
                             "properties": {
                                 "answer_choices": {
                                     "bsonType": "array",
@@ -73,7 +90,11 @@
                                                 "maxLength": 5000,
                                                 "minLength": 1
                                             }
-                                        }
+                                        },
+                                        "required":[
+                                            "content",
+                                            "_id"
+                                        ]
                                     },
                                     "maxItems": 100,
                                     "minItems": 1
@@ -104,9 +125,16 @@
                                         "checkbox_question"
                                     ]
                                 }
-                            }
+                            },
+                            "required": [
+                                "question_type",
+                                "answer_choices",
+                                "answers",
+                                "question_content"
+                            ]
                         },
                         {
+                            "bsonType": "object",
                             "properties": {
                                 "answerChoices": {
                                     "bsonType": "array",
@@ -120,7 +148,11 @@
                                                 "bsonType": "string",
                                                 "maxLength": 3000
                                             }
-                                        }
+                                        },
+                                        "required":[
+                                            "_id",
+                                            "content"
+                                        ]
                                     },
                                     "maxItems": 200,
                                     "minItems": 1
@@ -141,15 +173,26 @@
                                                 "maxLength": 1000,
                                                 "minLength": 1
                                             }
-                                        }
+                                        },
+                                        "required":[
+                                            "_id",
+                                            "answers",
+                                            "content"
+                                        ]
                                     },
                                     "maxItems": 20,
                                     "minItems": 1
                                 },
                                 "question_type": "sort_categories_question"
-                            }
+                            },
+                            "required":[
+                                "answer_choices",
+                                "categories",
+                                "question_type"
+                            ]
                         },
                         {
+                            "bsonType": "object",
                             "properties": {
                                 "img_url": {
                                     "bsonType": "string"
@@ -160,9 +203,14 @@
                                     "minLength": 1
                                 },
                                 "question_type": "short_answer_question"
-                            }
+                            },
+                            "required":[
+                                "question_type",
+                                "question"
+                            ]
                         },
                         {
+                            "bsonType": "object",
                             "properties": {
                                 "answer_choices": {
                                     "bsonType": "object",
@@ -175,7 +223,11 @@
                                             "maxLength": 2000,
                                             "minLength": 1
                                         }
-                                    }
+                                    },
+                                    "required":[
+                                        "_id",
+                                        "content"
+                                    ]
                                 },
                                 "image_url": "images/homePage/mountain-home-bg.jpg",
                                 "img_labels": {
@@ -194,7 +246,11 @@
                                         "width": {
                                             "bsonType": "number"
                                         }
-                                    }
+                                    },
+                                    "required":[
+                                        "height",
+                                        "width"
+                                    ]
                                 },
                                 "question_type": "label_pictures_question",
                                 "questions": {
@@ -216,12 +272,24 @@
                                             "content": {
                                                 "bsonType": "string"
                                             }
-                                        }
+                                        },
+                                        "required":[
+                                            "_id",
+                                            "answer",
+                                            "content"
+                                        ]
                                     },
                                     "maxItems": 100,
                                     "minItems": 0
                                 }
-                            }
+                            },
+                            "required":[
+                                "answer_choices",
+                                "img_url",
+                                "img_size",
+                                "question_type",
+                                "questions"
+                            ]
                         }
                     ]
                 }
@@ -249,7 +317,12 @@
                     "bsonType": "int",
                     "minimum": 0
                 }
-            }
+            },
+            "required":[
+                "hours",
+                "minutes",
+                "seconds"
+            ]
         },
         "creation_date": {
             "bsonType": "date"

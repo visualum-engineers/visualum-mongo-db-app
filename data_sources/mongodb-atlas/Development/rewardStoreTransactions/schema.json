@@ -5,9 +5,6 @@
         "_id": {
             "bsonType": "objectId"
         },
-        "bsonType": {
-            "bsonType": "objectId"
-        },
         "date_redeemed": {
             "bsonType": "date"
         },
@@ -20,5 +17,11 @@
         "user_id": {
             "bsonType": "objectId"
         }
-    }
+    },
+    "required":[
+        "date_redeemed",
+        "reward_id",
+        "reward_store_id",
+        "user_id"
+    ]
 }
