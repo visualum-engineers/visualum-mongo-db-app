@@ -2,7 +2,7 @@
     "bsonType": "object",
     "properties": {
         "_id": {
-            "bsonType": "objectId"
+            "bsonType": "string"
         },
         "account_type": {
             "bsonType": "string",
