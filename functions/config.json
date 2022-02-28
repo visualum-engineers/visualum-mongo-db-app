@@ -1,6 +1,6 @@
 [
     {
-        "name": "authentication/user_sign_in",
+        "name": "authentication/user_sign_up",
         "private": false
     }
 ]
