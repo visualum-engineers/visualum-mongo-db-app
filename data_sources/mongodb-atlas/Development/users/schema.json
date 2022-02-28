@@ -46,6 +46,7 @@
         "payment_info": {
             "bsonType": "string"
         },
+        "user_creation_date": {"bsonType": "date"},
         "user_avatar": {
             "bsonType": "object",
             "properties": {
