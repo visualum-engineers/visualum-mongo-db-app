@@ -43,10 +43,6 @@
             },
             {
                 "required": false,
-                "name": "birthday"
-            },
-            {
-                "required": false,
                 "name": "gender"
             }
         ],
