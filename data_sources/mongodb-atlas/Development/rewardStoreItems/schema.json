@@ -1,6 +1,5 @@
 {
     "bsonType": "object",
-    "title": "reward_store_item",
     "properties": {
         "_id": {
             "bsonType": "objectId"
@@ -23,9 +22,10 @@
             "minimum": 0
         }
     },
-    "required":[
+    "required": [
         "item_name",
         "item_price",
         "listed_date"
-    ]
+    ],
+    "title": "reward_store_item"
 }

@@ -1,13 +1,16 @@
 {
     "bsonType": "object",
-    "title": "user",
     "properties": {
         "_id": {
             "bsonType": "objectId"
         },
         "account_type": {
             "bsonType": "string",
-            "enum": ["student", "teacher", "admin"],
+            "enum": [
+                "student",
+                "teacher",
+                "admin"
+            ],
             "maxLength": 300,
             "minLength": 0
         },
@@ -24,7 +27,7 @@
             "maxLength": 300,
             "minLength": 3
         },
-        "email_confirmed":{
+        "email_confirmed": {
             "bsonType": "bool"
         },
         "first_name": {
@@ -37,19 +40,18 @@
             "maxLength": 300,
             "minLength": 0
         },
+        "payment_confirmed": {
+            "bsonType": "bool"
+        },
         "payment_info": {
             "bsonType": "string"
         },
-        "payment_confirmed":{
-            "bsonType": "bool"
-        },
         "user_avatar": {
             "bsonType": "object",
-            "properties":{
+            "properties": {
                 "accessory": {
                     "bsonType": "string"
                 },
-                
                 "clothes": {
                     "bsonType": "string"
                 },
@@ -95,17 +97,15 @@
                         "minimum": 0
                     }
                 },
-                "required":[
+                "required": [
                     "class_id",
                     "points"
                 ]
             }
         },
-        "user_settings":{
+        "user_settings": {
             "bsonType": "object",
-            "properties":{
-
-            }
+            "properties": {}
         }
     },
     "required": [
@@ -116,5 +116,6 @@
         "user_settings",
         "email_confirmed",
         "classes"
-    ]
+    ],
+    "title": "user"
 }

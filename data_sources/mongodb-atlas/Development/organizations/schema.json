@@ -6,7 +6,7 @@
         },
         "address": {
             "bsonType": "object",
-            "properties":{
+            "properties": {
                 "apartment": {
                     "bsonType": "string"
                 },
@@ -23,19 +23,21 @@
                     "bsonType": "string"
                 }
             },
-            "required":[
+            "required": [
                 "country",
                 "state",
                 "street"
             ]
+        },
+        "img_url": {
+            "bson_type": "string"
         },
         "organization_name": {
             "bsonType": "string"
         },
         "reward_store_id": {
             "bsonType": "objectId"
-        },
-        "img_url": {"bson_type": "string"}
+        }
     },
     "required": [
         "organization_name",

@@ -1,5 +1,5 @@
 {
-    "bsonType":"object",
+    "bsonType": "object",
     "properties": {
         "_id": {
             "bsonType": "objectId"
@@ -17,7 +17,7 @@
                 "$jsonSchema": {
                     "oneOf": [
                         {
-                            "bsonType":"object",
+                            "bsonType": "object",
                             "properties": {
                                 "answer_choices": {
                                     "bsonType": "array",
@@ -32,7 +32,7 @@
                                                 "maxLength": 1500
                                             }
                                         },
-                                        "required":[
+                                        "required": [
                                             "_id",
                                             "content"
                                         ]
@@ -57,7 +57,7 @@
                                                 "minLength": 1
                                             }
                                         },
-                                        "required":[
+                                        "required": [
                                             "_id",
                                             "answer",
                                             "content"
@@ -68,7 +68,7 @@
                                 },
                                 "question_type": "match_keypairs"
                             },
-                            "required":[
+                            "required": [
                                 "answer_choices",
                                 "key_pairs",
                                 "question_type"
@@ -91,7 +91,7 @@
                                                 "minLength": 1
                                             }
                                         },
-                                        "required":[
+                                        "required": [
                                             "content",
                                             "_id"
                                         ]
@@ -149,7 +149,7 @@
                                                 "maxLength": 3000
                                             }
                                         },
-                                        "required":[
+                                        "required": [
                                             "_id",
                                             "content"
                                         ]
@@ -174,7 +174,7 @@
                                                 "minLength": 1
                                             }
                                         },
-                                        "required":[
+                                        "required": [
                                             "_id",
                                             "answers",
                                             "content"
@@ -185,7 +185,7 @@
                                 },
                                 "question_type": "sort_categories_question"
                             },
-                            "required":[
+                            "required": [
                                 "answer_choices",
                                 "categories",
                                 "question_type"
@@ -204,7 +204,7 @@
                                 },
                                 "question_type": "short_answer_question"
                             },
-                            "required":[
+                            "required": [
                                 "question_type",
                                 "question"
                             ]
@@ -224,7 +224,7 @@
                                             "minLength": 1
                                         }
                                     },
-                                    "required":[
+                                    "required": [
                                         "_id",
                                         "content"
                                     ]
@@ -247,7 +247,7 @@
                                             "bsonType": "number"
                                         }
                                     },
-                                    "required":[
+                                    "required": [
                                         "height",
                                         "width"
                                     ]
@@ -273,7 +273,7 @@
                                                 "bsonType": "string"
                                             }
                                         },
-                                        "required":[
+                                        "required": [
                                             "_id",
                                             "answer",
                                             "content"
@@ -283,7 +283,7 @@
                                     "minItems": 0
                                 }
                             },
-                            "required":[
+                            "required": [
                                 "answer_choices",
                                 "img_url",
                                 "img_size",
@@ -318,7 +318,7 @@
                     "minimum": 0
                 }
             },
-            "required":[
+            "required": [
                 "hours",
                 "minutes",
                 "seconds"

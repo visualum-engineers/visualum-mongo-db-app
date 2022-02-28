@@ -27,6 +27,9 @@
         "creation_date": {
             "bsonType": "date"
         },
+        "img_url": {
+            "bsonType": "string"
+        },
         "organization_id": {
             "bsonType": "objectId"
         },
@@ -41,10 +44,9 @@
             "items": {
                 "bsonType": "objectId"
             }
-        },
-        "img_url":{"bsonType":"string"}
+        }
     },
-    "required":[
+    "required": [
         "teachers",
         "class_code",
         "class_name",

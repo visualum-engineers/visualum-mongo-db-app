@@ -1,6 +1,5 @@
 {
-    "title": "reward_transaction",
-    "bsonType":"object",
+    "bsonType": "object",
     "properties": {
         "_id": {
             "bsonType": "objectId"
@@ -18,10 +17,11 @@
             "bsonType": "objectId"
         }
     },
-    "required":[
+    "required": [
         "date_redeemed",
         "reward_id",
         "reward_store_id",
         "user_id"
-    ]
+    ],
+    "title": "reward_transaction"
 }
