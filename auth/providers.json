@@ -49,6 +49,11 @@
                 "required": false,
                 "name": "gender"
             }
+        ],
+        "redirect_uris": [
+            "http://localhost:3000",
+            "https://visualum.heroku.app.com",
+            "https://visualum.com"
         ]
     }
 }
