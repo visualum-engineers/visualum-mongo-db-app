@@ -22,7 +22,7 @@
         "type": "oauth2-google",
         "config": {
             "clientId": "297543839155-ambq3o5468pll4igtaruhlmh0nceru18.apps.googleusercontent.com",
-            "openId": false
+            "openId": true
         },
         "secret_config": {
             "clientSecret": "MONGO_DB_GOOGLE_CLIENT_SECRET"
