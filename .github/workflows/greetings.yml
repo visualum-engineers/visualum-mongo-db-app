@@ -1,0 +1,14 @@
+name: copy_realm_functions
+on:
+  push:
+    branches: 
+      - "*" 
+jobs:
+   copy_realm_functions:
+      runs-on: ubuntu-latest
+      steps: 
+        - uses: actions/checkout@v2
+        - run: | 
+            echo "$GITHUB_CONTEXT"
+    
+  
