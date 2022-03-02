@@ -1,6 +1,38 @@
 [
     {
-        "name": "authentication/user_sign_up",
+        "name": "user/create_user",
+        "private": false
+    },
+    {
+        "name": "authentication/user_google_auth",
+        "private": false
+    },
+    {
+        "name": "reward_store/create_store",
+        "private": false
+    },
+    {
+        "name": "reward_store/delete_store",
+        "private": false
+    },
+    {
+        "name": "reward_store/update_store",
+        "private": false
+    },
+    {
+        "name": "reward_store/get_store",
+        "private": false
+    },
+    {
+        "name": "user/update_user",
+        "private": false
+    },
+    {
+        "name": "user/delete_user",
+        "private": false
+    },
+    {
+        "name": "activities/create_activity",
         "private": false
     }
 ]
