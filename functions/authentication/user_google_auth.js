@@ -23,5 +23,4 @@ exports = async function(arg){
   } catch(e){
       return {error: e};
   }
-  
 };
