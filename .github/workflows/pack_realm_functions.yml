@@ -24,9 +24,9 @@ jobs:
             git add *
             git commit -m "pack realm functions"
         - name: Push workflow changes to repo
-            uses: ad-m/github-push-action@main
-            with:
-              branch: ${{ github.ref }}
-              github_token: ${{ github.token }}
+          uses: ad-m/github-push-action@master
+          with:
+            branch: ${{ github.ref }}
+            github_token: ${{ github.token }}
 
 

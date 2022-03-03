@@ -28,7 +28,7 @@ jobs:
             git add *
             git commit -m "${GITHUB_CONTEXT}"
         - name: Push workflow changes to repo
-            uses: ad-m/github-push-action@master
-            with:
-              branch: main
-              github_token: ${{ github.token }}
+          uses: ad-m/github-push-action@master
+          with:
+            branch: main
+            github_token: ${{ github.token }}
