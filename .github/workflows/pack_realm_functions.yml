@@ -4,6 +4,8 @@ on:
     branches: 
       - '*'
       - '!main'
+    paths: 
+      - 'functions/**'
 jobs:
    pack_realm_functions:
       if: github.ref_name != 'main'
