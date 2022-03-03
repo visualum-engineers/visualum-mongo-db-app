@@ -2,7 +2,8 @@ name: pack_realm_functions
 on:
   pull_request:
     branches: 
-      - main 
+      - '*'
+      - '!main'
 jobs:
    pack_realm_functions:
       if: github.ref_name != 'main'
