@@ -5,7 +5,7 @@ on:
       - main 
 jobs:
    pack_realm_functions:
-      if: github.ref_name != main
+      if: github.ref_name != 'main'
       runs-on: ubuntu-latest
       steps: 
         - uses: actions/checkout@v2
