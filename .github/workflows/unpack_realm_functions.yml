@@ -4,6 +4,7 @@ on:
     branches: 
       - main 
     paths: 
+      - 'directory_structures/functions/**'
       - 'functions/**'
 jobs:
    unpack_realm_functions:
