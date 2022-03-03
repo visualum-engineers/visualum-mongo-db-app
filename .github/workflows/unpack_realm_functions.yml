@@ -3,6 +3,8 @@ on:
   push:
     branches: 
       - main 
+    paths: 
+      - 'functions/**'
 jobs:
    unpack_realm_functions:
       runs-on: ubuntu-latest
