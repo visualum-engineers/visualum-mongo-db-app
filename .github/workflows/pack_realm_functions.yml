@@ -16,7 +16,7 @@ jobs:
         - run: | 
             npm install mv
             cd node_scripts
-            cd workflow
+            cd workflows
             node pack_realm_functions.js
             git add *
             git commit -m "pulled from main"
