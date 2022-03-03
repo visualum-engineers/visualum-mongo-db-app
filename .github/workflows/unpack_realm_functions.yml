@@ -15,7 +15,7 @@ jobs:
           name: Set up Node.js
           with:
               node-version: 16
-        - name: Unpack functions into sub-directories
+        - name: Unpack functions function directories
           run: | 
             npm install mv
             cd node_scripts
