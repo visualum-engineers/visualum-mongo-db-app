@@ -6,6 +6,12 @@ on:
     paths: 
       - 'directory_structures/functions/**'
       - 'functions/**'
+  pull_request: 
+    branches: 
+      - main 
+    paths: 
+      - 'directory_structures/functions/**'
+      - 'functions/**'
 jobs:
    unpack_realm_functions:
       runs-on: ubuntu-latest
