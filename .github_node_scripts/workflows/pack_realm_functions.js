@@ -1,5 +1,5 @@
 const path = require("path");
-const function_directories = require("../../functions/directories.json")
+const function_directories = require("../../directory_structures/functions/functions_directories.json")
 const move_file_deeper = require("./utilities/move_file")
 const create_directories_map = require("./utilities/create_directories_map")
 const check_root_functions = require("./utilities/check_root_functions")

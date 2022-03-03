@@ -18,5 +18,3 @@ jobs:
             cd .github_node_scripts
             cd workflow
             node unpack_realm_functions.js
-    
-  
