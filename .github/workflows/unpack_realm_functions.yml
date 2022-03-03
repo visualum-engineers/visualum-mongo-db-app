@@ -13,10 +13,22 @@ jobs:
           name: Set up Node.js
           with:
               node-version: 16
-        - run: | 
+        - name: Unpack functions into sub-directories
+          run: | 
             npm install mv
             cd node_scripts
             cd workflows
             node unpack_realm_functions.js
+        - name: Commit files
+          env: 
+            GITHUB_CONTEXT: ${{ github.event.head_commit.message }}
+          run: |
+            git config --local user.email "test@github.com"
+            git config --local user.name "GitHub Action test" 
             git add *
-            git commit -m "unpacked function workflow"
+            git commit -m "${GITHUB_CONTEXT}"
+        - name: Push workflow changes to repo
+            uses: ad-m/github-push-action@master
+            with:
+              branch: main
+              github_token: ${{ github.token }}
