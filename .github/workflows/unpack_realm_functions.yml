@@ -9,8 +9,7 @@ on:
 jobs:
    unpack_realm_functions:
       runs-on: ubuntu-latest
-      if: github.actor != 'mongodb-realm[bot]'
-      if: github.actor != 'testinguser'
+      if: github.actor != 'mongodb-realm[bot] && github.actor != 'testinguser'
       steps: 
         - uses: actions/checkout@v2
         - uses: actions/setup-node@v1
