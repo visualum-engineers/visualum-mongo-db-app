@@ -5,6 +5,7 @@ on:
       - '*'
       - '!main'
     paths: 
+      - 'directory_structures/functions/**'
       - 'functions/**'
 jobs:
    pack_realm_functions:
