@@ -15,7 +15,7 @@ jobs:
               node-version: 16
         - run: | 
             npm install mv
-            cd .github_node_scripts
+            cd node_scripts
             cd workflow
             node unpack_realm_functions.js
             git add *
