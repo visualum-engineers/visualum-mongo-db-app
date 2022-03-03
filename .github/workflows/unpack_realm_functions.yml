@@ -1,12 +1,12 @@
 name: unpack_realm_functions
 on:
-  pull:
+  push:
     branches: 
-      - "*" 
+      - main 
 jobs:
    unpack_realm_functions:
       runs-on: ubuntu-latest
-      if: github.actor == "mongodb-realm[bot]""
+      if: github.actor != "mongodb-realm[bot]""
       steps: 
         - uses: actions/checkout@v2
         - uses: actions/setup-node@v1
@@ -18,3 +18,5 @@ jobs:
             cd .github_node_scripts
             cd workflow
             node unpack_realm_functions.js
+            git add *
+            git commit -m "unpacked function workflow"

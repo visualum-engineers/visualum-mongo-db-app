@@ -1,11 +1,11 @@
 name: pack_realm_functions
 on:
-  pull:
+  pull_request:
     branches: 
-      - "*" 
+      - main 
 jobs:
    pack_realm_functions:
-      if: github.actor != "mongodb-realm[bot]""
+      if: github.ref_name != "main"
       runs-on: ubuntu-latest
       steps: 
         - uses: actions/checkout@v2
@@ -19,4 +19,5 @@ jobs:
             cd workflow
             node pack_realm_functions.js
             git add *
-            git commit -m "pack realm func workflow"
+            git commit -m "pulled from main"
+
