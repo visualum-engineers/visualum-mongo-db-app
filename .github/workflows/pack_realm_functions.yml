@@ -1,6 +1,6 @@
 name: pack_realm_functions
 on:
-  pull_request:
+  push:
     branches: 
       - '*'
       - '!main'
