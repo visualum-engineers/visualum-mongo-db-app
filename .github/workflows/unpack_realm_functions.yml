@@ -25,7 +25,7 @@ jobs:
           run: |
             git config --local user.email "test@github.com"
             git config --local user.name "GitHub Action test" 
-            git add *
+            git add .
             git commit -m "${GITHUB_CONTEXT}"
         - name: Push workflow changes to repo
           uses: ad-m/github-push-action@master

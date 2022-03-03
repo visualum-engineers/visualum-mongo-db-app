@@ -20,8 +20,9 @@ jobs:
         - name: Commit files
           run: |
             git config --local user.email "test@github.com"
-            git config --local user.name "GitHub Action test" 
-            git add *
+            git config --local user.name "GitHub Action test"
+            git config advice.addIgnoredFile false 
+            git add .
             git commit -m "pack realm functions"
         - name: Push workflow changes to repo
           uses: ad-m/github-push-action@master
