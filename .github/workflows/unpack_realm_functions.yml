@@ -1,0 +1,22 @@
+name: unpack_realm_functions
+on:
+  pull:
+    branches: 
+      - "*" 
+jobs:
+   unpack_realm_functions:
+      runs-on: ubuntu-latest
+      if: github.actor == "mongodb-realm[bot]""
+      steps: 
+        - uses: actions/checkout@v2
+        - uses: actions/setup-node@v1
+          name: Set up Node.js
+          with:
+              node-version: 16
+        - run: | 
+            npm install mv
+            cd .github_node_scripts
+            cd workflow
+            node unpack_realm_functions.js
+    
+  

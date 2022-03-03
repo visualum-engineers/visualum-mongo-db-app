@@ -1,0 +1,22 @@
+name: pack_realm_functions
+on:
+  pull:
+    branches: 
+      - "*" 
+jobs:
+   pack_realm_functions:
+      if: github.actor != "mongodb-realm[bot]""
+      runs-on: ubuntu-latest
+      steps: 
+        - uses: actions/checkout@v2
+        - uses: actions/setup-node@v1
+          name: Set up Node.js
+          with:
+              node-version: 16
+        - run: | 
+            npm install mv
+            cd .github_node_scripts
+            cd workflow
+            node pack_realm_functions.js
+            git add *
+            git commit -m "pack realm func workflow"

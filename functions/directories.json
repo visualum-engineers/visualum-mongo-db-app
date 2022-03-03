@@ -1,0 +1,34 @@
+{
+    "activities": {
+        "create_activity": true,
+        "delete_activity": true,
+        "read_activity": true,
+        "update_activity": true
+    },
+    "authentication":{
+        "user_google_auth": true
+    },
+    "classes": {
+        "create_class":true,
+        "delete_class":true,
+        "read_class":true,
+        "update_class":true
+    },
+    "organization": {
+        "create_organization":true,
+        "delete_organization":true,
+        "read_organization":true,
+        "update_organization":true
+    }, 
+    "reward_store": {
+        "create_store": true,
+        "delete_store": true,
+        "read_store": true,
+        "update_store": true
+    }, 
+    "user": {
+        "create_user": true,
+        "delete_user": true,
+        "update_user": true
+    }
+}

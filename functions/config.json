@@ -1,18 +1,38 @@
 [
     {
-        "name": "read_activity",
+        "name": "create_user",
         "private": false
     },
     {
-        "name": "update_activity",
+        "name": "user_google_auth",
+        "private": false
+    },
+    {
+        "name": "create_store",
+        "private": false
+    },
+    {
+        "name": "delete_store",
+        "private": false
+    },
+    {
+        "name": "update_store",
+        "private": false
+    },
+    {
+        "name": "get_store",
+        "private": false
+    },
+    {
+        "name": "update_user",
+        "private": false
+    },
+    {
+        "name": "delete_user",
         "private": false
     },
     {
         "name": "create_activity",
-        "private": false
-    },
-    {
-        "name": "delete_activity",
         "private": false
     }
 ]
