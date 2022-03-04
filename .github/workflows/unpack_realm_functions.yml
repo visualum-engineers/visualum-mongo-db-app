@@ -38,7 +38,6 @@ jobs:
             git config pull.rebase false
             git config --local user.email "${GITHUB_ACTOR_EMAIL}@users.noreply.github.com"
             git config --local user.name "${GITHUB_ACTOR_USER_NAME}"
-
         - name: Git commit to main
           id: commit_files
           env: 
@@ -47,7 +46,7 @@ jobs:
             git add .
             git commit -m "${GITHUB_MESSAGE}"
           continue-on-error: true
-         - name: Git merge
+        - name: Git merge
            if: steps.commit_files.outcome == 'success'
            id: git_merge
            run: |
