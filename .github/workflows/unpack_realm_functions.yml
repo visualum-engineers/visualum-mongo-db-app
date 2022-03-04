@@ -38,20 +38,23 @@ jobs:
             git config pull.rebase false
             git config --local user.email "${GITHUB_ACTOR_EMAIL}@users.noreply.github.com"
             git config --local user.name "${GITHUB_ACTOR_USER_NAME}"
-        - name: Git merge
-          run: |
-            git add .
-            git pull origin main --allow-unrelated-histories --strategy-option ours
+
         - name: Git commit to main
           id: commit_files
           env: 
               GITHUB_MESSAGE: ${{ github.event.head_commit.message }}
           run: |
+            git add .
             git commit -m "${GITHUB_MESSAGE}"
           continue-on-error: true
+         - name: Git merge
+           if: steps.commit_files.outcome == 'success'
+           id: git_merge
+           run: |
+            git pull origin main --allow-unrelated-histories --strategy-option ours
         - name: Push workflow changes to repo
           uses: ad-m/github-push-action@master
-          if: steps.commit_files.outcome == 'success'
+          if: steps.git_merge.outcome == 'success'
           with:
             branch: main
             github_token: ${{ github.token }}
