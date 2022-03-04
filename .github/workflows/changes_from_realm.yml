@@ -39,7 +39,7 @@ jobs:
         - name: Git merge
           id: git_merge
           run: |
-            git pull origin staging --allow-unrelated-histories --strategy-option ours --no-commit
+            git pull origin staging --allow-unrelated-histories --strategy-option ours
 
         - name: Push workflow changes to repo
           uses: ad-m/github-push-action@master
