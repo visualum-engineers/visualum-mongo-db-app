@@ -1,14 +1,6 @@
 [
     {
-        "name": "delete_activity",
-        "private": false
-    },
-    {
-        "name": "read_class",
-        "private": false
-    },
-    {
-        "name": "update_store",
+        "name": "create_store",
         "private": false
     },
     {
@@ -16,7 +8,7 @@
         "private": false
     },
     {
-        "name": "read_store",
+        "name": "update_activity",
         "private": false
     },
     {
@@ -24,39 +16,7 @@
         "private": false
     },
     {
-        "name": "read_organization",
-        "private": false
-    },
-    {
-        "name": "update_user",
-        "private": false
-    },
-    {
         "name": "read_activity",
-        "private": false
-    },
-    {
-        "name": "create_class",
-        "private": false
-    },
-    {
-        "name": "create_organization",
-        "private": false
-    },
-    {
-        "name": "user_google_auth",
-        "private": false
-    },
-    {
-        "name": "create_store",
-        "private": false
-    },
-    {
-        "name": "update_activity",
-        "private": false
-    },
-    {
-        "name": "update_class",
         "private": false
     },
     {
@@ -64,11 +24,51 @@
         "private": false
     },
     {
+        "name": "read_class",
+        "private": false
+    },
+    {
+        "name": "create_organization",
+        "private": false
+    },
+    {
+        "name": "delete_activity",
+        "private": false
+    },
+    {
         "name": "create_user",
         "private": false
     },
     {
+        "name": "update_user",
+        "private": false
+    },
+    {
+        "name": "update_store",
+        "private": false
+    },
+    {
+        "name": "read_organization",
+        "private": false
+    },
+    {
+        "name": "read_store",
+        "private": false
+    },
+    {
+        "name": "create_class",
+        "private": false
+    },
+    {
+        "name": "update_class",
+        "private": false
+    },
+    {
         "name": "delete_store",
+        "private": false
+    },
+    {
+        "name": "user_google_auth",
         "private": false
     }
 ]
