@@ -2,13 +2,14 @@ name: unpack_realm_functions
 on:
   push:
     branches: 
-      - main 
+      - staging 
+      - main
     paths: 
       - 'directory_structures/functions/**'
       - 'functions/**'
   pull_request: 
     branches: 
-      - main 
+      - staging 
     paths: 
       - 'directory_structures/functions/**'
       - 'functions/**'
@@ -33,7 +34,7 @@ jobs:
             GITHUB_CONTEXT: ${{ github.event.head_commit.message }}
           run: |
             git config --local user.email "test@github.com"
-            git config --local user.name "GitHub Action test" 
+            git config --local user.name "GitHub Action test"
             git add .
             git commit -m "${GITHUB_CONTEXT}"
         - name: Push workflow changes to repo
