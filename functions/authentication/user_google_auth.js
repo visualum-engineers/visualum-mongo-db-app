@@ -18,7 +18,7 @@ exports = async function({
         email: decoded_token.email,
         email_verified: decoded_token.email_verified
       };
-      return await context.functions.execute("user/create_user", sign_up_info);
+      return await context.functions.execute("create_user", sign_up_info);
     }
     return {error: null};
   } catch(e){
