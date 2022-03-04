@@ -5,9 +5,8 @@ exports = async function(arg){
   const name = context.user.name;
 
   try{
-      const account_type = args.account_type;
+      const account_type = arg.account_type;
       const [first_name, last_name] = name.split(" ");
-      const provider_type = context.user.identities[0].provider_type;
       
       const newUserDocument = {
         _id: user_id,
