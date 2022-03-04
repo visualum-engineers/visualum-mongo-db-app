@@ -1,5 +1,5 @@
 
-  exports = async function(arg){
+  exports = async function(){
     const user_collection = context.services.get("mongodb-atlas").db("Development").collection("users");
     const user_id = context.user.id;
   
@@ -18,9 +18,11 @@
         } 
         const update_params = {
             update_query: {
-              teachers: {
-                $where: this.length > 1, 
+              teachers: { 
                 $all:[user_id]
+              },
+              teacher_arr_size: {
+                $gt: 1,
               }
             },
             update_many: true
