@@ -29,7 +29,7 @@ jobs:
             cd node_scripts
             cd workflows
             node unpack_realm_functions.js
-        - name: Commit files
+        - name: Git Config
           env: 
             GITHUB_MESSAGE: ${{ github.event.head_commit.message }}
             GITHUB_ACTOR_EMAIL: ${{github.actor}}
@@ -38,8 +38,14 @@ jobs:
             git config pull.rebase false
             git config --local user.email "${GITHUB_ACTOR_EMAIL}@users.noreply.github.com"
             git config --local user.name "${GITHUB_ACTOR_USER_NAME}"
+        - name: Git merge
+          run: |
             git pull origin main --allow-unrelated-histories
             git merge --strategy-option ours
+        - name: Git commit to main
+          env: 
+              GITHUB_MESSAGE: ${{ github.event.head_commit.message }}
+          run: |
             git add .
             git commit -m "${GITHUB_MESSAGE}"
         - name: Push workflow changes to repo
