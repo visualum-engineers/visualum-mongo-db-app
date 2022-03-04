@@ -47,9 +47,9 @@ jobs:
             git commit -m "${GITHUB_MESSAGE}"
           continue-on-error: true
         - name: Git merge
-           if: steps.commit_files.outcome == 'success'
-           id: git_merge
-           run: |
+          if: steps.commit_files.outcome == 'success'
+          id: git_merge
+          run: |
             git pull origin main --allow-unrelated-histories --strategy-option ours
         - name: Push workflow changes to repo
           uses: ad-m/github-push-action@master
