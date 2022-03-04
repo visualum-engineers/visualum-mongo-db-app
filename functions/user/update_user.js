@@ -11,26 +11,34 @@ exports = async function({
     if(Object.keys(query_condition).length <= 0) return {
       error: true, message: "you do not have access to update these users"
     }
-    await user_collection.update_many(
-      {
-        ...query_condition, 
-        _id: {$in: users},
-      },
-      update_content
-    )
-    return {error: null, message: `successfully updated users: ${users}`}
+    try{
+        await user_collection.update_many(
+          {
+            ...query_condition, 
+            _id: {$in: users},
+          },
+          update_content
+        )
+        return {error: null, message: `successfully updated users: ${users}`}
+    } 
+    catch(e){
+        return {error: e, message: `could not update users: ${users}`}
+    }
   }
 
   const update_one_user = async() =>{
-    await user_collection.updateOne(
-      {
-        ...query_condition, 
-        _id: user_id,
-      },
-      update_content
-    )
-
-    return {error: null, message: `successfully updated user: ${user_id}`}
+    try{
+        await user_collection.updateOne(
+          {
+            ...query_condition, 
+            _id: user_id,
+          },
+          update_content
+        )
+    }
+    catch(e){
+        return {error: null, message: `successfully updated user: ${user_id}`}
+    }
   }
 
   try{
