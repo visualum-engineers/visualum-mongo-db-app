@@ -18,7 +18,6 @@ exports = async function(arg){
         user_creation_date: new Date(),
         user_points: [],
         user_settings:{
-          
         }
       };
       await collection.insertOne(newUserDocument);
