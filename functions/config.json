@@ -1,50 +1,6 @@
 [
     {
-        "name": "delete_activity",
-        "private": false
-    },
-    {
-        "name": "read_class",
-        "private": false
-    },
-    {
-        "name": "update_store",
-        "private": false
-    },
-    {
-        "name": "delete_class",
-        "private": false
-    },
-    {
-        "name": "read_store",
-        "private": false
-    },
-    {
         "name": "delete_user",
-        "private": false
-    },
-    {
-        "name": "read_organization",
-        "private": false
-    },
-    {
-        "name": "update_user",
-        "private": false
-    },
-    {
-        "name": "read_activity",
-        "private": false
-    },
-    {
-        "name": "create_class",
-        "private": false
-    },
-    {
-        "name": "create_organization",
-        "private": false
-    },
-    {
-        "name": "user_google_auth",
         "private": false
     },
     {
@@ -52,11 +8,35 @@
         "private": false
     },
     {
-        "name": "update_activity",
+        "name": "update_store",
         "private": false
     },
     {
-        "name": "update_class",
+        "name": "user_google_auth",
+        "private": false
+    },
+    {
+        "name": "create_class",
+        "private": false
+    },
+    {
+        "name": "read_class",
+        "private": false
+    },
+    {
+        "name": "read_store",
+        "private": false
+    },
+    {
+        "name": "read_organization",
+        "private": false
+    },
+    {
+        "name": "create_user",
+        "private": false
+    },
+    {
+        "name": "delete_class",
         "private": false
     },
     {
@@ -64,7 +44,27 @@
         "private": false
     },
     {
-        "name": "create_user",
+        "name": "update_activity",
+        "private": false
+    },
+    {
+        "name": "update_user",
+        "private": false
+    },
+    {
+        "name": "delete_activity",
+        "private": false
+    },
+    {
+        "name": "update_class",
+        "private": false
+    },
+    {
+        "name": "create_organization",
+        "private": false
+    },
+    {
+        "name": "read_activity",
         "private": false
     },
     {
