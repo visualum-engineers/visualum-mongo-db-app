@@ -40,13 +40,13 @@ jobs:
             git config --local user.name "${GITHUB_ACTOR_USER_NAME}"
         - name: Git merge
           run: |
+            git add .
             git pull origin main --allow-unrelated-histories --strategy-option ours
         - name: Git commit to main
           id: commit_files
           env: 
               GITHUB_MESSAGE: ${{ github.event.head_commit.message }}
           run: |
-            git add .
             git commit -m "${GITHUB_MESSAGE}"
           continue-on-error: true
         - name: Push workflow changes to repo
