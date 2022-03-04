@@ -40,7 +40,7 @@ jobs:
             git config --local user.name "${GITHUB_ACTOR_USER_NAME}"
         - name: Git merge
           run: |
-            git merge origin/main --strategy-option ours
+            git pull origin main --allow-unrelated-histories --strategy-option ours
         - name: Git commit to main
           env: 
               GITHUB_MESSAGE: ${{ github.event.head_commit.message }}
