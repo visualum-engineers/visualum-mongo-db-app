@@ -1,4 +1,7 @@
-exports = async function(arg){
+exports = async function({
+  token,
+  account_type
+}){
   const jwt = require('jsonwebtoken');
   //decrypt token
   try{
@@ -9,8 +12,6 @@ exports = async function(arg){
     
     //create a user schema document since it does not exist
     if(!user_data) {
-      const token = arg;
-      const account_type = arg.account_type;
       const decoded_token = jwt.decode(token);
       const sign_up_info = {
         account_type: account_type,
