@@ -1,6 +1,6 @@
 exports = async function({
   email = "",
-  email_confirmed = false,
+  email_verified = false,
   account_type= ""
 }){
   //user collection
@@ -16,7 +16,7 @@ exports = async function({
         account_type: account_type,
         classes: [],
         email: email,
-        email_confirmed: email_confirmed,
+        email_confirmed: email_verified,
         first_name: first_name,
         last_name: last_name,
         user_creation_date: new Date(),
