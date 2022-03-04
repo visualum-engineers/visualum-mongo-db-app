@@ -28,8 +28,8 @@
             update_many: true
         }
 
-        const delete_many = await context.functions.execute("classes/delete_class", delete_params)
-        const update_many = await context.functions.execute("classes/update_class", update_params)
+        const delete_many = await context.functions.execute("delete_class", delete_params)
+        const update_many = await context.functions.execute("update_class", update_params)
         if(delete_many.error) return {error: delete_many, message: "could not delete classes"}
         if(update_many.error) return {error: update_many, message: "could not update classes"}
         
