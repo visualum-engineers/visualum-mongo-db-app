@@ -16,7 +16,7 @@ on:
 jobs:
    unpack_realm_functions:
       runs-on: ubuntu-latest
-      if: github.actor != 'mongodb-realm[bot]' && github.actor != 'testinguser'
+      if: github.actor != 'mongodb-realm[bot]'
       steps: 
         - uses: actions/checkout@v2
         - uses: actions/setup-node@v1
@@ -35,7 +35,7 @@ jobs:
             GITHUB_ACTOR_EMAIL: ${{github.actor}}
             GITHUB_ACTOR_USER_NAME: ${{github.actor}}
           run: |
-            git config --local user.email "${{GITHUB_ACTOR_EMAIL}}@users.noreply.github.com"
+            git config --local user.email "${GITHUB_ACTOR_EMAIL}@users.noreply.github.com"
             git config --local user.name "${GITHUB_ACTOR_USER_NAME}"
             git add .
             git commit -m "${GITHUB_CONTEXT}"
