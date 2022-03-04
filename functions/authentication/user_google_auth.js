@@ -20,8 +20,10 @@ exports = async function({
       };
       return await context.functions.execute("create_user", sign_up_info);
     }
-    return {error: null};
+    return {error: null, message: "user successfully logged in"};
   } catch(e){
-      return {error: e};
+      const error = new Error("could not sign user in")
+      error.metadata = e
+      throw error
   }
 };

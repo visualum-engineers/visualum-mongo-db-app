@@ -26,7 +26,9 @@ exports = async function({
       };
       await collection.insertOne(newUserDocument);
   } catch(e){
-    return {error: e, message: "could not sign up user"};
+      const error = new Error("could not create a new user")
+      error.metadata = e
+      throw error
   }
 
   return {error: null, message: "user successfully created"};
