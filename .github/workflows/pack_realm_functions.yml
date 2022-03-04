@@ -22,9 +22,12 @@ jobs:
             cd workflows
             node pack_realm_functions.js
         - name: Configure GitHub user
+          env: 
+            GITHUB_ACTOR_EMAIL: ${{github.actor}}
+            GITHUB_ACTOR_USER_NAME: ${{github.actor}}
           run: |
-            git config --local user.email "test@github.com"
-            git config --local user.name "GitHub Action test"
+            git config --local user.email "${GITHUB_ACTOR_EMAIL}@users.noreply.github.com"
+            git config --local user.name "${GITHUB_ACTOR_USER_NAME}"
         - name: Commit files
           id: commit_files
           run: |
