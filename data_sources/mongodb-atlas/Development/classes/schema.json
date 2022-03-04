@@ -37,13 +37,18 @@
             "bsonType": "objectId"
         },
         "students": {
-            "bsonType": "objectId"
+            "bsonType": "array",
+            "items": {
+                "bsonType": "objectId"
+            },
+            "maxItems": 400
         },
         "teachers": {
             "bsonType": "array",
             "items": {
                 "bsonType": "objectId"
-            }
+            },
+            "maxItems": 400
         }
     },
     "required": [

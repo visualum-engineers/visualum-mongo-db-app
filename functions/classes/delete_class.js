@@ -14,5 +14,7 @@ exports = function(arg){
   
       Try running in the console below.
     */
+      const class_collection = context.services.get("mongodb-atlas").db("Development").collection("classes");
+
     return {arg: arg};
   };
