@@ -6,7 +6,7 @@ exports = async function({
   //user collection
   const collection = context.services.get("mongodb-atlas").db("Development").collection("users");
   const user_id = context.user.id;
-  const name = context.user.name;
+  const name = context.user.data.name;
 
   try{
       const [first_name, last_name] = name.split(" ");
