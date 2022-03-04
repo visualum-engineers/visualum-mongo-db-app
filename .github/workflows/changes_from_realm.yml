@@ -1,34 +1,22 @@
-name: unpack_realm_functions
+name: changes_from_realm
 on:
   push:
     branches: 
-      - staging 
-      - main
-    paths: 
-      - 'directory_structures/functions/**'
-      - 'functions/**'
-  pull_request: 
-    branches: 
-      - staging 
-    paths: 
-      - 'directory_structures/functions/**'
-      - 'functions/**'
+      - 'main'
 jobs:
-   unpack_realm_functions:
+   pack_realm_functions:
+      if: github.actor == 'mongodb-realm[bot]'
       runs-on: ubuntu-latest
-      if: github.actor != 'mongodb-realm[bot]'
       steps: 
         - uses: actions/checkout@v2
         - uses: actions/setup-node@v1
           name: Set up Node.js
-          with:
-              node-version: 16
-        - name: Unpack functions function directories
+        - name: Pack functions into sub-directories
           run: | 
             npm install mv
             cd node_scripts
             cd workflows
-            node unpack_realm_functions.js
+            node pack_realm_functions.js
         - name: Git Config
           env: 
             GITHUB_MESSAGE: ${{ github.event.head_commit.message }}
@@ -40,8 +28,8 @@ jobs:
             git config --local user.name "${GITHUB_ACTOR_USER_NAME}"
         - name: Git merge
           run: |
-            git pull origin main --allow-unrelated-histories --strategy-option ours
-        - name: Git commit to main
+            git pull origin staging --allow-unrelated-histories --strategy-option ours
+        - name: Git commit to staging
           id: commit_files
           env: 
               GITHUB_MESSAGE: ${{ github.event.head_commit.message }}
@@ -53,5 +41,7 @@ jobs:
           uses: ad-m/github-push-action@master
           if: steps.commit_files.outcome == 'success'
           with:
-            branch: main
+            branch: staging
             github_token: ${{ github.token }}
+
+

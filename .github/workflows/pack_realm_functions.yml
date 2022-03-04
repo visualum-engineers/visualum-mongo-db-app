@@ -21,13 +21,18 @@ jobs:
             cd node_scripts
             cd workflows
             node pack_realm_functions.js
-        - name: Commit files
+        - name: Configure GitHub user
           run: |
             git config --local user.email "test@github.com"
             git config --local user.name "GitHub Action test"
+        - name: Commit files
+          id: commit_files
+          run: |
             git add .
             git commit -m "pack realm functions"
-        - name: Push workflow changes to repo
+          continue-on-error: true
+        - name: Push packed functions to repo
+          if: steps.commit_files.outcome == 'success'
           uses: ad-m/github-push-action@master
           with:
             branch: ${{ github.ref }}
