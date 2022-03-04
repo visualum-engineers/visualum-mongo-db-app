@@ -32,9 +32,11 @@ jobs:
         - name: Commit files
           env: 
             GITHUB_CONTEXT: ${{ github.event.head_commit.message }}
+            GITHUB_ACTOR_EMAIL: ${{github.actor}}
+            GITHUB_ACTOR_USER_NAME: ${{github.actor}}
           run: |
-            git config --local user.email "test@github.com"
-            git config --local user.name "GitHub Action test"
+            git config --local user.email "${{GITHUB_ACTOR_EMAIL}}@users.noreply.github.com"
+            git config --local user.name "${GITHUB_ACTOR_USER_NAME}"
             git add .
             git commit -m "${GITHUB_CONTEXT}"
         - name: Push workflow changes to repo
