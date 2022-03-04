@@ -31,7 +31,7 @@ jobs:
             node unpack_realm_functions.js
         - name: Commit files
           env: 
-            GITHUB_CONTEXT: ${{ github.event.head_commit.message }}
+            GITHUB_MESSAGE: ${{ github.event.head_commit.message }}
             GITHUB_ACTOR_EMAIL: ${{github.actor}}
             GITHUB_ACTOR_USER_NAME: ${{github.actor}}
           run: |
@@ -39,8 +39,9 @@ jobs:
             git config --local user.email "${GITHUB_ACTOR_EMAIL}@users.noreply.github.com"
             git config --local user.name "${GITHUB_ACTOR_USER_NAME}"
             git pull origin main --allow-unrelated-histories
+            git merge --strategy-option ours
             git add .
-            git commit -m "${GITHUB_CONTEXT}"
+            git commit -m "${GITHUB_MESSAGE}"
         - name: Push workflow changes to repo
           uses: ad-m/github-push-action@master
           with:
