@@ -4,9 +4,6 @@
         "_id": {
             "bsonType": "objectId"
         },
-        "user_id": {
-            "bsonType": "string"
-        },
         "account_type": {
             "bsonType": "string",
             "enum": [
@@ -89,6 +86,9 @@
         },
         "user_creation_date": {
             "bsonType": "date"
+        },
+        "user_id": {
+            "bsonType": "string"
         },
         "user_points": {
             "bsonType": "array",

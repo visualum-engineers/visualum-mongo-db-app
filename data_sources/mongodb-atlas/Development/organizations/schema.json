@@ -29,6 +29,13 @@
                 "street"
             ]
         },
+        "admins": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "objectId"
+            },
+            "maxItems": 20
+        },
         "img_url": {
             "bson_type": "string"
         },
@@ -37,13 +44,6 @@
         },
         "reward_store_id": {
             "bsonType": "objectId"
-        },
-        "admins": {
-            "bsonType": "array",
-            "items": {
-                "bsonType": "objectId"
-            },
-            "maxItems": 20
         }
     },
     "required": [
