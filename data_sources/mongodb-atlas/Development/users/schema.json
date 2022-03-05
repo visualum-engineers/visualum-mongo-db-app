@@ -4,6 +4,8 @@
         "_id": {
             "bsonType": "objectId"
         },
+        "user_id": "string",
+
         "account_type": {
             "bsonType": "string",
             "enum": [
@@ -112,6 +114,7 @@
         }
     },
     "required": [
+        "user_id",
         "first_name",
         "last_name",
         "email",

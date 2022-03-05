@@ -37,6 +37,13 @@
         },
         "reward_store_id": {
             "bsonType": "objectId"
+        },
+        "admins": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "objectId"
+            },
+            "maxItems": 20
         }
     },
     "required": [

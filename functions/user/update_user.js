@@ -5,7 +5,7 @@ exports = async function({
   update_many = false
 }){
   const user_collection = context.services.get("mongodb-atlas").db("Development").collection("users");
-  const user_id = context.user.user_id
+  const user_id = context.user.id
   const update_many_users = async (users = []) =>{
     //protect against updating entire collection
     if(Object.keys(query_condition).length <= 0) return {
@@ -22,7 +22,9 @@ exports = async function({
         return {error: null, message: `successfully updated users: ${users}`}
     } 
     catch(e){
-        return {error: e, message: `could not update users: ${users}`}
+      const error = new Error(`could not update users: ${users}`)
+      error.metadata = e
+      throw error
     }
   }
 
@@ -32,20 +34,25 @@ exports = async function({
           {
             ...query_condition, 
             _id: user_id,
-          },
+          }
+          ,
           update_content
         )
+        return {error: null, message: `successfully updated user: ${user_id}`}
     }
     catch(e){
-        return {error: null, message: `successfully updated user: ${user_id}`}
+        const error = new Error("could not create a new user")
+        error.metadata = e
+        throw error
     }
   }
 
+  //_main_
   try{
     let response
     if(update_many) response = await update_many_users(update_users)
     else response = await update_one_user()
-    //check if error occured
+    
     return response
   }
   catch(e){
