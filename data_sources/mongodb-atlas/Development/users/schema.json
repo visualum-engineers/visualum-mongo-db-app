@@ -4,8 +4,9 @@
         "_id": {
             "bsonType": "objectId"
         },
-        "user_id": "string",
-
+        "user_id": {
+            "bsonType": "string"
+        },
         "account_type": {
             "bsonType": "string",
             "enum": [
