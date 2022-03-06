@@ -1,31 +1,74 @@
-exports = async function({
-    user_id,
-    readMany = false
-  }){
-    const user_collection = context.services.get("mongodb-atlas").db("Development").collection("users");
-
-    //decrypt token
-    try{
-      //if empty, we're dealing with a 
-      //new user since we dont
-      //have a schema for them
-      const user_data = context.user.custom_data.email;
-      
-      //create a user schema document since it does not exist
-      if(!user_data) {
-        const decoded_token = jwt.decode(token);
-        const sign_up_info = {
-          account_type: account_type,
-          email: decoded_token.email,
-          email_verified: decoded_token.email_verified
-        };
-        return await context.functions.execute("create_user", sign_up_info);
-      }
-      return {error: null, message: "user successfully logged in"};
-    } catch(e){
-        const error = new Error("could not sign user in")
-        error.metadata = e
-        throw error
+exports = async function ({
+  user_id = "",
+  many_user_ids = [],
+  query_condition = {},
+  read_many = false,
+}) {
+  const user_collection = context.services
+    .get("mongodb-atlas")
+    .db("Development")
+    .collection("users");
+  const read_one_user = async () => {
+    try {
+      const documents = await user_collection.findOne({
+        ...query_condition,
+        _id: {
+          user_id,
+        },
+      });
+      return {
+        error: null,
+        message:
+          documents.length <= 0
+            ? "no documents found"
+            : `found ${documents.length} documents`,
+        documents: documents
+      };
+    } catch (e) {
+      const errorParms = {
+        error_message: `user documents could not be found or accessed: ${many_user_ids}`,
+        error_metadata: e,
+      };
+      throw context.functions.execute("create_async_error", errorParms);
     }
   };
-  
+
+  const read_many_users = async () => {
+    try {
+      if (many_user_ids.length <= 0) return;
+      const documents = await user_collection.find({
+        ...query_condition,
+        _id: {
+          $in: many_user_ids,
+        },
+      });
+      return {
+        error: null,
+        message:
+          documents.length <= 0
+            ? "no documents found"
+            : `found ${documents.length} documents`,
+        documents: documents
+      };
+    } catch (e) {
+      const errorParms = {
+        error_message: `user document could not be found or accessed: ${user_id}`,
+        error_metadata: e,
+      };
+      throw context.functions.execute("create_async_error", errorParms);
+    }
+  };
+
+  //_main_
+  try {
+    let response;
+    if (read_many) response = await read_many_users();
+    else response = await read_one_user();
+    return response;
+  } catch (e) {
+    return {
+      error: e,
+      message: "Something went wrong reading user/users",
+    };
+  }
+};
