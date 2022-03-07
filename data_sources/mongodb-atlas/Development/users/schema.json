@@ -14,6 +14,13 @@
             "maxLength": 300,
             "minLength": 0
         },
+        "admins": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "objectId"
+            },
+            "maxItems": 300
+        },
         "classes": {
             "bsonType": "array",
             "items": {
@@ -45,6 +52,13 @@
         },
         "payment_info": {
             "bsonType": "string"
+        },
+        "teachers": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "objectId"
+            },
+            "maxItems": 300
         },
         "user_avatar": {
             "bsonType": "object",
