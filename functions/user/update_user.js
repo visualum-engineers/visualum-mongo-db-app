@@ -79,56 +79,6 @@ exports = async function ({
       throw context.functions.execute("create_async_error", errorParms);
     }
   };
-  //determine an added query condition,
-  // based off account type, this query
-  //will be used for ensuring only documents
-  //the user has access to, can be returned
-  const determine_custom_query = ({
-    account_type,
-    query_user_ids,
-    curr_user_id,
-  }) => {
-    let custom_query = {};
-    //we're dealing with the owner
-    if (query_user_ids.length === 1 && curr_user_id === query_user_ids[0])
-      return {};
-    //we're not dealing with the owner
-    switch (account_type) {
-      case "student":
-        const invalid =
-          query_user_ids.length > 1 ||
-          query_user_ids[0] !== BSON.ObjectId(context.user.id);
-        if (invalid) {
-          throw Error(
-            "student accounts cannot access other accounts expect their own"
-          );
-        }
-        break;
-      case "teacher":
-        if (
-          update_many ||
-          query_user_ids[0] !== BSON.ObjectId(context.user.id)
-        ) {
-          custom_query = {
-            teachers: { $elemMatch: BSON.ObjectId(context.user.id) },
-          };
-        }
-        break;
-      case "admin":
-        if (
-          update_many ||
-          query_user_ids[0] !== BSON.ObjectId(context.user.id)
-        ) {
-          custom_query = {
-            admins: { $elemMatch: BSON.ObjectId(context.user.id) },
-          };
-        }
-        break;
-      default:
-        throw new Error(`invalid account type: ${account_type}`);
-    }
-    return custom_query;
-  };
 
   //_main_
   try {
@@ -166,10 +116,12 @@ exports = async function ({
     if (validate_fields) {
       const custom_query = {
         ...query_condition,
-        ...determine_custom_query(
-          user_document.account_type,
-          update_many ? many_user_ids : [object_id_user]
-        ),
+        ...context.function.execute("validate_user_read", {
+          account_type: user_document.account_type,
+          query_user_ids: many_user_ids,
+          curr_user_id: BSON.ObjectId(context.user.id),
+          many_condition: update_many,
+        }),
       };
       let response;
       if (update_many)

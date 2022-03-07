@@ -68,56 +68,6 @@ exports = async function ({
       throw context.functions.execute("create_async_error", error_parms);
     }
   };
-  //determine an added query condition,
-  //based off account type, this query
-  //will be used for ensuring only documents
-  //the user has access to, can be returned
-  const determine_custom_query = ({
-    account_type,
-    query_user_ids,
-    curr_user_id,
-  }) => {
-    let custom_query = {};
-    //we're dealing with the owner
-    if (query_user_ids.length === 1 && curr_user_id === query_user_ids[0])
-      return {};
-    //we're not dealing with the owner
-    switch (account_type) {
-      case "student":
-        const invalid =
-          query_user_ids.length > 1 ||
-          query_user_ids[0] !== BSON.ObjectId(context.user.id);
-        if (invalid) {
-          throw Error(
-            "student accounts cannot access other accounts expect their own"
-          );
-        }
-        break;
-      case "teacher":
-        if (
-          read_many ||
-          query_user_ids[0] !== BSON.ObjectId(context.user.id)
-        ) {
-          custom_query = {
-            teachers: { $elemMatch: BSON.ObjectId(context.user.id) },
-          };
-        }
-        break;
-      case "admin":
-        if (
-          read_many ||
-          query_user_ids[0] !== BSON.ObjectId(context.user.id)
-        ) {
-          custom_query = {
-            admins: { $elemMatch: BSON.ObjectId(context.user.id) },
-          };
-        }
-        break;
-      default:
-        throw new Error(`invalid account type: ${account_type}`);
-    }
-    return custom_query;
-  };
 
   //_main_
   try {
@@ -140,29 +90,24 @@ exports = async function ({
     }
     //handle grabbing the right document
     let response;
+    const custom_query = {
+      ...query_condition,
+      ...context.function.execute("validate_user_read", {
+        account_type: user_document.account_type,
+        query_user_ids: many_user_ids,
+        curr_user_id: BSON.ObjectId(context.user.id),
+        many_condition: read_many,
+      }),
+    };
     if (read_many)
       response = await read_many_users({
         many_user_ids: many_user_ids,
-        query_condition: {
-          ...query_condition,
-          ...determine_custom_query({
-            account_type: user_document.account_type,
-            query_user_ids: many_user_ids,
-            curr_user_id: BSON.ObjectId(context.user.id),
-          }),
-        },
+        query_condition: custom_query,
       });
     else
       response = await read_one_user({
         user_id: object_id_user,
-        query_condition: {
-          ...query_condition,
-          ...determine_custom_query({
-            account_type: user_document.account_type,
-            query_user_ids: [object_id_user],
-            curr_user_id: BSON.ObjectId(context.user.id),
-          }),
-        },
+        query_condition: custom_query,
       });
 
     return response;
