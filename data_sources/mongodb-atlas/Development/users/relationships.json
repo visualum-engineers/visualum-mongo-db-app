@@ -1,7 +1,19 @@
 {
+    "admins": {
+        "ref": "#/relationship/mongodb-atlas/Development/users",
+        "source_key": "admins",
+        "foreign_key": "_id",
+        "is_list": true
+    },
     "classes": {
         "ref": "#/relationship/mongodb-atlas/Development/classes",
         "source_key": "classes",
+        "foreign_key": "_id",
+        "is_list": true
+    },
+    "teachers": {
+        "ref": "#/relationship/mongodb-atlas/Development/users",
+        "source_key": "teachers",
         "foreign_key": "_id",
         "is_list": true
     }
