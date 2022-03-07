@@ -1,34 +1,10 @@
 [
     {
-        "name": "create_class",
-        "private": false
-    },
-    {
-        "name": "delete_class",
-        "private": false
-    },
-    {
-        "name": "read_store",
-        "private": false
-    },
-    {
-        "name": "create_user",
-        "private": false
-    },
-    {
-        "name": "delete_store",
-        "private": false
-    },
-    {
         "name": "update_class",
         "private": false
     },
     {
-        "name": "read_activity",
-        "private": false
-    },
-    {
-        "name": "update_store",
+        "name": "delete_activity",
         "private": false
     },
     {
@@ -36,11 +12,43 @@
         "private": false
     },
     {
-        "name": "read_organization",
+        "name": "read_class",
+        "private": false
+    },
+    {
+        "name": "read_user",
+        "private": false
+    },
+    {
+        "name": "read_store",
+        "private": false
+    },
+    {
+        "name": "create_organization",
         "private": false
     },
     {
         "name": "update_activity",
+        "private": false
+    },
+    {
+        "name": "create_async_error",
+        "private": false
+    },
+    {
+        "name": "create_class",
+        "private": false
+    },
+    {
+        "name": "validate_user_write",
+        "private": true
+    },
+    {
+        "name": "update_store",
+        "private": false
+    },
+    {
+        "name": "delete_class",
         "private": false
     },
     {
@@ -52,23 +60,31 @@
         "private": false
     },
     {
-        "name": "user_google_auth",
+        "name": "read_organization",
         "private": false
     },
     {
-        "name": "read_class",
+        "name": "validate_user_read",
+        "private": true
+    },
+    {
+        "name": "delete_store",
         "private": false
     },
     {
-        "name": "create_organization",
+        "name": "read_activity",
         "private": false
     },
     {
-        "name": "delete_activity",
+        "name": "create_user",
         "private": false
     },
     {
         "name": "update_user",
+        "private": false
+    },
+    {
+        "name": "user_google_auth",
         "private": false
     }
 ]
