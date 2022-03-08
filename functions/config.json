@@ -1,10 +1,6 @@
 [
     {
-        "name": "read_class",
-        "private": false
-    },
-    {
-        "name": "update_activity",
+        "name": "read_store",
         "private": false
     },
     {
@@ -12,19 +8,15 @@
         "private": false
     },
     {
-        "name": "create_store",
+        "name": "create_async_error",
         "private": false
     },
     {
-        "name": "validate_user_read",
-        "private": true
-    },
-    {
-        "name": "create_activity",
+        "name": "create_organization",
         "private": false
     },
     {
-        "name": "update_user",
+        "name": "read_activity",
         "private": false
     },
     {
@@ -32,35 +24,7 @@
         "private": false
     },
     {
-        "name": "delete_user",
-        "private": false
-    },
-    {
-        "name": "update_class",
-        "private": false
-    },
-    {
-        "name": "read_store",
-        "private": false
-    },
-    {
-        "name": "read_user",
-        "private": false
-    },
-    {
         "name": "delete_class",
-        "private": false
-    },
-    {
-        "name": "validate_user_write",
-        "private": true
-    },
-    {
-        "name": "read_activity",
-        "private": false
-    },
-    {
-        "name": "read_organization",
         "private": false
     },
     {
@@ -68,15 +32,11 @@
         "private": false
     },
     {
-        "name": "create_async_error",
+        "name": "update_user",
         "private": false
     },
     {
-        "name": "create_user",
-        "private": false
-    },
-    {
-        "name": "delete_activity",
+        "name": "create_activity",
         "private": false
     },
     {
@@ -84,7 +44,47 @@
         "private": false
     },
     {
-        "name": "create_organization",
+        "name": "create_store",
+        "private": false
+    },
+    {
+        "name": "update_activity",
+        "private": false
+    },
+    {
+        "name": "delete_activity",
+        "private": false
+    },
+    {
+        "name": "read_class",
+        "private": false
+    },
+    {
+        "name": "update_class",
+        "private": false
+    },
+    {
+        "name": "validate_user_write",
+        "private": true
+    },
+    {
+        "name": "read_organization",
+        "private": false
+    },
+    {
+        "name": "validate_user_read",
+        "private": true
+    },
+    {
+        "name": "delete_user",
+        "private": false
+    },
+    {
+        "name": "read_user",
+        "private": false
+    },
+    {
+        "name": "create_user",
         "private": false
     }
 ]

@@ -3,10 +3,10 @@
     "database": "Development",
     "roles": [
         {
-            "name": "student_user_own_doc",
+            "name": "student_own_doc",
             "apply_when": {
-                "user_id": "%%user.id",
-                "account_type": "student"
+                "account_type": "student",
+                "user_id": "%%user.id"
             },
             "fields": {
                 "_id": {
@@ -61,12 +61,106 @@
                     "write": true
                 }
             },
-            "insert": false,
+            "insert": true,
             "delete": true,
             "search": true,
             "additional_fields": {
                 "read": true
             }
+        },
+        {
+            "name": "teacher_own_doc",
+            "apply_when": {
+                "account_type": "teacher",
+                "user_id": "%%user.id"
+            },
+            "fields": {
+                "_id": {},
+                "account_type": {},
+                "admins": {},
+                "classes": {
+                    "write": true
+                },
+                "email_confirmed": {},
+                "first_name": {
+                    "write": true
+                },
+                "last_name": {
+                    "write": true
+                },
+                "organization_id": {
+                    "write": true
+                },
+                "payment_confirmed": {},
+                "payment_info": {
+                    "write": true
+                },
+                "teachers": {
+                    "write": true
+                },
+                "user_avatar": {
+                    "write": true
+                },
+                "user_creation_date": {},
+                "user_id": {},
+                "user_points": {},
+                "user_settings": {
+                    "write": true
+                }
+            },
+            "read": true,
+            "insert": true,
+            "delete": true,
+            "search": true,
+            "additional_fields": {}
+        },
+        {
+            "name": "admin_own_doc",
+            "apply_when": {
+                "account_type": "admin",
+                "user_id": "%%user.id"
+            },
+            "fields": {
+                "_id": {},
+                "account_type": {},
+                "admins": {
+                    "write": true
+                },
+                "classes": {
+                    "write": true
+                },
+                "email_confirmed": {},
+                "first_name": {
+                    "write": true
+                },
+                "last_name": {
+                    "write": true
+                },
+                "organization_id": {
+                    "write": true
+                },
+                "payment_confirmed": {},
+                "payment_info": {
+                    "write": true
+                },
+                "teachers": {
+                    "write": true
+                },
+                "user_avatar": {
+                    "write": true
+                },
+                "user_creation_date": {},
+                "user_id": {},
+                "user_points": {},
+                "user_settings": {
+                    "write": true
+                }
+            },
+            "read": true,
+            "insert": true,
+            "delete": true,
+            "search": true,
+            "additional_fields": {}
         }
     ]
 }
