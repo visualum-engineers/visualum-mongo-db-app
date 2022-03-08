@@ -1,27 +1,23 @@
 {
-    "bsonType": "object",
-    "properties": {
-        "_id": {
-            "bsonType": "objectId"
-        },
-        "date_redeemed": {
-            "bsonType": "date"
-        },
-        "reward_id": {
-            "bsonType": "objectId"
-        },
-        "reward_store_id": {
-            "bsonType": "objectId"
-        },
-        "user_id": {
-            "bsonType": "objectId"
-        }
+  "bsonType": "object",
+  "properties": {
+    "_id": {
+      "bsonType": "objectId"
     },
-    "required": [
-        "date_redeemed",
-        "reward_id",
-        "reward_store_id",
-        "user_id"
-    ],
-    "title": "reward_transaction"
+    "date_redeemed": {
+      "bsonType": "date"
+    },
+    "reward_id": {
+      "bsonType": "objectId"
+    },
+    "reward_store_id": {
+      "bsonType": "objectId"
+    },
+    "user_id": {
+      "bsonType": "objectId"
+    }
+  },
+  "required": ["date_redeemed", "reward_id", "reward_store_id", "user_id"],
+  "title": "reward_transaction",
+  "additionalProperties": false
 }

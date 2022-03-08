@@ -49,5 +49,6 @@
     "required": [
         "_id",
         "organization_name"
-    ]
+    ],
+    "additionalProperties": false
 }

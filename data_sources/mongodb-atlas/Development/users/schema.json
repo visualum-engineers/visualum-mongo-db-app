@@ -165,5 +165,7 @@
     "email_confirmed",
     "classes"
   ],
+  "additionalProperties": false,
+
   "title": "user"
 }
