@@ -24,6 +24,7 @@ exports = function ({
           );
         }
         break;
+        
       case "teacher":
         if (
           many_condition ||

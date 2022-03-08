@@ -128,6 +128,7 @@
             "properties": {}
         }
     },
+    
     "required": [
         "user_id",
         "first_name",
