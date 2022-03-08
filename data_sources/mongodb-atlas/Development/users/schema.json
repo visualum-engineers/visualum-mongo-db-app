@@ -14,8 +14,7 @@
           "const": "admin"
         }
       },
-
-      "required": ["organization"]
+      "required": ["organization_id"]
     },
     {
       "properties": {
@@ -154,52 +153,6 @@
     },
     "organization_id": {
       "bsonType": "objectId"
-    },
-    "organization": {
-      "bsonType": "object",
-      "properties": {
-        "_id": {
-          "bsonType": "objectId"
-        },
-        "address": {
-          "bsonType": "object",
-          "properties": {
-            "apartment": {
-              "bsonType": "string"
-            },
-            "country": {
-              "bsonType": "string"
-            },
-            "state": {
-              "bsonType": "string"
-            },
-            "street": {
-              "bsonType": "string"
-            },
-            "zip": {
-              "bsonType": "string"
-            }
-          },
-          "required": ["country", "state", "street"]
-        },
-        "admins": {
-          "bsonType": "array",
-          "items": {
-            "bsonType": "objectId"
-          },
-          "maxItems": 20
-        },
-        "img_url": {
-          "bson_type": "string"
-        },
-        "organization_name": {
-          "bsonType": "string"
-        },
-        "reward_store_id": {
-          "bsonType": "objectId"
-        }
-      },
-      "required": ["organization_name", "address"]
     }
   },
   "required": [

@@ -1,6 +1,6 @@
 exports = async function({
   token,
-  account_type
+  custom_data
 }){
   const jwt = require('jsonwebtoken');
   //decrypt token
@@ -14,9 +14,10 @@ exports = async function({
     if(!user_data) {
       const decoded_token = jwt.decode(token);
       const sign_up_info = {
-        account_type: account_type,
+        additional_data: custom_data,
+        account_type: custom_data.account_type,
         email: decoded_token.email,
-        email_verified: decoded_token.email_verified
+        email_verified: decoded_token.email_verified,
       };
       return await context.functions.execute("create_user", sign_up_info);
     }

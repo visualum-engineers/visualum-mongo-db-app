@@ -34,7 +34,7 @@
             "items": {
                 "bsonType": "objectId"
             },
-            "maxItems": 20
+            "maxItems": 200
         },
         "img_url": {
             "bson_type": "string"

@@ -2,6 +2,7 @@ exports = async function ({
   email = "",
   email_verified = false,
   account_type = "",
+  additional_data = {}
 }) {
   //user collection
   const collection = context.services
@@ -14,6 +15,7 @@ exports = async function ({
   try {
     const [first_name, last_name] = name.split(" ");
     newUserDocument = {
+      ...additional_data,
       _id: new BSON.ObjectId(user_id),
       user_id: user_id,
       account_type: account_type,
@@ -26,6 +28,10 @@ exports = async function ({
       user_points: [],
       user_settings: {},
     };
+    //we must create an organization document
+    if (account_type === "admin") {
+
+    }
   } catch (e) {
     const errorParms = {
       error_message: "invalid new user document",
