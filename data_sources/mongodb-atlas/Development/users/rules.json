@@ -126,7 +126,7 @@
                     "account_type": "student"
                 },
                 "user_id": {
-                    "%nin": [
+                    "$nin": [
                         "%%user.id"
                     ]
                 }
@@ -172,12 +172,12 @@
                 "%%user.custom_data": {
                     "account_type": "teacher"
                 },
+                "account_type": "student",
                 "user_id": {
-                    "%nin": [
+                    "$nin": [
                         "%%user.id"
                     ]
-                },
-                "account_type": "student"
+                }
             },
             "fields": {
                 "_id": {
@@ -237,24 +237,25 @@
                 "%%user.custom_data": {
                     "account_type": "admin"
                 },
-                "user_id": {
-                    "%nin": [
-                        "%%user.id"
-                    ]
-                },
                 "account_type": {
                     "enum": [
                         "student",
                         "teacher"
                     ]
-                }
+                },
+                "user_id": {
+                    "$nin": [
+                        "%%user.id"
+                    ]
+                },
+                "organization_id": "%%user.custom_data.organization_id"
             },
             "fields": {
                 "_id": {
                     "read": true
                 },
                 "account_type": {
-                    "read": true
+                    "write": true
                 },
                 "admins": {
                     "write": true
@@ -266,10 +267,10 @@
                     "read": true
                 },
                 "first_name": {
-                    "read": true
+                    "write": true
                 },
                 "last_name": {
-                    "read": true
+                    "write": true
                 },
                 "organization_id": {
                     "write": true
