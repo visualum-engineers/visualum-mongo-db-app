@@ -1,16 +1,4 @@
 {
-    "anyOf": [
-        {
-            "properties": {
-                "account_type": {
-                    "const": "teacher"
-                }
-            },
-            "required": [
-                "organization_id"
-            ]
-        }
-    ],
     "bsonType": "object",
     "properties": {
         "_id": {
