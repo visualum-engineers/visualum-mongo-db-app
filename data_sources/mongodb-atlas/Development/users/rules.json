@@ -161,6 +161,110 @@
             "delete": true,
             "search": true,
             "additional_fields": {}
+        },
+        {
+            "name": "student_other_doc",
+            "apply_when": {
+                "%%user.custom_data": {
+                    "account_type": "student"
+                },
+                "user_id": {
+                    "%nin": [
+                        "%%user.id"
+                    ]
+                }
+            },
+            "fields": {
+                "_id": {},
+                "account_type": {},
+                "admins": {},
+                "classes": {},
+                "email_confirmed": {},
+                "first_name": {},
+                "last_name": {},
+                "organization_id": {},
+                "payment_confirmed": {},
+                "payment_info": {},
+                "teachers": {},
+                "user_avatar": {},
+                "user_creation_date": {},
+                "user_id": {},
+                "user_points": {},
+                "user_settings": {}
+            },
+            "insert": false,
+            "delete": false,
+            "search": false,
+            "additional_fields": {}
+        },
+        {
+            "name": "teacher_student_doc",
+            "apply_when": {
+                "%%user.custom_data": {
+                    "account_type": "teacher"
+                },
+                "user_id": {
+                    "%nin": [
+                        "%%user.id"
+                    ]
+                },
+                "account_type": "student"
+            },
+            "fields": {
+                "_id": {
+                    "read": true
+                },
+                "account_type": {
+                    "read": true
+                },
+                "admins": {
+                    "read": true
+                },
+                "classes": {
+                    "write": true,
+                    "read": true
+                },
+                "email_confirmed": {
+                    "read": true
+                },
+                "first_name": {
+                    "read": true
+                },
+                "last_name": {
+                    "read": true
+                },
+                "organization_id": {
+                    "read": true
+                },
+                "payment_confirmed": {
+                    "read": true
+                },
+                "payment_info": {
+                    "read": true
+                },
+                "teachers": {
+                    "read": true
+                },
+                "user_avatar": {
+                    "read": true
+                },
+                "user_creation_date": {
+                    "read": true
+                },
+                "user_id": {
+                    "read": true
+                },
+                "user_points": {
+                    "read": true
+                },
+                "user_settings": {}
+            },
+            "insert": false,
+            "delete": false,
+            "search": true,
+            "additional_fields": {
+                "read": true
+            }
         }
     ]
 }
