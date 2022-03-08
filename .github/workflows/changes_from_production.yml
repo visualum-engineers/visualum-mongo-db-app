@@ -1,20 +1,13 @@
-name: unpack_realm_functions
+name: changes from production
 on:
   push:
     branches: 
       - production 
-      - main
-    paths: 
-      - 'directory_structures/functions/**'
-      - 'functions/**'
-  pull_request: 
-    branches: 
-      - staging 
-    paths: 
+    ignore-paths: 
       - 'directory_structures/functions/**'
       - 'functions/**'
 jobs:
-   unpack_realm_functions:
+   push_to_mongo_db:
       runs-on: ubuntu-latest
       if: github.actor != 'mongodb-realm[bot]'
       steps: 
@@ -23,12 +16,6 @@ jobs:
           name: Set up Node.js
           with:
               node-version: 16
-        - name: Unpack functions function directories
-          run: | 
-            npm install mv
-            cd node_scripts
-            cd workflows
-            node unpack_realm_functions.js
         - name: Git Config
           env: 
             GITHUB_MESSAGE: ${{ github.event.head_commit.message }}
