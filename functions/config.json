@@ -1,6 +1,34 @@
 [
     {
-        "name": "delete_activity",
+        "name": "read_user",
+        "private": false
+    },
+    {
+        "name": "update_activity",
+        "private": false
+    },
+    {
+        "name": "validate_user_read",
+        "private": true
+    },
+    {
+        "name": "create_async_error",
+        "private": false
+    },
+    {
+        "name": "read_class",
+        "private": false
+    },
+    {
+        "name": "validate_user_write",
+        "private": true
+    },
+    {
+        "name": "create_organization",
+        "private": false
+    },
+    {
+        "name": "delete_class",
         "private": false
     },
     {
@@ -8,7 +36,23 @@
         "private": false
     },
     {
-        "name": "user_google_auth",
+        "name": "read_store",
+        "private": false
+    },
+    {
+        "name": "create_store",
+        "private": false
+    },
+    {
+        "name": "delete_store",
+        "private": false
+    },
+    {
+        "name": "create_activity",
+        "private": false
+    },
+    {
+        "name": "read_activity",
         "private": false
     },
     {
@@ -20,15 +64,7 @@
         "private": false
     },
     {
-        "name": "create_store",
-        "private": false
-    },
-    {
-        "name": "read_store",
-        "private": false
-    },
-    {
-        "name": "create_activity",
+        "name": "delete_activity",
         "private": false
     },
     {
@@ -36,23 +72,11 @@
         "private": false
     },
     {
-        "name": "update_activity",
+        "name": "update_store",
         "private": false
     },
     {
-        "name": "delete_store",
-        "private": false
-    },
-    {
-        "name": "validate_user_read",
-        "private": true
-    },
-    {
-        "name": "update_class",
-        "private": false
-    },
-    {
-        "name": "read_class",
+        "name": "user_google_auth",
         "private": false
     },
     {
@@ -60,31 +84,7 @@
         "private": false
     },
     {
-        "name": "validate_user_write",
-        "private": true
-    },
-    {
-        "name": "update_store",
-        "private": false
-    },
-    {
-        "name": "read_activity",
-        "private": false
-    },
-    {
-        "name": "read_user",
-        "private": false
-    },
-    {
-        "name": "create_async_error",
-        "private": false
-    },
-    {
-        "name": "create_organization",
-        "private": false
-    },
-    {
-        "name": "delete_class",
+        "name": "update_class",
         "private": false
     }
 ]
