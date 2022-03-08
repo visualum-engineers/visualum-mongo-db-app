@@ -3,13 +3,70 @@
     "database": "Development",
     "roles": [
         {
-            "name": "default",
-            "apply_when": {},
-            "write": true,
-            "insert": true,
+            "name": "student_user_own_doc",
+            "apply_when": {
+                "user_id": "%%user.id",
+                "account_type": "student"
+            },
+            "fields": {
+                "_id": {
+                    "read": true
+                },
+                "account_type": {
+                    "read": true
+                },
+                "admins": {
+                    "write": true,
+                    "read": true
+                },
+                "classes": {
+                    "write": true,
+                    "read": true
+                },
+                "email_confirmed": {
+                    "read": true
+                },
+                "first_name": {
+                    "write": true,
+                    "read": true
+                },
+                "last_name": {
+                    "write": true,
+                    "read": true
+                },
+                "organization_id": {
+                    "write": true,
+                    "read": true
+                },
+                "payment_confirmed": {},
+                "payment_info": {
+                    "write": true
+                },
+                "teachers": {
+                    "write": true
+                },
+                "user_avatar": {
+                    "write": true
+                },
+                "user_creation_date": {
+                    "read": true
+                },
+                "user_id": {
+                    "read": true
+                },
+                "user_points": {
+                    "read": true
+                },
+                "user_settings": {
+                    "write": true
+                }
+            },
+            "insert": false,
             "delete": true,
             "search": true,
-            "additional_fields": {}
+            "additional_fields": {
+                "read": true
+            }
         }
     ]
 }

@@ -1,4 +1,5 @@
 {
+    "additionalProperties": false,
     "bsonType": "object",
     "properties": {
         "_id": {
@@ -49,6 +50,5 @@
     "required": [
         "_id",
         "organization_name"
-    ],
-    "additionalProperties": false
+    ]
 }

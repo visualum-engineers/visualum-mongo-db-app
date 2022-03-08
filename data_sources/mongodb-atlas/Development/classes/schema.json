@@ -1,56 +1,56 @@
 {
     "bsonType": "object",
     "properties": {
-      "_id": {
-        "bsonType": "objectId"
-      },
-      "active_assignments": {
-        "bsonType": "array",
-        "items": {
-          "bsonType": "objectId"
+        "_id": {
+            "bsonType": "objectId"
         },
-        "maxItems": 200
-      },
-      "class_code": {
-        "bsonType": "string"
-      },
-      "class_goals": {
-        "bsonType": "array",
-        "items": {
-          "bsonType": "objectId"
+        "active_assignments": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "objectId"
+            },
+            "maxItems": 200
         },
-        "maxItems": 150
-      },
-      "class_name": {
-        "bsonType": "string"
-      },
-      "creation_date": {
-        "bsonType": "date"
-      },
-      "img_url": {
-        "bsonType": "string"
-      },
-      "organization_id": {
-        "bsonType": "objectId"
-      },
-      "reward_store_id": {
-        "bsonType": "objectId"
-      },
-      "students": {
-        "bsonType": "array",
-        "items": {
-          "bsonType": "objectId"
+        "additionalProperties": false,
+        "class_code": {
+            "bsonType": "string"
         },
-        "maxItems": 400
-      },
-      "teachers": {
-        "bsonType": "array",
-        "items": {
-          "bsonType": "objectId"
+        "class_goals": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "objectId"
+            },
+            "maxItems": 150
         },
-        "maxItems": 400
-      },
-      "additionalProperties": false
+        "class_name": {
+            "bsonType": "string"
+        },
+        "creation_date": {
+            "bsonType": "date"
+        },
+        "img_url": {
+            "bsonType": "string"
+        },
+        "organization_id": {
+            "bsonType": "objectId"
+        },
+        "reward_store_id": {
+            "bsonType": "objectId"
+        },
+        "students": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "objectId"
+            },
+            "maxItems": 400
+        },
+        "teachers": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "objectId"
+            },
+            "maxItems": 400
+        }
     },
     "required": [
         "teachers",

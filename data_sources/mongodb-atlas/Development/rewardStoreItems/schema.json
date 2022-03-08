@@ -1,28 +1,32 @@
 {
-  "bsonType": "object",
-  "properties": {
-    "_id": {
-      "bsonType": "objectId"
+    "additionalProperties": false,
+    "bsonType": "object",
+    "properties": {
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "img_url": {
+            "bsonType": "string"
+        },
+        "item_name": {
+            "bsonType": "string"
+        },
+        "item_price": {
+            "bsonType": "int",
+            "minimum": 0
+        },
+        "listed_date": {
+            "bsonType": "date"
+        },
+        "num_available": {
+            "bsonType": "int",
+            "minimum": 0
+        }
     },
-    "img_url": {
-      "bsonType": "string"
-    },
-    "item_name": {
-      "bsonType": "string"
-    },
-    "item_price": {
-      "bsonType": "int",
-      "minimum": 0
-    },
-    "listed_date": {
-      "bsonType": "date"
-    },
-    "num_available": {
-      "bsonType": "int",
-      "minimum": 0
-    }
-  },
-  "required": ["item_name", "item_price", "listed_date"],
-  "title": "reward_store_item",
-  "additionalProperties": false
+    "required": [
+        "item_name",
+        "item_price",
+        "listed_date"
+    ],
+    "title": "reward_store_item"
 }
