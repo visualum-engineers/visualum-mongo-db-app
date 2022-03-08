@@ -27,7 +27,7 @@ jobs:
             git config --local user.email "${GITHUB_ACTOR_EMAIL}@users.noreply.github.com"
             git config --local user.name "${GITHUB_ACTOR_USER_NAME}"
           
-        - name: Git commit to staging
+        - name: Git commit to production
           id: commit_files
           env: 
               GITHUB_MESSAGE: ${{ github.event.head_commit.message }}
@@ -39,13 +39,13 @@ jobs:
         - name: Git merge
           id: git_merge
           run: |
-            git pull origin staging --allow-unrelated-histories --strategy-option ours
+            git pull origin production --allow-unrelated-histories --strategy-option ours
 
         - name: Push workflow changes to repo
           uses: ad-m/github-push-action@master
           if: steps.git_merge.outcome == 'success'
           with:
-            branch: staging
+            branch: production
             github_token: ${{ github.token }}
 
 
