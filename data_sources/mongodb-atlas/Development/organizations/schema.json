@@ -47,7 +47,7 @@
         }
     },
     "required": [
-        "organization_name",
-        "address"
+        "_id",
+        "organization_name"
     ]
 }
