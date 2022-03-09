@@ -3,10 +3,119 @@
     "database": "Development",
     "roles": [
         {
-            "name": "default",
-            "apply_when": {},
+            "name": "admin_user",
+            "apply_when": {
+                "%%user.custom_data": {
+                    "account_type": "admin"
+                },
+                "anyOf": [
+                    {
+                        "organization_id": "%%user.custom_data.organization_id"
+                    },
+                    {
+                        "class_id": {
+                            "%in": [
+                                "%%user.custom_data.classes"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "fields": {
+                "_id": {}
+            },
+            "read": true,
             "insert": true,
             "delete": true,
+            "search": true,
+            "additional_fields": {
+                "write": true
+            }
+        },
+        {
+            "name": "teacher_user_class_store",
+            "apply_when": {
+                "%%user.custom_data": {
+                    "account_type": "teacher"
+                },
+                "class_id": {
+                    "%in": [
+                        "%%user.custom_data.classes"
+                    ]
+                }
+            },
+            "fields": {
+                "_id": {}
+            },
+            "read": true,
+            "insert": true,
+            "delete": true,
+            "search": true,
+            "additional_fields": {
+                "write": true
+            }
+        },
+        {
+            "name": "read_stores",
+            "apply_when": {
+                "anyOf": [
+                    {
+                        "%%user.custom_data": {
+                            "account_type": {
+                                "enum": [
+                                    "teacher",
+                                    "student"
+                                ]
+                            }
+                        },
+                        "organization_id": "%%user.custom_data.organization_id"
+                    },
+                    {
+                        "%%user.custom_data": {
+                            "account_type": "student"
+                        },
+                        "class_id": {
+                            "%in": [
+                                "%%user.custom_data.classes"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "fields": {
+                "_id": {}
+            },
+            "read": true,
+            "insert": false,
+            "delete": false,
+            "search": true,
+            "additional_fields": {}
+        },
+        {
+            "name": "no_access_user",
+            "apply_when": {
+                "anyOf": [
+                    {
+                        "organization_id": {
+                            "%nin": [
+                                "%%user.custom_data.organization_id"
+                            ]
+                        }
+                    },
+                    {
+                        "class_id": {
+                            "%nin": [
+                                "%%user.custom_data.classes"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "fields": {
+                "_id": {}
+            },
+            "insert": false,
+            "delete": false,
             "search": true,
             "additional_fields": {}
         }
