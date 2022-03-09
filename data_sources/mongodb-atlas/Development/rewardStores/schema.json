@@ -51,6 +51,7 @@
         }
     },
     "required": [
+        "_id",
         "creation_date",
         "reward_items",
         "store_name"

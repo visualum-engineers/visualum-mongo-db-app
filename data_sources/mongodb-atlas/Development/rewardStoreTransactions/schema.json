@@ -19,6 +19,7 @@
         }
     },
     "required": [
+        "_id",
         "date_redeemed",
         "reward_id",
         "reward_store_id",

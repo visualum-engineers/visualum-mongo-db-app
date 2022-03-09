@@ -27,6 +27,7 @@
         }
     },
     "required": [
+        "_id",
         "reward_store_id",
         "item_name",
         "item_price",
