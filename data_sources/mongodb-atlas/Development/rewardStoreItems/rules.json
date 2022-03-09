@@ -83,7 +83,11 @@
                 "_id": {},
                 "listed_date": {},
                 "num_available": {
-                    "write": true
+                    "write": {
+                        "%%this": {
+                            "%lte": "%%prev"
+                        }
+                    }
                 },
                 "reward_store_id": {}
             },
