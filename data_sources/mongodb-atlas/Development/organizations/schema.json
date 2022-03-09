@@ -39,9 +39,6 @@
     "organization_name": {
       "bsonType": "string"
     },
-    "reward_store_id": {
-      "bsonType": "objectId"
-    },
     "org_reward_store": {
       "additionalProperties": false,
       "bsonType": "object",
