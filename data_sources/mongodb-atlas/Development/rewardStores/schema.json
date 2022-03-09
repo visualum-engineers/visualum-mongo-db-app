@@ -44,12 +44,6 @@
             "maxItems": 1000,
             "minItems": 0
         },
-        "store_admins": {
-            "bsonType": "array",
-            "items": {
-                "bsonType": "string"
-            }
-        },
         "store_name": {
             "bsonType": "string",
             "maxLength": 250,
@@ -58,7 +52,6 @@
     },
     "required": [
         "_id",
-        "store_admins",
         "creation_date",
         "reward_items",
         "store_name"
