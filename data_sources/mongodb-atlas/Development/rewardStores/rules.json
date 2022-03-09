@@ -14,7 +14,7 @@
                     },
                     {
                         "class_id": {
-                            "%in": [
+                            "$in": [
                                 "%%user.custom_data.classes"
                             ]
                         }
@@ -40,7 +40,7 @@
                     "account_type": "teacher"
                 },
                 "class_id": {
-                    "%in": [
+                    "$in": [
                         "%%user.custom_data.classes"
                     ]
                 }
@@ -77,7 +77,7 @@
                             "account_type": "student"
                         },
                         "class_id": {
-                            "%in": [
+                            "$in": [
                                 "%%user.custom_data.classes"
                             ]
                         }
@@ -100,14 +100,14 @@
                 "anyOf": [
                     {
                         "organization_id": {
-                            "%nin": [
+                            "$nin": [
                                 "%%user.custom_data.organization_id"
                             ]
                         }
                     },
                     {
                         "class_id": {
-                            "%nin": [
+                            "$nin": [
                                 "%%user.custom_data.classes"
                             ]
                         }

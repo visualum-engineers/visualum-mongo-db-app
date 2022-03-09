@@ -3,10 +3,107 @@
     "database": "Development",
     "roles": [
         {
-            "name": "default",
-            "apply_when": {},
+            "name": "admin_user",
+            "apply_when": {
+                "%%user.custom_data": {
+                    "account_type": "admin"
+                },
+                "%%true": {
+                    "%function": {
+                        "name": "validate_reward_items_user",
+                        "arguments": [
+                            "%%user.custom_data"
+                        ]
+                    }
+                }
+            },
+            "fields": {
+                "_id": {},
+                "listed_date": {},
+                "num_available": {
+                    "write": true
+                },
+                "reward_store_id": {}
+            },
+            "read": true,
             "insert": true,
             "delete": true,
+            "search": true,
+            "additional_fields": {
+                "write": true
+            }
+        },
+        {
+            "name": "teacher_user",
+            "apply_when": {
+                "%%user.custom_data": {
+                    "account_type": "teacher"
+                },
+                "%%true": {
+                    "%function": {
+                        "name": "validate_reward_items_user",
+                        "arguments": [
+                            "%%user.custom_data"
+                        ]
+                    }
+                }
+            },
+            "fields": {
+                "_id": {},
+                "listed_date": {},
+                "num_available": {
+                    "write": true
+                },
+                "reward_store_id": {}
+            },
+            "read": true,
+            "insert": true,
+            "delete": true,
+            "search": true,
+            "additional_fields": {
+                "write": true
+            }
+        },
+        {
+            "name": "student_user",
+            "apply_when": {
+                "%%user.custom_data": {
+                    "account_type": "student"
+                },
+                "%%true": {
+                    "%function": {
+                        "name": "validate_reward_items_user",
+                        "arguments": [
+                            "%%user.custom_data"
+                        ]
+                    }
+                }
+            },
+            "fields": {
+                "_id": {},
+                "listed_date": {},
+                "num_available": {
+                    "write": true
+                },
+                "reward_store_id": {}
+            },
+            "read": true,
+            "insert": false,
+            "delete": false,
+            "search": true,
+            "additional_fields": {}
+        },
+        {
+            "name": "no_access",
+            "apply_when": {},
+            "fields": {
+                "_id": {},
+                "listed_date": {},
+                "num_available": {},
+                "reward_store_id": {}
+            },
+            "insert": false,
+            "delete": false,
             "search": true,
             "additional_fields": {}
         }
