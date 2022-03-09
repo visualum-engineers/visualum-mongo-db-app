@@ -73,13 +73,13 @@
                 "%%user.custom_data": {
                     "account_type": "student"
                 },
+                "anyOf": {
+                    "organization_id": "%%user.custom_data.organization_id"
+                },
                 "user_id": {
                     "$nin": [
                         "%%user.id"
                     ]
-                },
-                "anyOf": {
-                    "organization_id": "%%user.custom_data.organization_id"
                 }
             },
             "fields": {

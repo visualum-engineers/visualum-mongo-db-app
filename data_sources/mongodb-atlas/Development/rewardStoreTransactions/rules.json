@@ -3,10 +3,27 @@
     "database": "Development",
     "roles": [
         {
-            "name": "default",
-            "apply_when": {},
+            "name": "only_read_access",
+            "apply_when": {
+                "user_id": "%%user.id"
+            },
+            "read": true,
             "insert": true,
             "delete": true,
+            "search": true,
+            "additional_fields": {}
+        },
+        {
+            "name": "not_transaction_owner",
+            "apply_when": {
+                "user_id": {
+                    "%nin": [
+                        "%%user.id"
+                    ]
+                }
+            },
+            "insert": false,
+            "delete": false,
             "search": true,
             "additional_fields": {}
         }
