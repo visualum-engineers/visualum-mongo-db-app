@@ -42,11 +42,7 @@
         "bsonType": "string"
       },
       "maxItems": 400
-    },
-    "required": [
-        "teachers",
-        "class_code",
-        "class_name",
-        "creation_date"
-    ]
+    }
+  },
+  "required": ["teachers", "class_code", "class_name", "creation_date"]
 }
