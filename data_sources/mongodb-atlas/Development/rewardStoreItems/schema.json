@@ -22,7 +22,7 @@
             "bsonType": "int",
             "minimum": 0
         },
-        "reward_store_id":{
+        "reward_store_id": {
             "bsonType": "objectId"
         }
     },

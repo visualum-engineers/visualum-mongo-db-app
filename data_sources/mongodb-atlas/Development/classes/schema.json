@@ -1,82 +1,91 @@
 {
-  "bsonType": "object",
-  "properties": {
-    "_id": {
-      "bsonType": "objectId"
-    },
-    "active_assignments": {
-      "bsonType": "array",
-      "items": {
-        "bsonType": "objectId"
-      },
-      "maxItems": 200
-    },
-    "class_code": {
-      "bsonType": "string"
-    },
-    "class_goals": {
-      "bsonType": "array",
-      "items": {
-        "bsonType": "objectId"
-      },
-      "maxItems": 150
-    },
-    "class_name": {
-      "bsonType": "string"
-    },
-    "creation_date": {
-      "bsonType": "date"
-    },
-    "img_url": {
-      "bsonType": "string"
-    },
-    "organization_id": {
-      "bsonType": "objectId"
-    },
-    "class_reward_store": {
-      "additionalProperties": false,
-      "bsonType": "object",
-      "properties": {
+    "additionalProperties": false,
+    "bsonType": "object",
+    "properties": {
         "_id": {
-          "bsonType": "objectId"
+            "bsonType": "objectId"
+        },
+        "active_assignments": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "objectId"
+            },
+            "maxItems": 200
+        },
+        "class_code": {
+            "bsonType": "string"
+        },
+        "class_goals": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "objectId"
+            },
+            "maxItems": 150
+        },
+        "class_name": {
+            "bsonType": "string"
+        },
+        "class_reward_store": {
+            "additionalProperties": false,
+            "bsonType": "object",
+            "properties": {
+                "_id": {
+                    "bsonType": "objectId"
+                },
+                "creation_date": {
+                    "bsonType": "date"
+                },
+                "img_url": {
+                    "bsonType": "string"
+                },
+                "reward_items": {
+                    "bsonType": "array",
+                    "items": {
+                        "bsonType": "objectId"
+                    },
+                    "maxItems": 1000,
+                    "minItems": 0
+                },
+                "store_name": {
+                    "bsonType": "string",
+                    "maxLength": 250,
+                    "minLength": 0
+                }
+            },
+            "required": [
+                "creation_date",
+                "reward_items",
+                "store_name"
+            ]
         },
         "creation_date": {
-          "bsonType": "date"
+            "bsonType": "date"
         },
         "img_url": {
-          "bsonType": "string"
+            "bsonType": "string"
         },
-        "reward_items": {
-          "bsonType": "array",
-          "items": {
+        "organization_id": {
             "bsonType": "objectId"
-          },
-          "maxItems": 1000,
-          "minItems": 0
         },
-        "store_name": {
-          "bsonType": "string",
-          "maxLength": 250,
-          "minLength": 0
+        "students": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "string"
+            },
+            "maxItems": 400
+        },
+        "teachers": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "string"
+            },
+            "maxItems": 400
         }
-      },
-      "required": ["creation_date", "reward_items", "store_name"]
     },
-    "students": {
-      "bsonType": "array",
-      "items": {
-        "bsonType": "string"
-      },
-      "maxItems": 400
-    },
-    "teachers": {
-      "bsonType": "array",
-      "items": {
-        "bsonType": "string"
-      },
-      "maxItems": 400
-    }
-  },
-  "required": ["teachers", "class_code", "class_name", "creation_date"],
-  "additionalProperties": false
+    "required": [
+        "teachers",
+        "class_code",
+        "class_name",
+        "creation_date"
+    ]
 }
