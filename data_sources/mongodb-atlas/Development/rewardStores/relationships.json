@@ -10,5 +10,11 @@
         "source_key": "organization_id",
         "foreign_key": "_id",
         "is_list": false
+    },
+    "store_admins": {
+        "ref": "#/relationship/mongodb-atlas/Development/users",
+        "source_key": "store_admins",
+        "foreign_key": "_id",
+        "is_list": true
     }
 }
