@@ -5,16 +5,17 @@
         {
             "name": "admin_user",
             "apply_when": {
-                "%%user.custom_data": {
-                    "account_type": "admin"
-                },
                 "%%true": {
                     "%function": {
-                        "name": "validate_reward_items_user",
                         "arguments": [
-                            "%%user.custom_data"
-                        ]
+                            "%%user.custom_data",
+                            "%%root.reward_store_id"
+                        ],
+                        "name": "validate_reward_items_user"
                     }
+                },
+                "%%user.custom_data": {
+                    "account_type": "admin"
                 }
             },
             "fields": {
@@ -36,16 +37,17 @@
         {
             "name": "teacher_user",
             "apply_when": {
-                "%%user.custom_data": {
-                    "account_type": "teacher"
-                },
                 "%%true": {
                     "%function": {
-                        "name": "validate_reward_items_user",
                         "arguments": [
-                            "%%user.custom_data"
-                        ]
+                            "%%user.custom_data",
+                            "%%root.reward_store_id"
+                        ],
+                        "name": "validate_reward_items_user"
                     }
+                },
+                "%%user.custom_data": {
+                    "account_type": "teacher"
                 }
             },
             "fields": {
@@ -67,16 +69,17 @@
         {
             "name": "student_user",
             "apply_when": {
-                "%%user.custom_data": {
-                    "account_type": "student"
-                },
                 "%%true": {
                     "%function": {
-                        "name": "validate_reward_items_user",
                         "arguments": [
-                            "%%user.custom_data"
-                        ]
+                            "%%user.custom_data",
+                            "%%root.reward_store_id"
+                        ],
+                        "name": "validate_reward_items_user"
                     }
+                },
+                "%%user.custom_data": {
+                    "account_type": "student"
                 }
             },
             "fields": {
@@ -85,7 +88,7 @@
                 "num_available": {
                     "write": {
                         "%%this": {
-                            "%lte": "%%prev"
+                            "$lte": "%%prev"
                         }
                     }
                 },

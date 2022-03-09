@@ -1,46 +1,6 @@
 [
     {
-        "name": "update_class",
-        "private": false
-    },
-    {
-        "name": "user_google_auth",
-        "private": false
-    },
-    {
-        "name": "create_activity",
-        "private": false
-    },
-    {
-        "name": "read_activity",
-        "private": false
-    },
-    {
-        "name": "create_organization",
-        "private": false
-    },
-    {
-        "name": "read_user",
-        "private": false
-    },
-    {
-        "name": "read_organization",
-        "private": false
-    },
-    {
-        "name": "validate_user_read",
-        "private": true
-    },
-    {
         "name": "create_class",
-        "private": false
-    },
-    {
-        "name": "update_user",
-        "private": false
-    },
-    {
-        "name": "create_store",
         "private": false
     },
     {
@@ -48,19 +8,43 @@
         "private": false
     },
     {
-        "name": "delete_user",
-        "private": false
-    },
-    {
         "name": "create_user",
         "private": false
     },
     {
-        "name": "delete_activity",
+        "name": "delete_user",
         "private": false
     },
     {
-        "name": "update_store",
+        "name": "read_store",
+        "private": false
+    },
+    {
+        "name": "update_user",
+        "private": false
+    },
+    {
+        "name": "create_organization",
+        "private": false
+    },
+    {
+        "name": "validate_user_read",
+        "private": true
+    },
+    {
+        "name": "delete_class",
+        "private": false
+    },
+    {
+        "name": "read_class",
+        "private": false
+    },
+    {
+        "name": "update_class",
+        "private": false
+    },
+    {
+        "name": "user_google_auth",
         "private": false
     },
     {
@@ -72,11 +56,15 @@
         "private": false
     },
     {
-        "name": "delete_class",
+        "name": "create_store",
         "private": false
     },
     {
-        "name": "read_store",
+        "name": "read_activity",
+        "private": false
+    },
+    {
+        "name": "update_store",
         "private": false
     },
     {
@@ -84,7 +72,19 @@
         "private": false
     },
     {
-        "name": "read_class",
+        "name": "read_organization",
+        "private": false
+    },
+    {
+        "name": "delete_activity",
+        "private": false
+    },
+    {
+        "name": "read_user",
+        "private": false
+    },
+    {
+        "name": "create_activity",
         "private": false
     }
 ]
