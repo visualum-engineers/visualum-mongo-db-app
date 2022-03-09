@@ -33,7 +33,7 @@
     "organization_id": {
       "bsonType": "objectId"
     },
-    "reward_store": {
+    "class_reward_store": {
       "additionalProperties": false,
       "bsonType": "object",
       "properties": {

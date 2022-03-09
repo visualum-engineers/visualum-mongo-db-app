@@ -42,7 +42,7 @@
     "reward_store_id": {
       "bsonType": "objectId"
     },
-    "org_store": {
+    "org_reward_store": {
       "additionalProperties": false,
       "bsonType": "object",
       "properties": {
