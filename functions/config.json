@@ -1,30 +1,6 @@
 [
     {
-        "name": "validate_user_write",
-        "private": true
-    },
-    {
-        "name": "create_async_error",
-        "private": false
-    },
-    {
-        "name": "update_activity",
-        "private": false
-    },
-    {
-        "name": "update_class",
-        "private": false
-    },
-    {
-        "name": "delete_activity",
-        "private": false
-    },
-    {
-        "name": "delete_user",
-        "private": false
-    },
-    {
-        "name": "read_activity",
+        "name": "delete_class",
         "private": false
     },
     {
@@ -32,11 +8,19 @@
         "private": false
     },
     {
+        "name": "update_user",
+        "private": false
+    },
+    {
         "name": "create_activity",
         "private": false
     },
     {
-        "name": "read_organization",
+        "name": "read_user",
+        "private": false
+    },
+    {
+        "name": "update_activity",
         "private": false
     },
     {
@@ -44,39 +28,15 @@
         "private": false
     },
     {
-        "name": "update_user",
-        "private": false
-    },
-    {
-        "name": "user_google_auth",
-        "private": false
-    },
-    {
-        "name": "create_organization",
-        "private": false
-    },
-    {
-        "name": "delete_class",
-        "private": false
-    },
-    {
-        "name": "validate_user_read",
-        "private": true
-    },
-    {
         "name": "delete_store",
         "private": false
     },
     {
-        "name": "create_class",
-        "private": false
+        "name": "validate_user_write",
+        "private": true
     },
     {
-        "name": "create_user",
-        "private": false
-    },
-    {
-        "name": "read_class",
+        "name": "read_activity",
         "private": false
     },
     {
@@ -84,7 +44,47 @@
         "private": false
     },
     {
-        "name": "read_user",
+        "name": "read_organization",
+        "private": false
+    },
+    {
+        "name": "validate_user_read",
+        "private": true
+    },
+    {
+        "name": "create_class",
+        "private": false
+    },
+    {
+        "name": "create_organization",
+        "private": false
+    },
+    {
+        "name": "read_class",
+        "private": false
+    },
+    {
+        "name": "create_async_error",
+        "private": false
+    },
+    {
+        "name": "delete_user",
+        "private": false
+    },
+    {
+        "name": "update_class",
+        "private": false
+    },
+    {
+        "name": "user_google_auth",
+        "private": false
+    },
+    {
+        "name": "create_user",
+        "private": false
+    },
+    {
+        "name": "delete_activity",
         "private": false
     }
 ]

@@ -1,47 +1,54 @@
 {
-  "additionalProperties": false,
-  "bsonType": "object",
-  "properties": {
-    "_id": {
-      "bsonType": "objectId"
-    },
-    "address": {
-      "bsonType": "object",
-      "properties": {
-        "apartment": {
-          "bsonType": "string"
+    "additionalProperties": false,
+    "bsonType": "object",
+    "properties": {
+        "_id": {
+            "bsonType": "objectId"
         },
-        "country": {
-          "bsonType": "string"
+        "address": {
+            "bsonType": "object",
+            "properties": {
+                "apartment": {
+                    "bsonType": "string"
+                },
+                "country": {
+                    "bsonType": "string"
+                },
+                "state": {
+                    "bsonType": "string"
+                },
+                "street": {
+                    "bsonType": "string"
+                },
+                "zip": {
+                    "bsonType": "string"
+                }
+            },
+            "required": [
+                "country",
+                "state",
+                "street"
+            ]
         },
-        "state": {
-          "bsonType": "string"
+        "admins": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "string"
+            },
+            "maxItems": 200
         },
-        "street": {
-          "bsonType": "string"
+        "img_url": {
+            "bson_type": "string"
         },
-        "zip": {
-          "bsonType": "string"
+        "org_reward_store_id": {
+            "bsonType": "objectId"
+        },
+        "organization_name": {
+            "bsonType": "string"
         }
-      },
-      "required": ["country", "state", "street"]
     },
-    "admins": {
-      "bsonType": "array",
-      "items": {
-        "bsonType": "string"
-      },
-      "maxItems": 200
-    },
-    "img_url": {
-      "bson_type": "string"
-    },
-    "organization_name": {
-      "bsonType": "string"
-    },
-    "org_reward_store_id": {
-      "bsonType": "objectId"
-    }
-  },
-  "required": ["_id", "organization_name"]
+    "required": [
+        "_id",
+        "organization_name"
+    ]
 }
