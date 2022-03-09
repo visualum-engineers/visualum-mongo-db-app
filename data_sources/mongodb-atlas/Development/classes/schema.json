@@ -11,7 +11,6 @@
             },
             "maxItems": 200
         },
-        "additionalProperties": false,
         "class_code": {
             "bsonType": "string"
         },
@@ -40,14 +39,14 @@
         "students": {
             "bsonType": "array",
             "items": {
-                "bsonType": "objectId"
+                "bsonType": "string"
             },
             "maxItems": 400
         },
         "teachers": {
             "bsonType": "array",
             "items": {
-                "bsonType": "objectId"
+                "bsonType": "string"
             },
             "maxItems": 400
         }
@@ -57,5 +56,7 @@
         "class_code",
         "class_name",
         "creation_date"
-    ]
+    ],
+    "additionalProperties": false
+
 }

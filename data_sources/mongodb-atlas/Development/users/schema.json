@@ -56,7 +56,7 @@
     "bsonType": "object",
     "properties": {
         "_id": {
-            "bsonType": "objectId"
+            "bsonType": "string"
         },
         "account_type": {
             "bsonType": "string",
@@ -158,9 +158,6 @@
         "user_creation_date": {
             "bsonType": "date"
         },
-        "user_id": {
-            "bsonType": "string"
-        },
         "user_points": {
             "bsonType": "array",
             "items": {
@@ -186,7 +183,7 @@
         }
     },
     "required": [
-        "user_id",
+        "_id",
         "first_name",
         "last_name",
         "email",
