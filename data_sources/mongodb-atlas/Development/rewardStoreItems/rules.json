@@ -5,18 +5,19 @@
         {
             "name": "admin_user",
             "apply_when": {
-                "%%true": {
-                    "%function": {
-                        "arguments": [
-                            "%%user.custom_data",
-                            "%%root.reward_store_id"
-                        ],
-                        "name": "validate_reward_items_user"
-                    }
-                },
                 "%%user.custom_data": {
                     "account_type": "admin"
-                }
+                },
+                "anyOf": [
+                    {
+                        "organization_id": "%%user.custom_data.organization_id"
+                    },
+                    {
+                        "class_id": {
+                            "%in": "%%user.custom_data.classes"
+                        }
+                    }
+                ]
             },
             "fields": {
                 "_id": {},
@@ -37,18 +38,19 @@
         {
             "name": "teacher_user",
             "apply_when": {
-                "%%true": {
-                    "%function": {
-                        "arguments": [
-                            "%%user.custom_data",
-                            "%%root.reward_store_id"
-                        ],
-                        "name": "validate_reward_items_user"
-                    }
-                },
                 "%%user.custom_data": {
                     "account_type": "teacher"
-                }
+                },
+                "anyOf": [
+                    {
+                        "organization_id": "%%user.custom_data.organization_id"
+                    },
+                    {
+                        "class_id": {
+                            "%in": "%%user.custom_data.classes"
+                        }
+                    }
+                ]
             },
             "fields": {
                 "_id": {},
@@ -69,18 +71,19 @@
         {
             "name": "student_user",
             "apply_when": {
-                "%%true": {
-                    "%function": {
-                        "arguments": [
-                            "%%user.custom_data",
-                            "%%root.reward_store_id"
-                        ],
-                        "name": "validate_reward_items_user"
-                    }
-                },
                 "%%user.custom_data": {
                     "account_type": "student"
-                }
+                },
+                "anyOf": [
+                    {
+                        "organization_id": "%%user.custom_data.organization_id"
+                    },
+                    {
+                        "class_id": {
+                            "%in": "%%user.custom_data.classes"
+                        }
+                    }
+                ]
             },
             "fields": {
                 "_id": {},
