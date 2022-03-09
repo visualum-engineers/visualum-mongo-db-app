@@ -14,7 +14,7 @@
                     },
                     {
                         "class_id": {
-                            "%in": "%%user.custom_data.classes"
+                            "$in": "%%user.custom_data.classes"
                         }
                     }
                 ]
@@ -47,7 +47,7 @@
                     },
                     {
                         "class_id": {
-                            "%in": "%%user.custom_data.classes"
+                            "$in": "%%user.custom_data.classes"
                         }
                     }
                 ]
@@ -80,7 +80,7 @@
                     },
                     {
                         "class_id": {
-                            "%in": "%%user.custom_data.classes"
+                            "$in": "%%user.custom_data.classes"
                         }
                     }
                 ]

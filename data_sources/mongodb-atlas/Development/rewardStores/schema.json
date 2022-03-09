@@ -2,16 +2,9 @@
     "additionalProperties": false,
     "anyOf": [
         {
-            "not": {
-                "properties": {
-                    "class_id": {
-                        "bsonType": "objectId"
-                    }
-                },
-                "required": [
-                    "organization_id"
-                ]
-            }
+            "required": [
+                "organization_id"
+            ]
         },
         {
             "required": [

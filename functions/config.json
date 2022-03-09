@@ -4,7 +4,7 @@
         "private": false
     },
     {
-        "name": "update_user",
+        "name": "read_organization",
         "private": false
     },
     {
@@ -12,27 +12,15 @@
         "private": false
     },
     {
-        "name": "create_store",
+        "name": "update_activity",
         "private": false
     },
     {
-        "name": "read_store",
-        "private": false
+        "name": "validate_user_read",
+        "private": true
     },
     {
-        "name": "read_class",
-        "private": false
-    },
-    {
-        "name": "delete_user",
-        "private": false
-    },
-    {
-        "name": "read_organization",
-        "private": false
-    },
-    {
-        "name": "delete_activity",
+        "name": "delete_store",
         "private": false
     },
     {
@@ -40,15 +28,31 @@
         "private": true
     },
     {
+        "name": "user_google_auth",
+        "private": false
+    },
+    {
         "name": "create_class",
         "private": false
     },
     {
-        "name": "delete_store",
+        "name": "create_organization",
         "private": false
     },
     {
-        "name": "user_google_auth",
+        "name": "update_user",
+        "private": false
+    },
+    {
+        "name": "read_class",
+        "private": false
+    },
+    {
+        "name": "read_user",
+        "private": false
+    },
+    {
+        "name": "delete_class",
         "private": false
     },
     {
@@ -60,7 +64,15 @@
         "private": false
     },
     {
-        "name": "create_organization",
+        "name": "delete_activity",
+        "private": false
+    },
+    {
+        "name": "delete_user",
+        "private": false
+    },
+    {
+        "name": "read_store",
         "private": false
     },
     {
@@ -68,23 +80,11 @@
         "private": false
     },
     {
-        "name": "delete_class",
+        "name": "create_store",
         "private": false
     },
     {
         "name": "read_activity",
         "private": false
-    },
-    {
-        "name": "read_user",
-        "private": false
-    },
-    {
-        "name": "update_activity",
-        "private": false
-    },
-    {
-        "name": "validate_user_read",
-        "private": true
     }
 ]

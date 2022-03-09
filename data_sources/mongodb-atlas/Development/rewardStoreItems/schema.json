@@ -1,8 +1,23 @@
 {
     "additionalProperties": false,
+    "anyOf": [
+        {
+            "required": [
+                "organization_id"
+            ]
+        },
+        {
+            "required": [
+                "class_id"
+            ]
+        }
+    ],
     "bsonType": "object",
     "properties": {
         "_id": {
+            "bsonType": "objectId"
+        },
+        "class_id": {
             "bsonType": "objectId"
         },
         "img_url": {
@@ -21,6 +36,9 @@
         "num_available": {
             "bsonType": "int",
             "minimum": 0
+        },
+        "organization_id": {
+            "bsonType": "objectId"
         },
         "reward_store_id": {
             "bsonType": "objectId"
