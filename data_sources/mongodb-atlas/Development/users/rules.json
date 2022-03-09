@@ -114,7 +114,7 @@
             },
             "insert": false,
             "delete": false,
-            "search": false,
+            "search": true,
             "additional_fields": {}
         },
         {
