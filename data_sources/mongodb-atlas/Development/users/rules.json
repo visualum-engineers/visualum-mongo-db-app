@@ -123,7 +123,12 @@
                 "%%user.custom_data": {
                     "account_type": "teacher"
                 },
-                "account_type": "student",
+                "account_type": {
+                    "enum": [
+                        "student",
+                        "teacher"
+                    ]
+                },
                 "user_id": {
                     "$nin": [
                         "%%user.id"
