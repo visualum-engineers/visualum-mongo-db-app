@@ -33,34 +33,8 @@
     "organization_id": {
       "bsonType": "objectId"
     },
-    "class_reward_store": {
-      "additionalProperties": false,
-      "bsonType": "object",
-      "properties": {
-        "_id": {
-          "bsonType": "objectId"
-        },
-        "creation_date": {
-          "bsonType": "date"
-        },
-        "img_url": {
-          "bsonType": "string"
-        },
-        "reward_items": {
-          "bsonType": "array",
-          "items": {
-            "bsonType": "objectId"
-          },
-          "maxItems": 1000,
-          "minItems": 0
-        },
-        "store_name": {
-          "bsonType": "string",
-          "maxLength": 250,
-          "minLength": 0
-        }
-      },
-      "required": ["creation_date", "reward_items", "store_name"]
+    "class_reward_store_id": {
+      "bsonType": "objectId"
     },
     "students": {
       "bsonType": "array",
