@@ -3,14 +3,8 @@
     "database": "Development",
     "roles": [
         {
-            "name": "student_admin_own_doc",
+            "name": "owner_of_doc",
             "apply_when": {
-                "account_type": {
-                    "enum": [
-                        "student",
-                        "admin"
-                    ]
-                },
                 "user_id": "%%user.id"
             },
             "fields": {
@@ -74,52 +68,6 @@
             }
         },
         {
-            "name": "teacher_own_doc",
-            "apply_when": {
-                "account_type": "teacher",
-                "user_id": "%%user.id"
-            },
-            "fields": {
-                "_id": {},
-                "account_type": {},
-                "admins": {},
-                "classes": {
-                    "write": true
-                },
-                "email_confirmed": {},
-                "first_name": {
-                    "write": true
-                },
-                "last_name": {
-                    "write": true
-                },
-                "organization_id": {
-                    "write": true
-                },
-                "payment_confirmed": {},
-                "payment_info": {
-                    "write": true
-                },
-                "teachers": {
-                    "write": true
-                },
-                "user_avatar": {
-                    "write": true
-                },
-                "user_creation_date": {},
-                "user_id": {},
-                "user_points": {},
-                "user_settings": {
-                    "write": true
-                }
-            },
-            "read": true,
-            "insert": true,
-            "delete": true,
-            "search": true,
-            "additional_fields": {}
-        },
-        {
             "name": "student_other_doc",
             "apply_when": {
                 "%%user.custom_data": {
@@ -129,6 +77,9 @@
                     "$nin": [
                         "%%user.id"
                     ]
+                },
+                "anyOf": {
+                    "organization_id": "%%user.custom_data.organization_id"
                 }
             },
             "fields": {
@@ -167,7 +118,7 @@
             "additional_fields": {}
         },
         {
-            "name": "teacher_student_doc",
+            "name": "teacher_other_doc",
             "apply_when": {
                 "%%user.custom_data": {
                     "account_type": "teacher"
@@ -243,12 +194,12 @@
                         "teacher"
                     ]
                 },
+                "organization_id": "%%user.custom_data.organization_id",
                 "user_id": {
                     "$nin": [
                         "%%user.id"
                     ]
-                },
-                "organization_id": "%%user.custom_data.organization_id"
+                }
             },
             "fields": {
                 "_id": {
@@ -300,6 +251,38 @@
             "additional_fields": {
                 "read": true
             }
+        },
+        {
+            "name": "other_doc",
+            "apply_when": {
+                "user_id": {
+                    "$nin": [
+                        "%%user.id"
+                    ]
+                }
+            },
+            "fields": {
+                "_id": {},
+                "account_type": {},
+                "admins": {},
+                "classes": {},
+                "email_confirmed": {},
+                "first_name": {},
+                "last_name": {},
+                "organization_id": {},
+                "payment_confirmed": {},
+                "payment_info": {},
+                "teachers": {},
+                "user_avatar": {},
+                "user_creation_date": {},
+                "user_id": {},
+                "user_points": {},
+                "user_settings": {}
+            },
+            "insert": false,
+            "delete": false,
+            "search": true,
+            "additional_fields": {}
         }
     ]
 }
