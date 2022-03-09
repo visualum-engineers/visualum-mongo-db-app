@@ -21,9 +21,13 @@
         "num_available": {
             "bsonType": "int",
             "minimum": 0
+        },
+        "reward_store_id":{
+            "bsonType": "objectId"
         }
     },
     "required": [
+        "reward_store_id",
         "item_name",
         "item_price",
         "listed_date"

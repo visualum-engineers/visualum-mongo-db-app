@@ -1,54 +1,76 @@
 {
-    "additionalProperties": false,
-    "bsonType": "object",
-    "properties": {
+  "additionalProperties": false,
+  "bsonType": "object",
+  "properties": {
+    "_id": {
+      "bsonType": "objectId"
+    },
+    "address": {
+      "bsonType": "object",
+      "properties": {
+        "apartment": {
+          "bsonType": "string"
+        },
+        "country": {
+          "bsonType": "string"
+        },
+        "state": {
+          "bsonType": "string"
+        },
+        "street": {
+          "bsonType": "string"
+        },
+        "zip": {
+          "bsonType": "string"
+        }
+      },
+      "required": ["country", "state", "street"]
+    },
+    "admins": {
+      "bsonType": "array",
+      "items": {
+        "bsonType": "string"
+      },
+      "maxItems": 200
+    },
+    "img_url": {
+      "bson_type": "string"
+    },
+    "organization_name": {
+      "bsonType": "string"
+    },
+    "reward_store_id": {
+      "bsonType": "objectId"
+    },
+    "org_store": {
+      "additionalProperties": false,
+      "bsonType": "object",
+      "properties": {
         "_id": {
-            "bsonType": "objectId"
+          "bsonType": "objectId"
         },
-        "address": {
-            "bsonType": "object",
-            "properties": {
-                "apartment": {
-                    "bsonType": "string"
-                },
-                "country": {
-                    "bsonType": "string"
-                },
-                "state": {
-                    "bsonType": "string"
-                },
-                "street": {
-                    "bsonType": "string"
-                },
-                "zip": {
-                    "bsonType": "string"
-                }
-            },
-            "required": [
-                "country",
-                "state",
-                "street"
-            ]
-        },
-        "admins": {
-            "bsonType": "array",
-            "items": {
-                "bsonType": "string"
-            },
-            "maxItems": 200
+        "creation_date": {
+          "bsonType": "date"
         },
         "img_url": {
-            "bson_type": "string"
+          "bsonType": "string"
         },
-        "organization_name": {
-            "bsonType": "string"
-        },
-        "reward_store_id": {
+        "reward_items": {
+          "bsonType": "array",
+          "items": {
             "bsonType": "objectId"
+          },
+          "maxItems": 1000,
+          "minItems": 0
+        },
+        "store_name": {
+          "bsonType": "string",
+          "maxLength": 250,
+          "minLength": 0
         }
-    },
-    "required": [
-        "_id",
-        "organization_name"
-    ]
+      },
+      "required": ["creation_date", "reward_items", "store_name"]
+    }
+  },
+  "required": ["_id", "organization_name"]
 }
