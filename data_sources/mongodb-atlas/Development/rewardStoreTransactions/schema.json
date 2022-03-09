@@ -15,7 +15,7 @@
             "bsonType": "objectId"
         },
         "user_id": {
-            "bsonType": "string"
+            "bsonType": "objectId"
         }
     },
     "required": [

@@ -33,7 +33,7 @@
         "admins": {
             "bsonType": "array",
             "items": {
-                "bsonType": "string"
+                "bsonType": "objectId"
             },
             "maxItems": 200
         },

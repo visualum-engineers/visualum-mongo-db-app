@@ -15,7 +15,8 @@ exports = async function ({
     const [first_name, last_name] = name.split(" ");
     newUserDocument = {
       ...additional_data,
-      _id: user_id,
+      _id: new BSON.ObjectId(user_id),
+      user_id: user_id,
       account_type: account_type,
       classes: [],
       email: email,

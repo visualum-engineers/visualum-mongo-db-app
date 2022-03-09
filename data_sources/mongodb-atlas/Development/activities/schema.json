@@ -6,7 +6,7 @@
             "bsonType": "objectId"
         },
         "activity_creator": {
-            "bsonType": "string"
+            "bsonType": "objectId"
         },
         "activity_name": {
             "bsonType": "string",

@@ -73,13 +73,13 @@
                 "%%user.custom_data": {
                     "account_type": "student"
                 },
-                "anyOf": {
-                    "organization_id": "%%user.custom_data.organization_id"
-                },
                 "_id": {
                     "$nin": [
                         "%%user.id"
                     ]
+                },
+                "anyOf": {
+                    "organization_id": "%%user.custom_data.organization_id"
                 }
             },
             "fields": {
@@ -123,15 +123,15 @@
                 "%%user.custom_data": {
                     "account_type": "teacher"
                 },
+                "_id": {
+                    "$nin": [
+                        "%%user.id"
+                    ]
+                },
                 "account_type": {
                     "enum": [
                         "student",
                         "teacher"
-                    ]
-                },
-                "_id": {
-                    "$nin": [
-                        "%%user.id"
                     ]
                 }
             },
@@ -193,18 +193,18 @@
                 "%%user.custom_data": {
                     "account_type": "admin"
                 },
+                "_id": {
+                    "$nin": [
+                        "%%user.id"
+                    ]
+                },
                 "account_type": {
                     "enum": [
                         "student",
                         "teacher"
                     ]
                 },
-                "organization_id": "%%user.custom_data.organization_id",
-                "_id": {
-                    "$nin": [
-                        "%%user.id"
-                    ]
-                }
+                "organization_id": "%%user.custom_data.organization_id"
             },
             "fields": {
                 "_id": {
