@@ -5,7 +5,7 @@
         {
             "name": "owner_of_doc",
             "apply_when": {
-                "user_id": "%%user.id"
+                "_id": "%%user.id"
             },
             "fields": {
                 "_id": {
@@ -76,7 +76,7 @@
                 "anyOf": {
                     "organization_id": "%%user.custom_data.organization_id"
                 },
-                "user_id": {
+                "_id": {
                     "$nin": [
                         "%%user.id"
                     ]
@@ -129,7 +129,7 @@
                         "teacher"
                     ]
                 },
-                "user_id": {
+                "_id": {
                     "$nin": [
                         "%%user.id"
                     ]
@@ -200,7 +200,7 @@
                     ]
                 },
                 "organization_id": "%%user.custom_data.organization_id",
-                "user_id": {
+                "_id": {
                     "$nin": [
                         "%%user.id"
                     ]
@@ -260,7 +260,7 @@
         {
             "name": "other_doc",
             "apply_when": {
-                "user_id": {
+                "_id": {
                     "$nin": [
                         "%%user.id"
                     ]
