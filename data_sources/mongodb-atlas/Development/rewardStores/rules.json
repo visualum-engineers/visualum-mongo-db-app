@@ -22,7 +22,8 @@
                 ]
             },
             "fields": {
-                "_id": {}
+                "_id": {},
+                "creation_date": {}
             },
             "read": true,
             "insert": true,
@@ -45,7 +46,8 @@
                 }
             },
             "fields": {
-                "_id": {}
+                "_id": {},
+                "creation_date": {}
             },
             "read": true,
             "insert": true,
@@ -83,7 +85,8 @@
                 ]
             },
             "fields": {
-                "_id": {}
+                "_id": {},
+                "creation_date": {}
             },
             "read": true,
             "insert": false,
@@ -112,7 +115,8 @@
                 ]
             },
             "fields": {
-                "_id": {}
+                "_id": {},
+                "creation_date": {}
             },
             "insert": false,
             "delete": false,
