@@ -8,34 +8,23 @@
                 "_id": "%%user.id"
             },
             "fields": {
-                "_id": {
-                    "read": true
-                },
-                "account_type": {
-                    "read": true
-                },
+                "_id": {},
+                "account_type": {},
                 "admins": {
-                    "write": true,
-                    "read": true
+                    "write": true
                 },
                 "classes": {
-                    "write": true,
-                    "read": true
+                    "write": true
                 },
-                "email_confirmed": {
-                    "read": true
-                },
+                "email_confirmed": {},
                 "first_name": {
-                    "write": true,
-                    "read": true
+                    "write": true
                 },
                 "last_name": {
-                    "write": true,
-                    "read": true
+                    "write": true
                 },
                 "organization_id": {
-                    "write": true,
-                    "read": true
+                    "write": true
                 },
                 "payment_confirmed": {},
                 "payment_info": {
@@ -47,25 +36,17 @@
                 "user_avatar": {
                     "write": true
                 },
-                "user_creation_date": {
-                    "read": true
-                },
-                "user_id": {
-                    "read": true
-                },
-                "user_points": {
-                    "read": true
-                },
+                "user_creation_date": {},
+                "user_points": {},
                 "user_settings": {
                     "write": true
                 }
             },
+            "read": true,
             "insert": true,
             "delete": true,
             "search": true,
-            "additional_fields": {
-                "read": true
-            }
+            "additional_fields": {}
         },
         {
             "name": "admin_other_doc",
@@ -120,9 +101,6 @@
                     "read": true
                 },
                 "user_creation_date": {
-                    "read": true
-                },
-                "user_id": {
                     "read": true
                 },
                 "user_points": {
@@ -192,9 +170,6 @@
                 "user_creation_date": {
                     "read": true
                 },
-                "user_id": {
-                    "read": true
-                },
                 "user_points": {
                     "read": true
                 },
@@ -250,7 +225,6 @@
                     "read": true
                 },
                 "user_creation_date": {},
-                "user_id": {},
                 "user_points": {},
                 "user_settings": {}
             },
@@ -278,7 +252,6 @@
                 "teachers": {},
                 "user_avatar": {},
                 "user_creation_date": {},
-                "user_id": {},
                 "user_points": {},
                 "user_settings": {}
             },
