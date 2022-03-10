@@ -263,7 +263,9 @@
             "name": "no_account_match",
             "apply_when": {},
             "fields": {
-                "_id": {},
+                "_id": {
+                    "read": true
+                },
                 "account_type": {},
                 "admins": {},
                 "classes": {},
@@ -280,9 +282,9 @@
                 "user_points": {},
                 "user_settings": {}
             },
-            "insert": true,
+            "insert": false,
             "delete": false,
-            "search": false,
+            "search": true,
             "additional_fields": {}
         }
     ]
