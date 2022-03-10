@@ -1,0 +1,19 @@
+{
+    "id": "6229adbcd62fd685f3c093b0",
+    "name": "create_user_doc_google",
+    "type": "AUTHENTICATION",
+    "config": {
+        "operation_type": "CREATE",
+        "providers": [
+            "oauth2-google"
+        ]
+    },
+    "disabled": false,
+    "event_processors": {
+        "FUNCTION": {
+            "config": {
+                "function_name": "user_google_auth"
+            }
+        }
+    }
+}
