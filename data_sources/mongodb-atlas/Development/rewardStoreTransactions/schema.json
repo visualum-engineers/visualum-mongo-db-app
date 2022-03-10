@@ -16,8 +16,7 @@
         },
         "user_id": {
             "bsonType": "string"
-        },
-        "reward_store_name": {"bsonType": "string"}
+        }
     },
     "required": [
         "_id",
