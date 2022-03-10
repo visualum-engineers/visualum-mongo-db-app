@@ -32,7 +32,9 @@ exports = async function ({
       const org_collection = database.collection("organizations");
       const org_data = {
         ...additional_data.org_data,
-        _id: new BSON.ObjectId()
+        organization_name: additional_data.organization_name,
+        _id: new BSON.ObjectId(),
+        admins: [newUserDocument._id]
       };
       const org_id = await org_collection.insertOne(org_data);
       newUserDocument.organization_id = org_id;

@@ -20,7 +20,8 @@ exports = async function(  {
         email: decoded_token.email,
         email_verified: decoded_token.email_verified,
       };
-      return await context.functions.execute("create_user", sign_up_info);
+      const result = await context.functions.execute("create_user", sign_up_info);
+      return result
     }
     return {error: null, message: "user successfully logged in"};
   } catch(e){
