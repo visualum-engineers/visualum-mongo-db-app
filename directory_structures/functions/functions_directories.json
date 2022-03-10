@@ -26,6 +26,12 @@
     "read_store": true,
     "update_store": true
   },
+  "reward_store_items":{
+
+  },
+  "reward_store_transactions": {
+
+  },
   "user": {
     "create_user": true,
     "delete_user": true,
