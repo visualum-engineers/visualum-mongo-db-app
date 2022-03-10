@@ -22,8 +22,12 @@
                         }
                     }
                 },
-                "admins": {},
-                "classes": {},
+                "admins": {
+                    "write": true
+                },
+                "classes": {
+                    "write": true
+                },
                 "email_confirmed": {
                     "write": {
                         "%%prev": {
@@ -31,9 +35,15 @@
                         }
                     }
                 },
-                "first_name": {},
-                "last_name": {},
-                "organization_id": {},
+                "first_name": {
+                    "write": true
+                },
+                "last_name": {
+                    "write": true
+                },
+                "organization_id": {
+                    "write": true
+                },
                 "payment_confirmed": {
                     "write": {
                         "%%prev": {
@@ -41,9 +51,15 @@
                         }
                     }
                 },
-                "payment_info": {},
-                "teachers": {},
-                "user_avatar": {},
+                "payment_info": {
+                    "write": true
+                },
+                "teachers": {
+                    "write": true
+                },
+                "user_avatar": {
+                    "write": true
+                },
                 "user_creation_date": {
                     "write": {
                         "%%prev": {
@@ -66,13 +82,16 @@
                         }
                     }
                 },
-                "user_settings": {}
+                "user_settings": {
+                    "write": true
+                }
             },
-            "write": true,
             "insert": true,
             "delete": true,
             "search": true,
-            "additional_fields": {}
+            "additional_fields": {
+                "write": true
+            }
         },
         {
             "name": "admin_other_doc",
