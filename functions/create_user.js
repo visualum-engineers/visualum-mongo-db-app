@@ -10,10 +10,10 @@ exports = async function ({
   const collection = database.collection("users");
   const user_id = context.user.id;
   const name = context.user.data.name;
-  let newUserDocument;
+  let new_user_document;
   try {
     const [first_name, last_name] = name.split(" ");
-    newUserDocument = {
+    new_user_document = {
       ...additional_data,
       _id: user_id,
       account_type: account_type,
@@ -33,10 +33,10 @@ exports = async function ({
         ...additional_data.org_data,
         organization_name: additional_data.organization_name,
         _id: new BSON.ObjectId(),
-        admins: [newUserDocument._id]
+        admins: [new_user_document._id]
       };
       const org_id = await org_collection.insertOne(org_data);
-      newUserDocument.organization_id = org_id;
+      new_user_document.organization_id = org_id;
     }
   } catch (e) {
     const errorParms = {
@@ -47,7 +47,7 @@ exports = async function ({
   }
 
   try {
-    const result = await collection.insertOne(newUserDocument);
+    const result = await collection.insertOne(new_user_document);
     return {
       error: null,
       message: `successfully created user`,
@@ -57,7 +57,8 @@ exports = async function ({
     const errorParms = {
       error_message:
         "could not create a new user. Invalid information, or user already exists",
-      error_metadata: e,
+      error_metadata:e,
+      doc_attempted: new_user_document,
     };
     throw context.functions.execute("create_async_error", errorParms);
   }
