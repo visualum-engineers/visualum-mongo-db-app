@@ -8,20 +8,64 @@
                 "_id": "%%user.id"
             },
             "fields": {
-                "_id": {},
-                "account_type": {},
+                "_id": {
+                    "write": {
+                        "%%prev": {
+                            "$exists": false
+                        }
+                    }
+                },
+                "account_type": {
+                    "write": {
+                        "%%prev": {
+                            "$exists": false
+                        }
+                    }
+                },
                 "admins": {},
                 "classes": {},
-                "email_confirmed": {},
+                "email_confirmed": {
+                    "write": {
+                        "%%prev": {
+                            "$exists": false
+                        }
+                    }
+                },
                 "first_name": {},
                 "last_name": {},
                 "organization_id": {},
-                "payment_confirmed": {},
+                "payment_confirmed": {
+                    "write": {
+                        "%%prev": {
+                            "$exists": false
+                        }
+                    }
+                },
                 "payment_info": {},
                 "teachers": {},
                 "user_avatar": {},
-                "user_creation_date": {},
-                "user_points": {},
+                "user_creation_date": {
+                    "write": {
+                        "%%prev": {
+                            "$exists": false
+                        }
+                    }
+                },
+                "user_points": {
+                    "write": {
+                        "%%prev": {
+                            "$exists": false
+                        },
+                        "%%this": {
+                            "type": "array",
+                            "items": {
+                                "number": {
+                                    "$numberInt": "0"
+                                }
+                            }
+                        }
+                    }
+                },
                 "user_settings": {}
             },
             "write": true,
