@@ -10,39 +10,21 @@
             "fields": {
                 "_id": {},
                 "account_type": {},
-                "admins": {
-                    "write": true
-                },
-                "classes": {
-                    "write": true
-                },
+                "admins": {},
+                "classes": {},
                 "email_confirmed": {},
-                "first_name": {
-                    "write": true
-                },
-                "last_name": {
-                    "write": true
-                },
-                "organization_id": {
-                    "write": true
-                },
+                "first_name": {},
+                "last_name": {},
+                "organization_id": {},
                 "payment_confirmed": {},
-                "payment_info": {
-                    "write": true
-                },
-                "teachers": {
-                    "write": true
-                },
-                "user_avatar": {
-                    "write": true
-                },
+                "payment_info": {},
+                "teachers": {},
+                "user_avatar": {},
                 "user_creation_date": {},
                 "user_points": {},
-                "user_settings": {
-                    "write": true
-                }
+                "user_settings": {}
             },
-            "read": true,
+            "write": true,
             "insert": true,
             "delete": true,
             "search": true,
