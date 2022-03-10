@@ -1,11 +1,59 @@
 [
     {
-        "name": "create_user",
+        "name": "read_organization",
+        "private": false
+    },
+    {
+        "name": "delete_activity",
+        "private": false
+    },
+    {
+        "name": "update_store",
+        "private": false
+    },
+    {
+        "name": "user_google_auth",
         "private": false
     },
     {
         "name": "delete_class",
         "private": false
+    },
+    {
+        "name": "delete_store",
+        "private": false
+    },
+    {
+        "name": "delete_user",
+        "private": false
+    },
+    {
+        "name": "create_organization",
+        "private": false
+    },
+    {
+        "name": "update_user",
+        "private": false
+    },
+    {
+        "name": "create_class",
+        "private": false
+    },
+    {
+        "name": "create_async_error",
+        "private": false
+    },
+    {
+        "name": "read_activity",
+        "private": false
+    },
+    {
+        "name": "read_class",
+        "private": false
+    },
+    {
+        "name": "validate_user_write",
+        "private": true
     },
     {
         "name": "create_store",
@@ -16,19 +64,7 @@
         "private": false
     },
     {
-        "name": "update_store",
-        "private": false
-    },
-    {
-        "name": "create_organization",
-        "private": false
-    },
-    {
         "name": "validate_user_read",
-        "private": true
-    },
-    {
-        "name": "validate_user_write",
         "private": true
     },
     {
@@ -40,23 +76,7 @@
         "private": false
     },
     {
-        "name": "create_class",
-        "private": false
-    },
-    {
-        "name": "delete_activity",
-        "private": false
-    },
-    {
-        "name": "read_activity",
-        "private": false
-    },
-    {
-        "name": "create_async_error",
-        "private": false
-    },
-    {
-        "name": "read_organization",
+        "name": "create_user",
         "private": false
     },
     {
@@ -65,26 +85,6 @@
     },
     {
         "name": "read_user",
-        "private": false
-    },
-    {
-        "name": "delete_user",
-        "private": false
-    },
-    {
-        "name": "read_class",
-        "private": false
-    },
-    {
-        "name": "delete_store",
-        "private": false
-    },
-    {
-        "name": "update_user",
-        "private": false
-    },
-    {
-        "name": "user_google_auth",
         "private": false
     }
 ]

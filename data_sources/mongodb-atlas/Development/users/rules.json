@@ -260,14 +260,8 @@
             "additional_fields": {}
         },
         {
-            "name": "other_doc",
-            "apply_when": {
-                "_id": {
-                    "$nin": [
-                        "%%user.id"
-                    ]
-                }
-            },
+            "name": "no_account_match",
+            "apply_when": {},
             "fields": {
                 "_id": {},
                 "account_type": {},
@@ -286,9 +280,9 @@
                 "user_points": {},
                 "user_settings": {}
             },
-            "insert": false,
+            "insert": true,
             "delete": false,
-            "search": true,
+            "search": false,
             "additional_fields": {}
         }
     ]
