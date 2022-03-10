@@ -57,8 +57,10 @@ exports = async function ({
     const errorParms = {
       error_message:
         "could not create a new user. Invalid information, or user already exists",
-      error_metadata:e,
-      doc_attempted: new_user_document,
+      error_metadata:{
+        doc_attempted: new_user_document,
+        stack_trace: e,
+      }
     };
     throw context.functions.execute("create_async_error", errorParms);
   }
