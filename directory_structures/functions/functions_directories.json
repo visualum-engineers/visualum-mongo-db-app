@@ -27,10 +27,15 @@
     "update_store": true
   },
   "reward_store_items":{
-
+    "create_store_item": true,
+    "read_store_item": true,
+    "update_store_item": true,
+    "delete_store_item": true
   },
   "reward_store_transactions": {
-
+    "create_store_transactions": true,
+    "read_store_transactions": true,
+    "delete_store_transactions": true
   },
   "user": {
     "create_user": true,
