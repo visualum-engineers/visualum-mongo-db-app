@@ -1,6 +1,6 @@
 exports = async function ({
   store_ids = [],
-  query_condition,
+  query_condition = {},
   read_many = false,
 }) {
   //logged in user data
