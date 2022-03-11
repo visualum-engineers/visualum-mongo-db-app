@@ -1,4 +1,7 @@
-exports = function(arg){
+exports = function ({
+  store_ids = [],
+  delete_many = false
+}){
   /*
     Accessing application's values:
     var x = context.values.get("value_name");
