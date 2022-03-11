@@ -30,7 +30,8 @@
     "create_store_item": true,
     "read_store_item": true,
     "update_store_item": true,
-    "delete_store_item": true
+    "delete_store_item": true,
+    "validate_reward_store_access": true
   },
   "reward_store_transactions": {
     "create_store_transactions": true,
