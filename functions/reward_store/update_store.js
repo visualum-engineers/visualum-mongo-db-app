@@ -1,4 +1,4 @@
-exports = function ({
+exports = async function ({
   query_condition = {},
   store_ids = [],
   update_content = {},
