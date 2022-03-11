@@ -11,22 +11,8 @@ exports = async function ({
   const user_data = context.user.custom_data;
   const classes = user_data.classes;
   const organization_id = user_data.organization_id;
+
   const read_many_stores = async () => {
-    //validate user_access
-    try {
-      //generate access map
-      let access_map = { [organization_id]: true };
-      for (let i of classes) access_map[i] = true;
-      //check if match exists
-      let match = store_ids.every((el) => el in access_map);
-      if (!match) throw new Error("you do not have access to read this store");
-    } catch (e) {
-      const error_parms = {
-        error_message: "could not validate user access",
-        error_metadata: e,
-      };
-      throw context.functions.execute("create_async_error", error_parms);
-    }
     //return all docs
     const result = await collection
       .find({
@@ -37,25 +23,30 @@ exports = async function ({
     return result;
   };
   const read_one_store = async () => {
-    //validate user_access
-    try {
-      let class_match = classes.find((el) => store_ids[0] === el);
-      let org_match = organization_id === store_ids[0];
-      if (!class_match && !org_match)
-        throw new Error("you do not have access to read this store");
-    } catch (e) {
-      const error_parms = {
-        error_message: "could not validate user access",
-        error_metadata: e,
-      };
-      throw context.functions.execute("create_async_error", error_parms);
-    }
     //return all docs
     const result = await collection.findOne({
       _id: store_ids[0],
     });
     return result;
   };
+
+  //validate user access
+  const access_granted = context.functions.execute(
+    "validate_reward_store_access",
+    {
+      organization_id: organization_id,
+      classes: classes,
+      store_ids: store_ids,
+    }
+  );
+  if (!access_granted) {
+    const error_parms = {
+      error_message: "could not validate user access",
+      error_metadata: e,
+    };
+    throw context.functions.execute("create_async_error", error_parms);
+  }
+
   //_main_
   try {
     let result;
