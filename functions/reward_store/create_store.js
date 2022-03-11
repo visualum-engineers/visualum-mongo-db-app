@@ -7,7 +7,6 @@ exports = async function ({ class_id, organization_id, store_name }) {
   const user_data = context.user.custom_data;
   const account_type = user_data.account_type;
   const classes = user_data.classes;
-  const organization_id = user_data.organization_id;
   let new_store_document;
   //create document template
   try {
