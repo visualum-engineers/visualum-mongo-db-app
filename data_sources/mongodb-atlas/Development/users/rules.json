@@ -71,14 +71,6 @@
                     "write": {
                         "%%prev": {
                             "$exists": false
-                        },
-                        "%%this": {
-                            "type": "array",
-                            "items": {
-                                "number": {
-                                    "$numberInt": "0"
-                                }
-                            }
                         }
                     }
                 },
