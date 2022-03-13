@@ -34,7 +34,7 @@ exports = async function () {
     }
   }
   //means we're dealing with an admin or teacher account
-  const delete_assignments_params = {
+  const delete_activity_params = {
     query_condition: { activity_creator: user_id },
     delete_many: true,
   };
@@ -50,6 +50,7 @@ exports = async function () {
       teachers: user_doc._id,
       teachers_length: { $gt: 1 },
     },
+    update_many: true,
     no_limit: true,
     update_content: {
       $pull: user_doc._id,
@@ -63,21 +64,21 @@ exports = async function () {
     "delete_class",
     delete_class_params
   );
-  const delete_assignments = context.functions.execute(
-    "delete_assignments",
-    delete_assignments_params
+  const delete_activities = context.functions.execute(
+    "delete_activity",
+    delete_activity_params
   );
   const delete_user = context.functions.execute("delete_user");
   const result = await Promise.all([
-    delete_assignments,
+    delete_activities,
     delete_class,
     update_class,
-    delete_user,
+    delete_user
   ]);
   return {
-    delete_assignments: result[0],
+    delete_activities: result[0],
     delete_class: result[1],
     update_class: result[2],
-    delete_user: result[3],
+    delete_user: result[3]
   };
 };
