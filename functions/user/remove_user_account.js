@@ -54,10 +54,8 @@ exports = function () {
     update_content: {
       $pull: user_doc._id,
     },
-    };
-    const delete_user_params = {
-
-    }
+  };
+  const delete_user_params = {};
   const update_class = context.functions.execute(
     "update_class",
     update_class_params
@@ -70,17 +68,17 @@ exports = function () {
     "delete_assignments",
     delete_assignments_params
   );
-  const delete_user = context.functions.execute("delete_user")
+  const delete_user = context.functions.execute("delete_user");
   const result = await Promise.all([
     delete_assignments,
     delete_class,
-      update_class,
-    delete_user
+    update_class,
+    delete_user,
   ]);
   return {
     delete_assignments: result[0],
     delete_class: result[1],
-      update_class: result[2],
-    delete_user: result[3]
+    update_class: result[2],
+    delete_user: result[3],
   };
 };
