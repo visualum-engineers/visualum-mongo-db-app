@@ -1,4 +1,4 @@
-exports = function () {
+exports = async function () {
   const user_id = context.user.id;
   const user_doc_result = await context.functions.execute("read_user", {
     user_id: user_id,
@@ -55,7 +55,6 @@ exports = function () {
       $pull: user_doc._id,
     },
   };
-  const delete_user_params = {};
   const update_class = context.functions.execute(
     "update_class",
     update_class_params
