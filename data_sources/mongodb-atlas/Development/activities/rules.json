@@ -3,12 +3,66 @@
     "database": "Development",
     "roles": [
         {
-            "name": "default",
-            "apply_when": {},
+            "name": "assignment_owner",
+            "apply_when": {
+                "%user.custom_data": {
+                    "account_type": {
+                        "enum": [
+                            "teacher",
+                            "admin"
+                        ]
+                    }
+                },
+                "owner_ids": "%%user.id"
+            },
+            "fields": {
+                "_id": {
+                    "write": {
+                        "%%prev": {
+                            "$exists": false
+                        }
+                    }
+                }
+            },
+            "read": true,
             "insert": true,
             "delete": true,
             "search": true,
-            "additional_fields": {}
+            "additional_fields": {
+                "write": true
+            }
+        },
+        {
+            "name": "non_owner_public",
+            "apply_when": {
+                "private": false
+            },
+            "fields": {
+                "_id": {
+                    "read": true
+                }
+            },
+            "read": false,
+            "insert": false,
+            "delete": false,
+            "search": true,
+            "additional_fields": {
+                "read": true
+            }
+        },
+        {
+            "name": "non_owner_private",
+            "apply_when": {},
+            "fields": {
+                "_id": {}
+            },
+            "read": false,
+            "insert": false,
+            "delete": false,
+            "search": false,
+            "additional_fields": {
+                "read": false
+            }
         }
     ]
 }

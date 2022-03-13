@@ -1,23 +1,11 @@
 [
     {
-        "name": "delete_activity",
-        "private": false
-    },
-    {
-        "name": "create_organization",
-        "private": false
-    },
-    {
-        "name": "delete_user",
-        "private": false
-    },
-    {
-        "name": "validate_user_write",
-        "private": true
-    },
-    {
         "name": "validate_user_read",
         "private": true
+    },
+    {
+        "name": "update_class",
+        "private": false
     },
     {
         "name": "read_user",
@@ -25,6 +13,70 @@
     },
     {
         "name": "read_store",
+        "private": false
+    },
+    {
+        "name": "create_store",
+        "private": false
+    },
+    {
+        "name": "read_activity",
+        "private": false
+    },
+    {
+        "name": "read_store_transactions",
+        "private": false
+    },
+    {
+        "name": "read_organization",
+        "private": false
+    },
+    {
+        "name": "delete_store",
+        "private": false
+    },
+    {
+        "name": "delete_class",
+        "private": false
+    },
+    {
+        "name": "read_store_item",
+        "private": false
+    },
+    {
+        "name": "delete_organization",
+        "private": false
+    },
+    {
+        "name": "delete_user",
+        "private": false
+    },
+    {
+        "name": "create_organization",
+        "private": false
+    },
+    {
+        "name": "create_user",
+        "private": false
+    },
+    {
+        "name": "delete_store_transactions",
+        "private": false
+    },
+    {
+        "name": "delete_store_item",
+        "private": false
+    },
+    {
+        "name": "validate_user_write",
+        "private": true
+    },
+    {
+        "name": "create_class",
+        "private": false
+    },
+    {
+        "name": "delete_activity",
         "private": false
     },
     {
@@ -36,39 +88,11 @@
         "private": false
     },
     {
-        "name": "update_class",
+        "name": "remove_user_account",
         "private": false
     },
     {
-        "name": "create_class",
-        "private": false
-    },
-    {
-        "name": "read_activity",
-        "private": false
-    },
-    {
-        "name": "update_store",
-        "private": false
-    },
-    {
-        "name": "update_activity",
-        "private": false
-    },
-    {
-        "name": "create_user",
-        "private": false
-    },
-    {
-        "name": "delete_class",
-        "private": false
-    },
-    {
-        "name": "create_async_error",
-        "private": false
-    },
-    {
-        "name": "delete_store",
+        "name": "create_store_transactions",
         "private": false
     },
     {
@@ -76,15 +100,31 @@
         "private": false
     },
     {
-        "name": "create_store",
+        "name": "create_async_error",
         "private": false
     },
     {
-        "name": "read_organization",
+        "name": "update_store_item",
+        "private": false
+    },
+    {
+        "name": "update_store",
+        "private": false
+    },
+    {
+        "name": "update_organization",
+        "private": false
+    },
+    {
+        "name": "create_store_item",
         "private": false
     },
     {
         "name": "create_activity",
+        "private": false
+    },
+    {
+        "name": "update_activity",
         "private": false
     }
 ]
