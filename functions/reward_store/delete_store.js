@@ -1,4 +1,4 @@
-exports = async function ({
+exports = function ({
   store_ids = [],
   query_condition={},
   delete_many = false
