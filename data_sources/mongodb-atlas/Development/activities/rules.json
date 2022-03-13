@@ -5,7 +5,7 @@
         {
             "name": "assignment_owner",
             "apply_when": {
-                "%user.custom_data": {
+                "%%user.custom_data": {
                     "account_type": {
                         "enum": [
                             "teacher",
