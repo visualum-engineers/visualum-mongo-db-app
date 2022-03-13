@@ -5,8 +5,19 @@
         "_id": {
             "bsonType": "objectId"
         },
-        "activity_creator": {
-            "bsonType": "string"
+        "owner_ids": {
+            "bsonType": "array",
+            "items": {"bsonType": "string"},
+            "maxLength": 100,
+            "minLength": 1
+        },
+        "owner_names": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "string"
+            },
+            "maxLength": 100,
+            "minLength": 1
         },
         "activity_name": {
             "bsonType": "string",

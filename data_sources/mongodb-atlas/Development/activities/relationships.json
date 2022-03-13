@@ -1,8 +1,8 @@
 {
-    "activity_creator": {
+    "owner_ids": {
         "ref": "#/relationship/mongodb-atlas/Development/users",
-        "source_key": "activity_creator",
+        "source_key": "owner_ids",
         "foreign_key": "_id",
-        "is_list": false
+        "is_list": true
     }
 }
