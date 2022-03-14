@@ -9,7 +9,7 @@ exports = async function ({
     .get("mongodb-atlas")
     .db("Development")
     .collection("activities");
-  const update_many_activities = ({ query, update_content }) => {
+  const update_many_activities = async ({ query, update_content }) => {
     const found_activities = await collection.find(query).limit(1000);
     const activity_ids = found_activities.forEach((doc) => doc["_id"]);
     const result = await collection.updateMany(
@@ -18,7 +18,7 @@ exports = async function ({
       },
       update_content
     );
-    return result
+    return result;
   };
   //validate access
   if (user_data.account_type === "student") {
@@ -31,11 +31,11 @@ exports = async function ({
     };
     let result;
     if (update_many)
-      update_many_activities({
+      result = await update_many_activities({
         query: query,
         update_content: update_content,
       });
-    else result = collection.updateOne(query, update_content);
+    else result = await collection.updateOne(query, update_content);
     return result;
   } catch (e) {
     const error_parms = {
