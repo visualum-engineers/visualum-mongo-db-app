@@ -21,9 +21,12 @@ exports = async function ({
     return result;
   };
   //validate access
-  if (user_data.account_type === "student") {
+  if (
+    user_data.account_type !== "teacher" &&
+    user_data.account_type !== "admin"
+  )
     throw new Error("you do not have access to this activity");
-  }
+
   try {
     const query = {
       ...query_condition,

@@ -68,17 +68,20 @@ exports = async function () {
     "delete_activity",
     delete_activity_params
   );
-  const delete_user = context.functions.execute("delete_user");
   const result = await Promise.all([
     delete_activities,
     delete_class,
     update_class,
-    delete_user
   ]);
+  //we do not delete user in parallel
+  //because the above functions rely on user_doc data
+  //for validation. After these are done, 
+  //we can delete the user.
+  const delete_user = await context.functions.execute("delete_user");
   return {
     delete_activities: result[0],
     delete_class: result[1],
     update_class: result[2],
-    delete_user: result[3]
+    delete_user:delete_user
   };
 };
