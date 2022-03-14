@@ -1,4 +1,4 @@
-exports = function ({ query_condtion = {}, delete_many = false }) {
+exports = async function ({ query_condtion = {}, delete_many = false }) {
   //logged in user_data
   const user_id = context.user.id;
   const user_data = context.user.custom_data;
