@@ -18,49 +18,33 @@ exports = async function ({
     query_condition = {},
     update_content = {},
   }) => {
-    try {
-      //2 queries needed since update many does not have a query limit
-      const store_documents = await store_collection
-        .find({
-          ...query_condition,
-          _id: { $in: store_ids },
-        })
-        .limit(1000);
-      const ids = store_documents.forEach((doc) => doc["_ids"]);
-      const result = store_collection.update_many(
-        { _id: { $in: ids } },
-        update_content
-      );
-      return result;
-    } catch (e) {
-      const errorParms = {
-        error_message: `could not update stores: ${store_ids}`,
-        error_metadata: e,
-      };
-      throw context.functions.execute("create_async_error", errorParms);
-    }
+    //2 queries needed since update many does not have a query limit
+    const store_documents = await store_collection
+      .find({
+        ...query_condition,
+        _id: { $in: store_ids },
+      })
+      .limit(1000);
+    const ids = store_documents.forEach((doc) => doc["_id"]);
+    const result = await store_collection.updateMany(
+      { _id: { $in: ids } },
+      update_content
+    );
+    return result;
   };
   const update_one_store = async ({
     store_ids = [],
     query_condition = {},
     update_content = {},
   }) => {
-    try {
-      const result = await store_collection.updateOne(
-        {
-          ...query_condition,
-          _id: store_ids[0],
-        },
-        update_content
-      );
-      return result;
-    } catch (e) {
-      const errorParms = {
-        error_message: `could not update store info: ${store_ids[0]}`,
-        error_metadata: e,
-      };
-      throw context.functions.execute("create_async_error", errorParms);
-    }
+    const result = await store_collection.updateOne(
+      {
+        ...query_condition,
+        _id: store_ids[0],
+      },
+      update_content
+    );
+    return result;
   };
   //validate user access
   const validate_user_access = ({

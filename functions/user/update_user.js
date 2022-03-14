@@ -34,7 +34,7 @@ exports = async function ({
           _id: { $in: users },
         })
         .limit(1000);
-      const ids = user_documents.forEach((doc) => doc["_ids"]);
+      const ids = user_documents.forEach((doc) => doc["_id"]);
       const result = user_collection.update_many(
         { _id: { $in: ids } },
         update_content

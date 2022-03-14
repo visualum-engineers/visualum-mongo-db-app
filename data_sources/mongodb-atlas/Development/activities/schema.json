@@ -338,13 +338,16 @@
         },
         "creation_date": {
             "bsonType": "date"
-        }
+        },
+        "private": {"bsonType": "bool"}
     },
     "required": [
-        "activity_creator",
+        "owner_ids",
+        "owner_names",
         "activity_name",
         "activity_questions",
-        "creation_date"
+        "creation_date",
+        "private"
     ],
     "title": "activity"
 }
