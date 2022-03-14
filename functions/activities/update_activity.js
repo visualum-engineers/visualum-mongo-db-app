@@ -1,4 +1,4 @@
-exports = function ({
+exports = async function ({
   query_condition = {},
   update_many = false,
   update_content = {},
