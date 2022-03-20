@@ -8,75 +8,74 @@
                 "_id": "%%user.id"
             },
             "fields": {
-                "_id": {
-                    "write": {
-                        "%%prev": {
-                            "$exists": false
-                        }
-                    }
-                },
-                "account_type": {
-                    "write": {
-                        "%%prev": {
-                            "$exists": false
-                        }
-                    }
-                },
-                "admins": {
-                    "write": true
-                },
-                "classes": {
-                    "write": true
+              "_id": {
+                "write": {
+                  "%%prev": {
+                    "$exists": false
+                  }
+                }
+              },
+              "account_type": {
+                "write": {
+                  "%%prev": {
+                    "$exists": false
+                  }
+                }
+              },
+              "admins": {
+                "write": true
+              },
+              "organization_id": {
+                "write": true
+              },
+              "payment_confirmed": {
+                "write": {
+                  "%%prev": {
+                    "$exists": false
+                  }
+                }
+              },
+              "payment_info": {
+                "write": true
+              },
+              "user_creation_date": {
+                "write": {
+                  "%%prev": {
+                    "$exists": false
+                  }
+                }
+              },
+              "user_points": {
+                "write": {
+                  "%%prev": {
+                    "$exists": false
+                  }
+                }
+              },
+              "user_settings": {
+                "write": true
+              },
+              "user_profile": {
+                "user_avatar": {
+                  "write": true
                 },
                 "email_confirmed": {
-                    "write": {
-                        "%%prev": {
-                            "$exists": false
-                        }
+                  "write": {
+                    "%%prev": {
+                      "$exists": false
                     }
+                  }
+                },
+                "email":{
+                    "write": true
                 },
                 "first_name": {
-                    "write": true
+                  "write": true
                 },
                 "last_name": {
-                    "write": true
-                },
-                "organization_id": {
-                    "write": true
-                },
-                "payment_confirmed": {
-                    "write": {
-                        "%%prev": {
-                            "$exists": false
-                        }
-                    }
-                },
-                "payment_info": {
-                    "write": true
-                },
-                "teachers": {
-                    "write": true
-                },
-                "user_avatar": {
-                    "write": true
-                },
-                "user_creation_date": {
-                    "write": {
-                        "%%prev": {
-                            "$exists": false
-                        }
-                    }
-                },
-                "user_points": {
-                    "write": {
-                        "%%prev": {
-                            "$exists": false
-                        }
-                    }
-                },
-                "user_settings": {
-                    "write": true
+                  "write": true
                 }
+              }
             },
             "read": true,
             "insert": true,
@@ -109,19 +108,27 @@
                 "_id": {
                     "read": true
                 },
+                "user_profile": {
+                  "user_avatar": {
+                    "read": true
+                  },
+                  "email_confirmed": {
+                    "read": true
+                  },
+                  "first_name": {
+                    "write": true
+                  },
+                  "last_name": {
+                    "write": true
+                  },
+                "email":{
+                    "read": true
+                }
+                },
                 "account_type": {
                     "write": true
                 },
                 "admins": {
-                    "write": true
-                },
-                "email_confirmed": {
-                    "read": true
-                },
-                "first_name": {
-                    "write": true
-                },
-                "last_name": {
                     "write": true
                 },
                 "organization_id": {
@@ -129,9 +136,6 @@
                 },
                 "payment_confirmed": {},
                 "payment_info": {},
-                "user_avatar": {
-                    "read": true
-                },
                 "user_creation_date": {
                     "read": true
                 },
@@ -167,39 +171,45 @@
                 "organization_id": "%%user.custom_data.organization_id"
             },
             "fields": {
-                "_id": {
-                    "read": true
-                },
-                "account_type": {
-                    "read": true
-                },
-                "admins": {
-                    "read": true
+              "_id": {
+                "read": true
+              },
+              "account_type": {
+                "read": true
+              },
+              "admins": {
+                "read": true
+              },
+              "user_profile": {
+                "user_avatar": {
+                  "read": true
                 },
                 "email_confirmed": {
-                    "read": true
+                  "read": true
                 },
                 "first_name": {
-                    "read": true
+                  "read": true
                 },
                 "last_name": {
-                    "read": true
+                  "read": true
                 },
-                "organization_id": {
-                    "read": true
-                },
-                "payment_confirmed": {},
-                "payment_info": {},
-                "user_avatar": {
-                    "read": true
-                },
-                "user_creation_date": {
-                    "read": true
-                },
-                "user_points": {
-                    "read": true
-                },
-                "user_settings": {}
+                "email": {
+                  "read": true
+                }
+              },
+
+              "organization_id": {
+                "read": true
+              },
+              "payment_confirmed": {},
+              "payment_info": {},
+              "user_creation_date": {
+                "read": true
+              },
+              "user_points": {
+                "read": true
+              },
+              "user_settings": {}
             },
             "insert": true,
             "delete": false,
@@ -222,30 +232,34 @@
                 "organization_id": "%%user.custom_data.organization_id"
             },
             "fields": {
-                "_id": {},
-                "account_type": {
-                    "read": true
-                },
-                "admins": {},
+              "_id": {},
+              "account_type": {
+                "read": true
+              },
+              "user_profile": {
                 "email_confirmed": {},
                 "first_name": {
-                    "read": true
+                  "read": true
                 },
                 "last_name": {
-                    "read": true
+                  "read": true
                 },
-                "organization_id": {
-                    "read": true
+                "email": {
+                  "read": true
                 },
-                "payment_confirmed": {},
-                "payment_info": {},
-                "teachers": {},
                 "user_avatar": {
-                    "read": true
-                },
-                "user_creation_date": {},
-                "user_points": {},
-                "user_settings": {}
+                  "read": true
+                }
+              },
+              "admins": {},
+              "organization_id": {
+                "read": true
+              },
+              "payment_confirmed": {},
+              "payment_info": {},
+              "user_creation_date": {},
+              "user_points": {},
+              "user_settings": {}
             },
             "insert": false,
             "delete": false,
@@ -259,15 +273,10 @@
                 "_id": {},
                 "account_type": {},
                 "admins": {},
-                "classes": {},
-                "email_confirmed": {},
-                "first_name": {},
-                "last_name": {},
                 "organization_id": {},
                 "payment_confirmed": {},
                 "payment_info": {},
-                "teachers": {},
-                "user_avatar": {},
+                "user_profile": {},
                 "user_creation_date": {},
                 "user_points": {},
                 "user_settings": {}
