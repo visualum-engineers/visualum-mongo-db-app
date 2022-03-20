@@ -2,280 +2,267 @@
     "collection": "users",
     "database": "Development",
     "roles": [
-        {
-            "name": "owner_of_doc",
-            "apply_when": {
-                "_id": "%%user.id"
+      {
+        "name": "owner_of_doc",
+        "apply_when": {
+          "_id": "%%user.id"
+        },
+        "fields": {
+          "_id": {
+            "write": {
+              "%%prev": {
+                "$exists": false
+              }
+            }
+          },
+          "account_type": {
+            "write": {
+              "%%prev": {
+                "$exists": false
+              }
+            }
+          },
+          "admins": {
+            "write": true
+          },
+          "organization_id": {
+            "write": true
+          },
+          "payment_confirmed": {
+            "write": {
+              "%%prev": {
+                "$exists": false
+              }
+            }
+          },
+          "payment_info": {
+            "write": true
+          },
+          "user_creation_date": {
+            "write": {
+              "%%prev": {
+                "$exists": false
+              }
+            }
+          },
+          "user_points": {
+            "write": {
+              "%%prev": {
+                "$exists": false
+              }
+            }
+          },
+          "user_settings": {
+            "write": true
+          },
+          "user_profile": {
+            "user_avatar": {
+              "write": true
             },
-            "fields": {
-                "_id": {
-                    "write": {
-                        "%%prev": {
-                            "$exists": false
-                        }
-                    }
-                },
-                "account_type": {
-                    "write": {
-                        "%%prev": {
-                            "$exists": false
-                        }
-                    }
-                },
-                "admins": {
-                    "write": true
-                },
-                "classes": {
-                    "write": true
-                },
-                "email_confirmed": {
-                    "write": {
-                        "%%prev": {
-                            "$exists": false
-                        }
-                    }
-                },
-                "first_name": {
-                    "write": true
-                },
-                "last_name": {
-                    "write": true
-                },
-                "organization_id": {
-                    "write": true
-                },
-                "payment_confirmed": {
-                    "write": {
-                        "%%prev": {
-                            "$exists": false
-                        }
-                    }
-                },
-                "payment_info": {
-                    "write": true
-                },
-                "teachers": {
-                    "write": true
-                },
-                "user_avatar": {
-                    "write": true
-                },
-                "user_creation_date": {
-                    "write": {
-                        "%%prev": {
-                            "$exists": false
-                        }
-                    }
-                },
-                "user_points": {
-                    "write": {
-                        "%%prev": {
-                            "$exists": false
-                        }
-                    }
-                },
-                "user_settings": {
-                    "write": true
+            "email_confirmed": {
+              "write": {
+                "%%prev": {
+                  "$exists": false
                 }
+              }
             },
-            "read": true,
-            "insert": true,
-            "delete": true,
-            "search": true,
-            "additional_fields": {
-                "write": true
+            "email": {
+              "write": true
+            },
+            "first_name": {
+              "write": true
+            },
+            "last_name": {
+              "write": true
             }
+          }
         },
-        {
-            "name": "admin_other_doc",
-            "apply_when": {
-                "%%user.custom_data": {
-                    "account_type": "admin"
-                },
-                "_id": {
-                    "$nin": [
-                        "%%user.id"
-                    ]
-                },
-                "account_type": {
-                    "enum": [
-                        "student",
-                        "teacher"
-                    ]
-                },
-                "organization_id": "%%user.custom_data.organization_id"
-            },
-            "fields": {
-                "_id": {
-                    "read": true
-                },
-                "account_type": {
-                    "write": true
-                },
-                "admins": {
-                    "write": true
-                },
-                "email_confirmed": {
-                    "read": true
-                },
-                "first_name": {
-                    "write": true
-                },
-                "last_name": {
-                    "write": true
-                },
-                "organization_id": {
-                    "write": true
-                },
-                "payment_confirmed": {},
-                "payment_info": {},
-                "user_avatar": {
-                    "read": true
-                },
-                "user_creation_date": {
-                    "read": true
-                },
-                "user_points": {
-                    "read": true
-                },
-                "user_settings": {}
-            },
-            "insert": true,
-            "delete": false,
-            "search": true,
-            "additional_fields": {
-                "read": true
-            }
-        },
-        {
-            "name": "teacher_other_doc",
-            "apply_when": {
-                "%%user.custom_data": {
-                    "account_type": "teacher"
-                },
-                "_id": {
-                    "$nin": [
-                        "%%user.id"
-                    ]
-                },
-                "account_type": {
-                    "enum": [
-                        "student",
-                        "teacher"
-                    ]
-                },
-                "organization_id": "%%user.custom_data.organization_id"
-            },
-            "fields": {
-                "_id": {
-                    "read": true
-                },
-                "account_type": {
-                    "read": true
-                },
-                "admins": {
-                    "read": true
-                },
-                "email_confirmed": {
-                    "read": true
-                },
-                "first_name": {
-                    "read": true
-                },
-                "last_name": {
-                    "read": true
-                },
-                "organization_id": {
-                    "read": true
-                },
-                "payment_confirmed": {},
-                "payment_info": {},
-                "user_avatar": {
-                    "read": true
-                },
-                "user_creation_date": {
-                    "read": true
-                },
-                "user_points": {
-                    "read": true
-                },
-                "user_settings": {}
-            },
-            "insert": true,
-            "delete": false,
-            "search": true,
-            "additional_fields": {
-                "read": true
-            }
-        },
-        {
-            "name": "student_other_doc",
-            "apply_when": {
-                "%%user.custom_data": {
-                    "account_type": "student"
-                },
-                "_id": {
-                    "$nin": [
-                        "%%user.id"
-                    ]
-                },
-                "organization_id": "%%user.custom_data.organization_id"
-            },
-            "fields": {
-                "_id": {},
-                "account_type": {
-                    "read": true
-                },
-                "admins": {},
-                "email_confirmed": {},
-                "first_name": {
-                    "read": true
-                },
-                "last_name": {
-                    "read": true
-                },
-                "organization_id": {
-                    "read": true
-                },
-                "payment_confirmed": {},
-                "payment_info": {},
-                "teachers": {},
-                "user_avatar": {
-                    "read": true
-                },
-                "user_creation_date": {},
-                "user_points": {},
-                "user_settings": {}
-            },
-            "insert": false,
-            "delete": false,
-            "search": true,
-            "additional_fields": {}
-        },
-        {
-            "name": "no_account_match",
-            "apply_when": {},
-            "fields": {
-                "_id": {},
-                "account_type": {},
-                "admins": {},
-                "classes": {},
-                "email_confirmed": {},
-                "first_name": {},
-                "last_name": {},
-                "organization_id": {},
-                "payment_confirmed": {},
-                "payment_info": {},
-                "teachers": {},
-                "user_avatar": {},
-                "user_creation_date": {},
-                "user_points": {},
-                "user_settings": {}
-            },
-            "insert": true,
-            "delete": false,
-            "search": false,
-            "additional_fields": {}
+        "read": true,
+        "insert": true,
+        "delete": true,
+        "search": true,
+        "additional_fields": {
+          "write": true
         }
+      },
+      {
+        "name": "admin_other_doc",
+        "apply_when": {
+          "%%user.custom_data": {
+            "account_type": "admin"
+          },
+          "_id": {
+            "$nin": ["%%user.id"]
+          },
+          "account_type": {
+            "enum": ["student", "teacher"]
+          },
+          "organization_id": "%%user.custom_data.organization_id"
+        },
+        "fields": {
+          "_id": {
+            "read": true
+          },
+          "account_type": {
+            "write": true
+          },
+          "admins": {
+            "write": true
+          },
+          "email_confirmed": {
+            "read": true
+          },
+          "first_name": {
+            "write": true
+          },
+          "last_name": {
+            "write": true
+          },
+          "organization_id": {
+            "write": true
+          },
+          "payment_confirmed": {},
+          "payment_info": {},
+          "user_avatar": {
+            "read": true
+          },
+          "user_creation_date": {
+            "read": true
+          },
+          "user_points": {
+            "read": true
+          },
+          "user_settings": {}
+        },
+        "insert": true,
+        "delete": false,
+        "search": true,
+        "additional_fields": {
+          "read": true
+        }
+      },
+      {
+        "name": "teacher_other_doc",
+        "apply_when": {
+          "%%user.custom_data": {
+            "account_type": "teacher"
+          },
+          "_id": {
+            "$nin": ["%%user.id"]
+          },
+          "account_type": {
+            "enum": ["student", "teacher"]
+          },
+          "organization_id": "%%user.custom_data.organization_id"
+        },
+        "fields": {
+          "_id": {
+            "read": true
+          },
+          "account_type": {
+            "read": true
+          },
+          "admins": {
+            "read": true
+          },
+          "email_confirmed": {
+            "read": true
+          },
+          "first_name": {
+            "read": true
+          },
+          "last_name": {
+            "read": true
+          },
+          "organization_id": {
+            "read": true
+          },
+          "payment_confirmed": {},
+          "payment_info": {},
+          "user_avatar": {
+            "read": true
+          },
+          "user_creation_date": {
+            "read": true
+          },
+          "user_points": {
+            "read": true
+          },
+          "user_settings": {}
+        },
+        "insert": true,
+        "delete": false,
+        "search": true,
+        "additional_fields": {
+          "read": true
+        }
+      },
+      {
+        "name": "student_other_doc",
+        "apply_when": {
+          "%%user.custom_data": {
+            "account_type": "student"
+          },
+          "_id": {
+            "$nin": ["%%user.id"]
+          },
+          "organization_id": "%%user.custom_data.organization_id"
+        },
+        "fields": {
+          "_id": {},
+          "account_type": {
+            "read": true
+          },
+          "admins": {},
+          "email_confirmed": {},
+          "first_name": {
+            "read": true
+          },
+          "last_name": {
+            "read": true
+          },
+          "organization_id": {
+            "read": true
+          },
+          "payment_confirmed": {},
+          "payment_info": {},
+          "teachers": {},
+          "user_avatar": {
+            "read": true
+          },
+          "user_creation_date": {},
+          "user_points": {},
+          "user_settings": {}
+        },
+        "insert": false,
+        "delete": false,
+        "search": true,
+        "additional_fields": {}
+      },
+      {
+        "name": "no_account_match",
+        "apply_when": {},
+        "fields": {
+          "_id": {},
+          "account_type": {},
+          "admins": {},
+          "classes": {},
+          "email_confirmed": {},
+          "first_name": {},
+          "last_name": {},
+          "organization_id": {},
+          "payment_confirmed": {},
+          "payment_info": {},
+          "teachers": {},
+          "user_avatar": {},
+          "user_creation_date": {},
+          "user_points": {},
+          "user_settings": {}
+        },
+        "insert": true,
+        "delete": false,
+        "search": false,
+        "additional_fields": {}
+      }
     ]
 }
