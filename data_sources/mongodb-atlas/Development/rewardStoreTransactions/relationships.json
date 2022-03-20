@@ -1,13 +1,19 @@
 {
+    "class_store_id": {
+        "ref": "#/relationship/mongodb-atlas/Development/rewardStoreItems",
+        "source_key": "class_store_id",
+        "foreign_key": "class_store_id",
+        "is_list": false
+    },
+    "org_store_id": {
+        "ref": "#/relationship/mongodb-atlas/Development/rewardStoreItems",
+        "source_key": "org_store_id",
+        "foreign_key": "org_store_id",
+        "is_list": false
+    },
     "reward_id": {
         "ref": "#/relationship/mongodb-atlas/Development/rewardStoreItems",
         "source_key": "reward_id",
-        "foreign_key": "_id",
-        "is_list": false
-    },
-    "reward_store_id": {
-        "ref": "#/relationship/mongodb-atlas/Development/rewardStores",
-        "source_key": "reward_store_id",
         "foreign_key": "_id",
         "is_list": false
     },

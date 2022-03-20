@@ -3,12 +3,12 @@
     "anyOf": [
         {
             "required": [
-                "organization_id"
+                "org_store_id"
             ]
         },
         {
             "required": [
-                "class_id"
+                "class_store_id"
             ]
         }
     ],
@@ -18,6 +18,9 @@
             "bsonType": "objectId"
         },
         "class_id": {
+            "bsonType": "objectId"
+        },
+        "class_store_id": {
             "bsonType": "objectId"
         },
         "img_url": {
@@ -37,16 +40,15 @@
             "bsonType": "int",
             "minimum": 0
         },
-        "organization_id": {
+        "org_store_id": {
             "bsonType": "objectId"
         },
-        "reward_store_id": {
+        "organization_id": {
             "bsonType": "objectId"
         }
     },
     "required": [
         "_id",
-        "reward_store_id",
         "item_name",
         "item_price",
         "listed_date"

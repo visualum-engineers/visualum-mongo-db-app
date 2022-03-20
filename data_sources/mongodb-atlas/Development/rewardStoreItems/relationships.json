@@ -5,15 +5,21 @@
         "foreign_key": "_id",
         "is_list": false
     },
+    "class_store_id": {
+        "ref": "#/relationship/mongodb-atlas/Development/classes",
+        "source_key": "class_store_id",
+        "foreign_key": "reward_store._id",
+        "is_list": false
+    },
+    "org_store_id": {
+        "ref": "#/relationship/mongodb-atlas/Development/organizations",
+        "source_key": "org_store_id",
+        "foreign_key": "reward_store._id",
+        "is_list": false
+    },
     "organization_id": {
         "ref": "#/relationship/mongodb-atlas/Development/organizations",
         "source_key": "organization_id",
-        "foreign_key": "_id",
-        "is_list": false
-    },
-    "reward_store_id": {
-        "ref": "#/relationship/mongodb-atlas/Development/rewardStores",
-        "source_key": "reward_store_id",
         "foreign_key": "_id",
         "is_list": false
     }
