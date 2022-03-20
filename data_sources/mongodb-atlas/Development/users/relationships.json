@@ -5,22 +5,10 @@
         "foreign_key": "_id",
         "is_list": true
     },
-    "classes": {
-        "ref": "#/relationship/mongodb-atlas/Development/classes",
-        "source_key": "classes",
-        "foreign_key": "_id",
-        "is_list": true
-    },
     "organization_id": {
         "ref": "#/relationship/mongodb-atlas/Development/organizations",
         "source_key": "organization_id",
         "foreign_key": "_id",
         "is_list": false
-    },
-    "teachers": {
-        "ref": "#/relationship/mongodb-atlas/Development/users",
-        "source_key": "teachers",
-        "foreign_key": "_id",
-        "is_list": true
     }
 }
