@@ -115,9 +115,6 @@
                 "admins": {
                     "write": true
                 },
-                "classes": {
-                    "write": true
-                },
                 "email_confirmed": {
                     "read": true
                 },
@@ -132,9 +129,6 @@
                 },
                 "payment_confirmed": {},
                 "payment_info": {},
-                "teachers": {
-                    "write": true
-                },
                 "user_avatar": {
                     "read": true
                 },
@@ -169,7 +163,9 @@
                         "student",
                         "teacher"
                     ]
-                }
+                },
+                "organization_id": "%%user.custom_data.organization_id"
+
             },
             "fields": {
                 "_id": {
@@ -179,10 +175,6 @@
                     "read": true
                 },
                 "admins": {
-                    "read": true
-                },
-                "classes": {
-                    "write": true,
                     "read": true
                 },
                 "email_confirmed": {
@@ -199,9 +191,6 @@
                 },
                 "payment_confirmed": {},
                 "payment_info": {},
-                "teachers": {
-                    "write": true
-                },
                 "user_avatar": {
                     "read": true
                 },
@@ -231,11 +220,7 @@
                         "%%user.id"
                     ]
                 },
-                "anyOf": [
-                    {
-                        "organization_id": "%%user.custom_data.organization_id"
-                    }
-                ]
+                "organization_id": "%%user.custom_data.organization_id"
             },
             "fields": {
                 "_id": {},
@@ -243,9 +228,6 @@
                     "read": true
                 },
                 "admins": {},
-                "classes": {
-                    "read": true
-                },
                 "email_confirmed": {},
                 "first_name": {
                     "read": true
