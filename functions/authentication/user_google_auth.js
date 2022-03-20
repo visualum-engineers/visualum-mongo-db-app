@@ -9,7 +9,7 @@ exports = async function(  {
     //if empty, we're dealing with a 
     //new user since we dont
     //have a document for them
-    const user_data = context.user.custom_data.email;
+    const user_data = context.user.custom_data._id;
     
     //create a user schema document since it does not exist
     if(!user_data) {

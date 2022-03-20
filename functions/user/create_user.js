@@ -17,11 +17,12 @@ exports = async function ({
       ...additional_data,
       _id: user_id,
       account_type: account_type,
-      classes: [],
-      email: email,
-      email_confirmed: email_verified,
-      first_name: first_name,
-      last_name: last_name,
+      user_profile: {
+        email: email,
+        email_confirmed: email_verified,
+        first_name: first_name,
+        last_name: last_name,
+      },
       user_creation_date: new Date(),
       user_points: [],
       user_settings: {},
@@ -33,7 +34,7 @@ exports = async function ({
         ...additional_data.org_data,
         organization_name: additional_data.organization_name,
         _id: new BSON.ObjectId(),
-        admins: [new_user_document._id]
+        admins: [new_user_document._id],
       };
       const org_id = await org_collection.insertOne(org_data);
       new_user_document.organization_id = org_id;
@@ -57,10 +58,10 @@ exports = async function ({
     const errorParms = {
       error_message:
         "could not create a new user. Invalid information, or user already exists",
-      error_metadata:{
+      error_metadata: {
         doc_attempted: new_user_document,
         stack_trace: e,
-      }
+      },
     };
     throw context.functions.execute("create_async_error", errorParms);
   }
