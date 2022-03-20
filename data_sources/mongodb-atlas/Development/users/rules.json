@@ -165,7 +165,6 @@
                     ]
                 },
                 "organization_id": "%%user.custom_data.organization_id"
-
             },
             "fields": {
                 "_id": {
