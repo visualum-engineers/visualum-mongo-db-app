@@ -58,68 +58,6 @@
         "_id": {
             "bsonType": "string"
         },
-        "user_profile":{
-          "bsonType": "object",
-          "properties": {
-            "_id": {
-              "bsonType": "objectId"
-            },
-            "email": {
-              "bsonType": "string"
-            },
-            "email_confirmed": {
-              "bsonType": "bool"
-            },
-            "first_name": {
-              "bsonType": "string"
-            },
-            "last_name": {
-              "bsonType": "string"
-            },
-            "user_avatar": {
-              "bsonType": "object",
-              "properties": {
-                "accessory": {
-                  "bsonType": "string"
-                },
-                "clothes": {
-                  "bsonType": "string"
-                },
-                "clothes_color": {
-                  "bsonType": "string"
-                },
-                "eyebrow": {
-                  "bsonType": "string"
-                },
-                "eyes": {
-                  "bsonType": "string"
-                },
-                "facial_hair": {
-                  "bsonType": "string"
-                },
-                "facial_hair_color": {
-                  "bsonType": "string"
-                },
-                "hair_color": {
-                  "bsonType": "string"
-                },
-                "hair_style": {
-                  "bsonType": "string"
-                },
-                "mouth": {
-                  "bsonType": "string"
-                },
-                "skin_color": {
-                  "bsonType": "string"
-                }
-              }
-            },
-            "user_id": { "bsonType": "string" }
-          },
-          "additionalProperties": false,
-
-          "required": ["first_name", "last_name", "email", "email_confirmed"]
-        },
         "account_type": {
             "bsonType": "string",
             "enum": [
@@ -167,6 +105,74 @@
                     "points"
                 ]
             }
+        },
+        "user_profile": {
+            "additionalProperties": false,
+            "bsonType": "object",
+            "properties": {
+                "_id": {
+                    "bsonType": "objectId"
+                },
+                "email": {
+                    "bsonType": "string"
+                },
+                "email_confirmed": {
+                    "bsonType": "bool"
+                },
+                "first_name": {
+                    "bsonType": "string"
+                },
+                "last_name": {
+                    "bsonType": "string"
+                },
+                "user_avatar": {
+                    "bsonType": "object",
+                    "properties": {
+                        "accessory": {
+                            "bsonType": "string"
+                        },
+                        "clothes": {
+                            "bsonType": "string"
+                        },
+                        "clothes_color": {
+                            "bsonType": "string"
+                        },
+                        "eyebrow": {
+                            "bsonType": "string"
+                        },
+                        "eyes": {
+                            "bsonType": "string"
+                        },
+                        "facial_hair": {
+                            "bsonType": "string"
+                        },
+                        "facial_hair_color": {
+                            "bsonType": "string"
+                        },
+                        "hair_color": {
+                            "bsonType": "string"
+                        },
+                        "hair_style": {
+                            "bsonType": "string"
+                        },
+                        "mouth": {
+                            "bsonType": "string"
+                        },
+                        "skin_color": {
+                            "bsonType": "string"
+                        }
+                    }
+                },
+                "user_id": {
+                    "bsonType": "string"
+                }
+            },
+            "required": [
+                "first_name",
+                "last_name",
+                "email",
+                "email_confirmed"
+            ]
         },
         "user_settings": {
             "bsonType": "object",

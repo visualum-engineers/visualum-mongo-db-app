@@ -14,7 +14,7 @@
         "class_admins": {
             "bsonType": "array",
             "items": {
-                "bsonType": "string"
+                "bsonType": "object"
             },
             "maxItems": 200
         },
@@ -81,34 +81,7 @@
         "students": {
             "bsonType": "array",
             "items": {
-                "bsonType": "object",
-                "properties": {
-                    "_id": {
-                        "bsonType": "objectId"
-                    },
-                    "email": {
-                        "bsonType": "string"
-                    },
-                    "email_confirmed": {
-                        "bsonType": "bool"
-                    },
-                    "first_name": {
-                        "bsonType": "string"
-                    },
-                    "last_name": {
-                        "bsonType": "string"
-                    },
-                    "user_avatar": {
-                        "bsonType": "object"
-                    }
-                },
-                "required": [
-                    "_id",
-                    "first_name",
-                    "last_name",
-                    "email",
-                    "email_confirmed"
-                ]
+                "bsonType": "object"
             },
             "maxItems": 400
         }
