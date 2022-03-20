@@ -14,8 +14,8 @@
                 }
             },
             "read": true,
-            "insert": false,
-            "delete": false,
+            "insert": true,
+            "delete": true,
             "search": true,
             "additional_fields": {
                 "write": true
