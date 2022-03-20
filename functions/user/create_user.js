@@ -22,6 +22,7 @@ exports = async function ({
         email_confirmed: email_verified,
         first_name: first_name,
         last_name: last_name,
+        user_id: user_id
       },
       user_creation_date: new Date(),
       user_points: [],

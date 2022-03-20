@@ -56,28 +56,34 @@
           "write": true
         },
         "user_profile": {
-            "fields":{
-              "user_avatar": {
-                "write": true
-              },
-              "email_confirmed": {
-                "write": {
-                  "%%prev": {
-                    "$exists": false
-                  }
+          "fields": {
+            "user_avatar": {
+              "write": true
+            },
+            "email_confirmed": {
+              "write": {
+                "%%prev": {
+                  "$exists": false
                 }
-              },
-              "email": {
-                "write": true
-              },
-              "first_name": {
-                "write": true
-              },
-              "last_name": {
-                "write": true
+              }
+            },
+            "email": {
+              "write": true
+            },
+            "first_name": {
+              "write": true
+            },
+            "last_name": {
+              "write": true
+            },
+            "user_id":{
+              "write": {
+                "%%prev": {
+                  "$exists": false
+                }
               }
             }
-          
+          }
         }
       },
       "read": true,
@@ -107,24 +113,26 @@
           "read": true
         },
         "user_profile": {
-            "fields":{
-              "user_avatar": {
-                "read": true
-              },
-              "email_confirmed": {
-                "read": true
-              },
-              "first_name": {
-                "write": true
-              },
-              "last_name": {
-                "write": true
-              },
-              "email": {
-                "read": true
-              }
+          "fields": {
+            "user_avatar": {
+              "read": true
+            },
+            "email_confirmed": {
+              "read": true
+            },
+            "first_name": {
+              "write": true
+            },
+            "last_name": {
+              "write": true
+            },
+            "email": {
+              "read": true
+            },
+            "user_id":{
+              "read": true
             }
-          
+          }
         },
         "account_type": {
           "write": true
@@ -177,24 +185,26 @@
           "read": true
         },
         "user_profile": {
-            "fields":{
-              "user_avatar": {
-                "read": true
-              },
-              "email_confirmed": {
-                "read": true
-              },
-              "first_name": {
-                "read": true
-              },
-              "last_name": {
-                "read": true
-              },
-              "email": {
-                "read": true
-              }
+          "fields": {
+            "user_avatar": {
+              "read": true
+            },
+            "email_confirmed": {
+              "read": true
+            },
+            "first_name": {
+              "read": true
+            },
+            "last_name": {
+              "read": true
+            },
+            "email": {
+              "read": true
+            },
+            "user_id": {
+              "read": true
             }
-          
+          }
         },
 
         "organization_id": {
@@ -234,22 +244,24 @@
           "read": true
         },
         "user_profile": {
-            "fields":{
-              "email_confirmed": {},
-              "first_name": {
-                "read": true
-              },
-              "last_name": {
-                "read": true
-              },
-              "email": {
-                "read": true
-              },
-              "user_avatar": {
-                "read": true
-              }
+          "fields": {
+            "email_confirmed": {},
+            "first_name": {
+              "read": true
+            },
+            "last_name": {
+              "read": true
+            },
+            "email": {
+              "read": true
+            },
+            "user_avatar": {
+              "read": true
+            },
+            "user_id": {
+              "read": true
             }
-          
+          }
         },
         "admins": {},
         "organization_id": {
