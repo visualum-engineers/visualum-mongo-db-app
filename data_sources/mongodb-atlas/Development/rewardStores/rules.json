@@ -97,7 +97,7 @@
         {
             "name": "no_access_user",
             "apply_when": {
-                "anyOf": [
+                "allOf": [
                     {
                         "organization_id": {
                             "$nin": [

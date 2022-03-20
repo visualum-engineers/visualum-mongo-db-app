@@ -11,6 +11,13 @@
             },
             "maxItems": 200
         },
+        "class_admins": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "string"
+            },
+            "maxItems": 200
+        },
         "class_code": {
             "bsonType": "string"
         },
@@ -45,7 +52,7 @@
         }
     },
     "required": [
-        "teachers",
+        "class_admins",
         "class_code",
         "class_name",
         "creation_date"

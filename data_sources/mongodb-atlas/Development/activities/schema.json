@@ -5,20 +5,6 @@
         "_id": {
             "bsonType": "objectId"
         },
-        "owner_ids": {
-            "bsonType": "array",
-            "items": {"bsonType": "string"},
-            "maxLength": 100,
-            "minLength": 1
-        },
-        "owner_names": {
-            "bsonType": "array",
-            "items": {
-                "bsonType": "string"
-            },
-            "maxLength": 100,
-            "minLength": 1
-        },
         "activity_name": {
             "bsonType": "string",
             "maxLength": 200
@@ -339,7 +325,25 @@
         "creation_date": {
             "bsonType": "date"
         },
-        "private": {"bsonType": "bool"}
+        "owner_ids": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "string"
+            },
+            "maxLength": 100,
+            "minLength": 1
+        },
+        "owner_names": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "string"
+            },
+            "maxLength": 100,
+            "minLength": 1
+        },
+        "private": {
+            "bsonType": "bool"
+        }
     },
     "required": [
         "owner_ids",

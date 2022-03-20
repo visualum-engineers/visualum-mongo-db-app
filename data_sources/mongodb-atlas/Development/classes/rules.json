@@ -3,10 +3,65 @@
     "database": "Development",
     "roles": [
         {
-            "name": "default",
-            "apply_when": {},
-            "insert": true,
-            "delete": true,
+            "name": "class_admins",
+            "apply_when": {
+                "class_admins": "%%user.id"
+            },
+            "fields": {
+                "_id": {},
+                "class_admins": {
+                    "write": true
+                }
+            },
+            "read": true,
+            "insert": false,
+            "delete": false,
+            "search": true,
+            "additional_fields": {
+                "write": true
+            }
+        },
+        {
+            "name": "read_only",
+            "apply_when": {
+                "students": "%%user.id"
+            },
+            "fields": {
+                "_id": {},
+                "class_admins": {}
+            },
+            "read": true,
+            "insert": false,
+            "delete": false,
+            "search": true,
+            "additional_fields": {}
+        },
+        {
+            "name": "no_access",
+            "apply_when": {
+                "allOf": [
+                    {
+                        "class_admins": {
+                            "$nin": [
+                                "%%user.id"
+                            ]
+                        }
+                    },
+                    {
+                        "students": {
+                            "$nin": [
+                                "%%user.id"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "fields": {
+                "_id": {},
+                "class_admins": {}
+            },
+            "insert": false,
+            "delete": false,
             "search": true,
             "additional_fields": {}
         }
