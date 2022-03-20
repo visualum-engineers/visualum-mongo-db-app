@@ -1,20 +1,8 @@
 {
-    "class_admins": {
-        "ref": "#/relationship/mongodb-atlas/Development/users",
-        "source_key": "class_admins",
-        "foreign_key": "_id",
-        "is_list": true
-    },
     "organization_id": {
         "ref": "#/relationship/mongodb-atlas/Development/organizations",
         "source_key": "organization_id",
         "foreign_key": "_id",
         "is_list": false
-    },
-    "students": {
-        "ref": "#/relationship/mongodb-atlas/Development/users",
-        "source_key": "students",
-        "foreign_key": "_id",
-        "is_list": true
     }
 }

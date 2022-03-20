@@ -1,82 +1,6 @@
 [
     {
-        "name": "create_store",
-        "private": false
-    },
-    {
-        "name": "create_async_error",
-        "private": false
-    },
-    {
-        "name": "delete_store_transactions",
-        "private": false
-    },
-    {
-        "name": "update_class",
-        "private": false
-    },
-    {
-        "name": "user_google_auth",
-        "private": false
-    },
-    {
-        "name": "update_store_item",
-        "private": false
-    },
-    {
-        "name": "delete_class",
-        "private": false
-    },
-    {
-        "name": "create_store_transactions",
-        "private": false
-    },
-    {
-        "name": "read_organization",
-        "private": false
-    },
-    {
-        "name": "delete_organization",
-        "private": false
-    },
-    {
-        "name": "update_store",
-        "private": false
-    },
-    {
-        "name": "create_user",
-        "private": false
-    },
-    {
         "name": "read_store",
-        "private": false
-    },
-    {
-        "name": "create_activity",
-        "private": false
-    },
-    {
-        "name": "create_class",
-        "private": false
-    },
-    {
-        "name": "read_store_item",
-        "private": false
-    },
-    {
-        "name": "delete_activity",
-        "private": false
-    },
-    {
-        "name": "create_organization",
-        "private": false
-    },
-    {
-        "name": "update_organization",
-        "private": false
-    },
-    {
-        "name": "delete_store_item",
         "private": false
     },
     {
@@ -84,19 +8,63 @@
         "private": false
     },
     {
-        "name": "remove_user_account",
+        "name": "delete_store",
         "private": false
     },
     {
-        "name": "delete_user",
+        "name": "delete_class",
         "private": false
     },
     {
-        "name": "update_user",
+        "name": "delete_organization",
+        "private": false
+    },
+    {
+        "name": "delete_activity",
+        "private": false
+    },
+    {
+        "name": "update_organization",
+        "private": false
+    },
+    {
+        "name": "user_google_auth",
+        "private": false
+    },
+    {
+        "name": "create_store_item",
+        "private": false
+    },
+    {
+        "name": "delete_store_transactions",
+        "private": false
+    },
+    {
+        "name": "create_organization",
+        "private": false
+    },
+    {
+        "name": "validate_user_read",
+        "private": true
+    },
+    {
+        "name": "read_organization",
+        "private": false
+    },
+    {
+        "name": "create_activity",
+        "private": false
+    },
+    {
+        "name": "create_user",
         "private": false
     },
     {
         "name": "read_activity",
+        "private": false
+    },
+    {
+        "name": "update_class",
         "private": false
     },
     {
@@ -108,11 +76,7 @@
         "private": false
     },
     {
-        "name": "validate_user_write",
-        "private": true
-    },
-    {
-        "name": "create_store_item",
+        "name": "update_user",
         "private": false
     },
     {
@@ -120,11 +84,47 @@
         "private": false
     },
     {
-        "name": "delete_store",
+        "name": "read_store_item",
         "private": false
     },
     {
-        "name": "validate_user_read",
+        "name": "create_store",
+        "private": false
+    },
+    {
+        "name": "update_store_item",
+        "private": false
+    },
+    {
+        "name": "update_store",
+        "private": false
+    },
+    {
+        "name": "create_store_transactions",
+        "private": false
+    },
+    {
+        "name": "validate_user_write",
         "private": true
+    },
+    {
+        "name": "delete_store_item",
+        "private": false
+    },
+    {
+        "name": "delete_user",
+        "private": false
+    },
+    {
+        "name": "create_async_error",
+        "private": false
+    },
+    {
+        "name": "remove_user_account",
+        "private": false
+    },
+    {
+        "name": "create_class",
+        "private": false
     }
 ]
