@@ -8,12 +8,19 @@
                 "class_admins": "%%user.id"
             },
             "fields": {
-                "_id": {},
+                "_id": {
+                    "write": {
+                        "%%prev": {
+                            "$exists": false
+                        }
+                    },
+                    "read": true
+                },
                 "class_admins": {
                     "write": true
                 }
             },
-            "read": true,
+            "read": false,
             "insert": true,
             "delete": true,
             "search": true,
