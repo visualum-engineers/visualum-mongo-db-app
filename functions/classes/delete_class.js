@@ -12,6 +12,8 @@ exports = async function ({
   if (account_type === "student")
     throw Error("you do not have access to delete class");  
   const delete_one_class = async (query_condition, class_ids) => {
+    //remove this field as its used for validation
+    if(query_condition.class_admins) delete query_condition.class_admins
     try {
       const query = {
         ...query_condition,
