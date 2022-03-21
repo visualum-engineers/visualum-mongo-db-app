@@ -10,18 +10,16 @@ exports = async function ({
     .db("Development")
     .collection("classes");
   if (account_type === "student")
-    throw Error("you do not have access to delete class");  
+    throw Error("you do not have access to delete class");
   const delete_one_class = async (query_condition, class_ids) => {
-    //remove this field as its used for validation
-    if(query_condition.class_admins) delete query_condition.class_admins
     try {
       const query = {
         ...query_condition,
-        'class_admins.user_id': context.user.id,
-        _id: class_ids[0]
+        "class_admins.user_id": context.user.id,
+        _id: class_ids[0],
       };
-      const result = [await class_collection.deleteOne(query)]
-      return result
+      const result = [await class_collection.deleteOne(query)];
+      return result;
     } catch (e) {
       const errorParms = {
         error_message: `Could not delete this single class: ${class_ids[0]}`,
@@ -29,8 +27,8 @@ exports = async function ({
       };
       throw context.functions.execute("create_async_error", errorParms);
     }
-  }
-  const delete_many_classes = async(query_condition, class_ids) => {
+  };
+  const delete_many_classes = async (query_condition, class_ids) => {
     try {
       const query = {
         ...query_condition,
@@ -40,9 +38,9 @@ exports = async function ({
       const find_docs = await class_collection.find(query).limit(1000);
       const class_found_ids = find_docs.forEach((doc) => doc["_id"]);
       const result = await class_collection.deleteMany({
-        _id: { $in: class_found_ids }
-      })  
-      return result
+        _id: { $in: class_found_ids },
+      });
+      return result;
     } catch (e) {
       const errorParms = {
         error_message: `Could not delete multiple classes: ${class_ids}`,
@@ -50,18 +48,17 @@ exports = async function ({
       };
       throw context.functions.execute("create_async_error", errorParms);
     }
-  }
+  };
   try {
-    let result
-    if(delete_many) result = delete_many_classes(query_condition, class_ids)
-    else result = delete_one_class(query_condition, class_ids)
+    let result;
+    if (delete_many) result = delete_many_classes(query_condition, class_ids);
+    else result = delete_one_class(query_condition, class_ids);
     return {
-      error: null, 
+      error: null,
       message: `successfully deleted class/classes`,
-      result: result
-    }
-  }
-  catch (e) {
+      result: result,
+    };
+  } catch (e) {
     const errorParms = {
       error_message: `Could not delete class/classes`,
       error_metadata: e,
