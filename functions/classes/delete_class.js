@@ -1,4 +1,14 @@
-exports = function(arg){
+exports = function ({
+  class_ids = [],
+  delete_many = false
+}) {
+    const user_data = context.user.custom_data;
+    const account_type = user_data.account_type;
+    const class_collection = context.services
+      .get("mongodb-atlas")
+      .db("Development")
+      .collection("classes");
+
     /*
       Accessing application's values:
       var x = context.values.get("value_name");
@@ -14,7 +24,5 @@ exports = function(arg){
   
       Try running in the console below.
     */
-      const class_collection = context.services.get("mongodb-atlas").db("Development").collection("classes");
-
     return {arg: arg};
   };

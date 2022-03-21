@@ -6,7 +6,6 @@ exports = async function ({
 }) {
   //user collection
   const database = context.services.get("mongodb-atlas").db("Development");
-
   const collection = database.collection("users");
   const user_id = context.user.id;
   const name = context.user.data.name;

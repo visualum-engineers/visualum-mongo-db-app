@@ -43,16 +43,12 @@
     "delete_user": true,
     "update_user": true,
     "read_user": true,
-    "remove_user_account": true
+    "remove_user_account": true,
+    "validate_user_read": true,
+    "validate_user_write": true
   },
   "utilities": {
     "create_async_error": true
-  },
-  "validate_read_access": {
-      "validate_user_read": true
-  },
-  "validate_write_access": {
-      "validate_user_write": true
   }
 }
 

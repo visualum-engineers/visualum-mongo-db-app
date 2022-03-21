@@ -40,8 +40,8 @@ exports = async function () {
   };
   const delete_class_params = {
     query_condition: {
-      teachers: user_doc._id,
-      teachers_length: { $lte: 1 },
+      class_admins: user_doc._id,
+      class_admins_length: { $lte: 1 },
     },
     delete_many: true,
   };
@@ -53,7 +53,9 @@ exports = async function () {
     update_many: true,
     no_limit: true,
     update_content: {
-      $pull: user_doc._id,
+      class_admins: {
+        $pull: user_doc._id
+      },
     },
   };
   const update_class = context.functions.execute(

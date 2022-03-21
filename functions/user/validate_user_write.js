@@ -17,12 +17,13 @@ exports = function ({
     user_id: true,
   };
   let new_invalid_fields = {};
-  const user_id = BSON.ObjectId(context.user.id);
+  const user_id = context.user.id;
   const user_custom_data = user_document;
   const user_owner = users_ids.length === 1 && users_ids[0] === user_id;
   if (user_owner) invalid_write_fields.user_points = true;
   switch (user_custom_data.account_type) {
     case "student":
+      if(!user_owner) throw new Error("you do not have access to write to this user")
       invalid_write_fields = {
         new_invalid_fields,
         ...invalid_write_fields,
