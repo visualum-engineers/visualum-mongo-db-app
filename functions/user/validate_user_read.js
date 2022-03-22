@@ -30,7 +30,7 @@ exports = function ({
         query_user_ids[0] !== context.user.id
       ) {
         custom_query = {
-          organization_id: context.user.custom_data.organization_id ,
+          organization_id: context.user.custom_data.organization_id
         };
       }
       break;

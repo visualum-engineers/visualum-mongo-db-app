@@ -48,7 +48,8 @@
     "validate_user_write": true
   },
   "utilities": {
-    "create_async_error": true
+    "create_async_error": true,
+    "update_func_template": true
   }
 }
 
