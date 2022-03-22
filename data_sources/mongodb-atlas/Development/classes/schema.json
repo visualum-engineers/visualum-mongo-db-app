@@ -22,11 +22,13 @@
         "class_code": {
             "bsonType": "object",
             "properties": {
-                "active": {
-                    "bsonType": "bool"
+                "expiration_date": {
+                    "bsonType": "date"
                 },
                 "code": {
-                    "bsonType": "string"
+                    "bsonType": "string",
+                    "minLength": 6,
+                    "maxLength": 9
                 },
                 "creation_date": {
                     "bsonType": "date"

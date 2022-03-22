@@ -30,7 +30,13 @@ exports = async function ({ class_name, img_url, additional_fields = {} }) {
       count++;
     }
     if (exists) throw Error("error generating class code. too many collisions");
-    return class_code;
+    const creation_date = new Date()
+    const expiry_date = new Date(creation_date.getDate() + 3)
+    return {
+      code: class_code,
+      creation_date: creation_date,
+      expiration_date: expiry_date
+    };
   };
   let new_document ={}
   try {
@@ -38,11 +44,7 @@ exports = async function ({ class_name, img_url, additional_fields = {} }) {
       ...additional_fields,
       _id: new BSON.ObjectId(),
       class_admins: [user_data.user_profile],
-      class_code: {
-        code: await generate_class_code(),
-        creation_date: new Date(),
-        active: true,
-      },
+      class_code: await generate_class_code(),
       class_name: class_name,
       creation_date: new Date(),
       img_url: img_url,
