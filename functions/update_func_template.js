@@ -35,7 +35,7 @@ exports = async function ({
   const create_query = ({
     filter_query={},
     query_condition={},
-    ids={}
+    ids=[]
   }) =>{
     delete filter_query._id;
     let query = {
